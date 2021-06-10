@@ -1,5 +1,7 @@
 <?php 
-require("../config/constantes.php");
-    require_once(ROUTE_DIR.'views/security/connexion.html.php');
+    require(dirname(__DIR__)."/config/constantes.php");
+    require(dirname(__DIR__)."/config/require.php");
+    open_session();
+    require(ROUTE_DIR.'lib/rooter.php');
    
 ?>
