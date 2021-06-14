@@ -119,5 +119,21 @@
         "password": "mbenglaye",
         "file1": "question-mark-1872665_1920.jpg",
         "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "qwwdqi",
+        "name": "wqdiidw",
+        "login": "dwqu@gmail.com",
+        "password": "123456",
+        "file1": "index.jpeg",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "dwklkl",
+        "name": "wkllkwe",
+        "login": "eweo@gmail.com",
+        "password": "eweewe",
+        "file1": "woman-918583_1920.jpg",
+        "role": "ROLE_JOUEUR"
     }
 ]

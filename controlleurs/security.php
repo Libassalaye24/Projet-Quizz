@@ -9,8 +9,7 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
         require(ROUTE_DIR.'views/security/inscription.html.php');
        }elseif($_GET['views']=='deconnexion') {
            deconnexion();
-        require(ROUTE_DIR.'views/security/connexion.html.php');
-       }
+           header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');       }
     }else{
             require(ROUTE_DIR.'views/security/connexion.html.php');
         }
