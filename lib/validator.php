@@ -1,6 +1,6 @@
 <?php
 //fonction de validation
-function est_vide(string $valeur):bool{
+function est_vide( $valeur):bool{
     return empty($valeur);
 }
 
@@ -29,11 +29,12 @@ function form_valid($arrayError):bool{
     }
     return false;
 }
- function longueur_password(string $valeur ,int $min=6 , int $max=10):bool{
+
+ function longueur_password( $valeur ,int $min=6 , int $max=10):bool{
      return strlen($valeur) < $min ||strlen($valeur) > $max ; 
  }
 
-    function valide_email(string $valeur , string $key, array &$arrayError):void{
+    function valide_email( $valeur , string $key, array &$arrayError):void{
         if (est_vide($valeur)) {
             $arrayError[$key]= 'le champs est obligatoire';
         }elseif (!est_email($valeur)) {
@@ -41,7 +42,7 @@ function form_valid($arrayError):bool{
         }
     }
 
-    function validation_password(string $valeur,array &$arrayError, string $key ,int $min=6 , int $max=10):void{
+    function validation_password( $valeur,array &$arrayError, string $key ,int $min=6 , int $max=10):void{
         if (est_vide($valeur)) {
             $arrayError[$key]= 'le champs est obligatoire';
         }elseif (strlen($valeur) < $min ||strlen($valeur) > $max  ) {
@@ -49,7 +50,7 @@ function form_valid($arrayError):bool{
         }
       
     }
-    function validation_username(string $valeur , string $key,array &$arrayError){
+    function validation_username( $valeur , string $key,array &$arrayError){
         if (est_vide($valeur)) {
             $arrayError[$key]= 'le champs est obligatoire';
         }
@@ -61,7 +62,7 @@ function form_valid($arrayError):bool{
             $arrayError[$key]= 'saisir des valeurs'; 
         }
     } */
-    
+  
     function verif_sexe(){
         
     }
@@ -142,8 +143,9 @@ function bisextille_annee(int $annee):bool{
         }
     }
     function valide_avatar($file ,string $key ,array &$arrayError):void{
-        if (empty($_POST['avatar'])) {
+        if (empty($file)) {
             $arrayError[$key] = "champs obligatoire";
+            
         }
     }
    

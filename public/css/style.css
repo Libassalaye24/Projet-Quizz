@@ -1,0 +1,105 @@
+.submit{
+    background-color: #C90017;
+    color: #fff;
+    
+  }
+  
+    .submit:hover{
+    background-color: #fff;
+    color: #C90017;
+    border-color: #C90017;
+  }
+  
+  .form-control .cnx{
+    background-color: #ddd;
+  }
+ 
+.danger{
+  color: #C90017;
+}
+.card-signin {
+  border: 0;
+  border-radius: 1rem;
+  box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+  margin-bottom: 2rem;
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+  padding: 2rem;
+}
+
+.form-signin {
+  width: 100%;
+}
+
+.form-signin .btn {
+  font-size: 80%;
+  border-radius: 5rem;
+  letter-spacing: .1rem;
+  font-weight: bold;
+  padding: 1rem;
+  transition: all 0.2s;
+}
+ 
+.fhj{
+  width: 25px;
+}
+
+
+
+body{
+overflow-x: hidden;
+}
+.form-control{
+background-color: #ddd;
+}
+.red{
+  margin-left: 4%;
+  background-color: #C90017;
+  width: 190px;
+  height: 47px;
+  color: #fff;
+}
+
+.red:hover{
+  background-color: #fff;
+  color: #C90017;
+  width: 190px;
+  height: 47px;
+  border-color: #C90017;
+}
+
+
+.card-signin {
+border: 0;
+border-radius: 1rem;
+box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.1);
+}
+
+.card-signin .card-title {
+margin-bottom: 2rem;
+font-weight: 300;
+font-size: 1.5rem;
+}
+
+.card-signin .card-body {
+padding: 2rem;
+}
+
+.form-signin {
+width: 100%;
+}
+
+.form-signin .btn {
+font-size: 80%;
+border-radius: 5rem;
+letter-spacing: .1rem;
+font-weight: bold;
+padding: 1rem;
+transition: all 0.2s;
+}

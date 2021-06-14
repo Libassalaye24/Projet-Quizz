@@ -1,0 +1,123 @@
+[
+    {
+        "contolleurs": "security",
+        "prenom": "libasse",
+        "name": "kmqw",
+        "login": "frhddh@gmail.com",
+        "password": "qqqqqq",
+        "avatar": "",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "bara",
+        "name": "kmqw",
+        "login": "imam@gmail.com",
+        "password": "qqqqqq",
+        "avatar": "",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "libasse",
+        "name": "laye",
+        "login": "libasse@gmail.com",
+        "password": "libasse",
+        "avatar": "avatar.png",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "prenom": "rfe",
+        "name": "ejnnef",
+        "login": "nwi@gmail.com",
+        "password": "libasse",
+        "file1": "images.jpeg",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "sene",
+        "name": "sene",
+        "login": "sene@gmail.com",
+        "password": "senesene",
+        "file1": "question-mark-1872665_1920.jpg",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "sdjns",
+        "name": "wdlwd",
+        "login": "diop@gmail.com",
+        "password": "wanecoudy",
+        "file1": "connexion.fig",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "23",
+        "name": "2ejjk",
+        "login": "hh@gmail.com",
+        "password": "123456",
+        "file1": "woman-918583_1920.jpg",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "dwjjnedw",
+        "name": "dwlwe",
+        "login": "wej@gmail.com",
+        "password": "123456",
+        "file1": "bee-6061015_1920.jpg",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "dwjjnedw",
+        "name": "wane",
+        "login": "diope@gmail.com",
+        "password": "wanecoudy",
+        "file1": "question-mark-1019820_1920.jpg",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "wkdqkl",
+        "name": "dwqkl",
+        "login": "wqdk@gmail.com",
+        "password": "mbenglaye",
+        "file1": "index.jpeg",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "jkjnkjnk",
+        "name": "ujnjnkjnk",
+        "login": "123@gmail.com",
+        "password": "123456",
+        "file1": "ECOLE 221 QUIZZ.png",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "w jjwd",
+        "name": "wdkjwd",
+        "login": "1233@gmail.com",
+        "password": "123456",
+        "file1": "bee-6061015_1920.jpg",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "ndoye",
+        "name": "ndoye",
+        "login": "poiu@gmail.com",
+        "password": "ndoye123",
+        "file1": "question-mark-1872665_1920.jpg",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": "jdeedfj",
+        "name": "scjk",
+        "login": "bnib@gmail.com",
+        "password": "bnbbnb",
+        "file1": "hacker-2883635_1920.jpg",
+        "role": "ROLE_JOUEUR"
+    },
+    {
+        "prenom": " m,de,",
+        "name": "dklwn",
+        "login": "mbeing@gmail.com",
+        "password": "mbenglaye",
+        "file1": "question-mark-1872665_1920.jpg",
+        "role": "ROLE_JOUEUR"
+    }
+]
