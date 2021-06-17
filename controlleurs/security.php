@@ -9,7 +9,8 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
         require(ROUTE_DIR.'views/security/inscription.html.php');
        }elseif($_GET['views']=='deconnexion') {
            deconnexion();
-           header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');       }
+           header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');  
+       }
     }else{
             require(ROUTE_DIR.'views/security/connexion.html.php');
         }
@@ -68,8 +69,6 @@ function inscription(array $data ,array $files):void{
     validation_username($name,'name',$arrayError);
      /* valide_avatar($avatar,'avatar',$arrayError); */  
      
-     
-   
     if(login_exist($login)){
             $arrayError['login'] = 'Ce login existe déjà';
             $_SESSION['arrayError']=$arrayError;
@@ -110,8 +109,14 @@ function inscription(array $data ,array $files):void{
             
             header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');
          }else {
-             $_SESSION['arrayError']=$arrayError;
-             header('location:'.WEB_ROUTE.'?controlleurs=security&views=inscription');
+            
+             if (est_admin()) {
+              $_SESSION['arrayError']=$arrayError;
+              header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.admin');
+             }else {
+              $_SESSION['arrayError']=$arrayError;
+              header('location:'.WEB_ROUTE.'?controlleurs=security&views=inscription');
+             }
          }
 }
 function deconnexion():void{

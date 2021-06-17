@@ -12,6 +12,8 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                 require(ROUTE_DIR.'views/admin/list.joueur.html.php'); 
             }elseif ($_GET['views'] == 'creer.admin') {
                 require(ROUTE_DIR.'views/admin/creer.admin.html.php'); 
+            }elseif ($_GET['views'] == 'tab.bord') {
+                require(ROUTE_DIR.'views/admin/tab.bord.html.php'); 
             }
            
         }else {
