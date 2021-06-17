@@ -34,8 +34,3 @@
               
          
       </div>
- 
-    
-<div class="col-md-8 ml-auto mr-auto">
-  <?php require_once(ROUTE_DIR.'views/security/inscription2.html.php') ?>
-</div>

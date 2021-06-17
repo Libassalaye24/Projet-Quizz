@@ -1,101 +1,68 @@
- 
-<div class="container mt-5">
-    <div class="row conect ">
+<?php 
+   require_once(ROUTE_DIR.'views/imc/header.html.php'); 
+?>
         <?php if(est_joueur()): ?>
 <!--      <img src="<?php echo UPLOAD_DIR . basename($_FILES['file1']['name']) ; ?>" alt=""> 
  -->       
           <?php endif ?>
-        <?php if(est_connect()): ?>
-                <ul class="ml-auto mt-2">
-                    <li class="nav-item ">
-                        <a class="nav-link" href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion' ?>">Deconnexion</a>
-                    </li>
-                </ul>
-        <?php endif ?>
+       
 
-    </div>
+   
     <?php if(est_admin()): ?>
-    <div class="row admin">
-        <div class="col-4">
-            <div class=" photo">
+      
+        <div id="mySidepanel" class="sidepanel ">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question'?>">Liste des questions</a>
+            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.admin'?>">Creer Admin</a>
+            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.joueur'?>">Liste des joueurs</a>
+            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.question'?>">Creer Questions</a>
+            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=tab.bord '?>">Tableau de bord</a>
+            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion '?>">Se deconnecter</a>
+
+        </div>
+
+    <button class="openbtn" onclick="openNav()" >&#9776; </button>
+   
+    <div class="mnn">
+            <div class=" photo mt-5">
                 mklwklwedlw
 <!--                 <img src="<?php echo UPLOAD_DIR . basename($_FILES['file1']['name']) ; ?>" alt="">
  -->            </div>
-            <div class="vertical-menu">
-                <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question'?>" class="active">Liste des questions</a>
-                <span><img src="<?= WEB_ROUTE.'img/ic-liste-active.png' ?>" alt=""></span>
-                <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.question'?>">Ajouter Questions</a>
-                <span><img src="<?= WEB_ROUTE.'img/ic-ajout.png' ?>" alt=""></span>
-                <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.joueur'?>">Liste des joueurs</a>
-                <span><img src="<?= WEB_ROUTE.'img/ic-liste.png' ?>" alt=""></span>
-                <a href="<?= WEB_ROUTE.'?controlleurs=security&views=inscription'?>">Creer admin</a>
-                <span><img src="<?= WEB_ROUTE.'img/ic-ajout-active.png' ?>" alt=""></span>
+            <div class="vertical-menu" >
+                <div class="d-flex">
+                    <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question'?>" class="active">Liste des questions</a>
+                    <img class="mt-3 ml-auto mr-4" src="<?= WEB_ROUTE.'img/ic-liste-active.png' ?>" alt="">
+                </div>
+                <div class="d-flex">
+                    <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.admin'?>">Creer admin</a>
+                    <img class="mt-3 ml-auto mr-4" src="<?= WEB_ROUTE.'img/ic-ajout.png' ?>" alt="">
+                </div>  
+                <div class="d-flex">
+                    <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.joueur'?>" >Liste des joueurs</a>
+                    <img class="mt-3 ml-auto mr-4" src="<?= WEB_ROUTE.'img/ic-liste.png' ?>" alt="">
+                </div>
+                <div class="d-flex">
+                    <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.question'?>" >Creer questions</a>
+                    <img class="mt-3 ml-auto mr-4" src="<?= WEB_ROUTE.'img/ic-ajout-active.png' ?>" alt="">
+                </div>
+
+                <div class="d-flex">
+                    <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=tab.bord'?>" >Tableau de bord</a>
+                    <img class="mt-3 ml-auto mr-4"  src="<?= WEB_ROUTE.'img/ic-liste-active.png' ?>" alt="">
+                </div>
+          
             </div>
-        </div>
-        <div class="col-6">
-                
-        </div>
+        
     </div>
-    <?php endif ?>
-</div>
-
-<style>
-    .vertical-menu {
-  width: 300px; 
-}
-.vertical-menu img{
-    width: 20px;
-    height: 20px;
-    float: right;
-    margin-top: -13%;
-    margin-right: 5%;
-}
-.photo{
-    width: 300px;
-    height: 135px;
-    background-color: #c90017;
-}
-
-.vertical-menu a {
-  background-color: #eee; 
-  color: black; 
-  display: block; 
-  padding: 12px; 
-  text-decoration: none; 
-}
-
-.vertical-menu a:hover {
-  background-color: #ccc; 
-}
-
-
-.admin{
-    background-color: #fff;
-}
-.conect{
-    padding: 0;
-    background-color: #F9F9F9;
-}
-  .row{
-      padding: 0;
-  }
-  .conect ul {
-      list-style: none  ;
-
-  }
-  .conect ul li a{
-      text-decoration: none;
-      color: black;
-  }
   
-  .conect a{
-      padding: 12px;
-      background-color: #ddd;
-  }
-  .conect a:hover{
-     background-color: grey;
-    
-  }
+    <?php endif ?>
+    <style>
+        .d-flex{
+            cursor: pointer;
+        }
+    </style>
+    <?php 
+   require_once(ROUTE_DIR.'views/imc/header.html.php'); 
+?>
 
-</style>
                
