@@ -17,8 +17,19 @@
             <div class="col-4">
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
-            <div class="col-md-8 col-sm-12 bg-light jhg">
-               
+            <div class="col-md-8 col-sm-12 bg-light ">
+                <div class="progress">
+                <label for="file">Nombre de joueur: </label>
+                <progress id="file" value="82" max="100">  </progress>
+                </div>
+                <div class="progress">
+                <label for="file">Nombre de admin: </label>
+                <progress id="file" value="62" max="100">  </progress>
+                </div>
+                <div class="progress">
+                <label for="file">Nombre de question: </label>
+                <progress id="file" value="72" max="100">  </progress>
+                </div>
             </div>
         </div>
         
@@ -29,12 +40,20 @@
             padding: 12px;
         }
         .container{
-            height: 900px;
+            height: 600px;
         }
         .jhg{
             height: 700px;
         }
-        
+        .progress{
+            margin-top: 10%;
+            background-color: none;
+            
+        }
+        progress{
+            width: 60%;
+            height: 1000px;
+        }
     </style>
 <?php 
     require_once(ROUTE_DIR.'views/imc/footer.html.php');

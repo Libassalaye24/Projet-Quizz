@@ -50,6 +50,10 @@
                     <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=tab.bord'?>" >Tableau de bord</a>
                     <img class="mt-3 ml-auto mr-4"  src="<?= WEB_ROUTE.'img/ic-liste-active.png' ?>" alt="">
                 </div>
+                <div class="d-flex">
+                    <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.admin'?>" >Liste des admins</a>
+                    <img class="mt-3 ml-auto mr-4"  src="<?= WEB_ROUTE.'img/ic-liste-active.png' ?>" alt="">
+                </div>
           
             </div>
         

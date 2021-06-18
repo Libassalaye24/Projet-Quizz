@@ -4,7 +4,7 @@
 
    require_once(ROUTE_DIR.'views/imc/header.html.php'); 
 ?>
-    <div class="container bg-white conect mt-5">
+    <div class="container bg-light conect mt-5">
         <div class="row deconnect">
         <?php if(est_connect()): ?>
             <h3 class="text-dark mt-3 ml-4 font-weight-bold " >PARAMETRER VOS QUIZZ</h3>
@@ -36,30 +36,66 @@
                         <tr>
                             <th>Nom</th>
                             <th>Prenom</th>
-                            <th>Score</th>
                         </tr>
                     </thead>
                     <tbody>
+                       
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                        </tr>
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                            
+                        </tr>
                         
-                           <?php foreach($arrayUser as $user ): ?>
-                             <?php if($user['role'] != 'ROLE_ADMIN'): ?>
-                                <tr>
-                                    <td><?php echo $user['name'] ?></td>
-                                    
-                                    <td><?php echo $user['prenom'] ?></td>
-                                    
-                                    <td><?php echo $user['score'] ?></td>
-                                </tr>
-                             <?php endif ?>
-                            <?php endforeach ?>
-                    
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                        </tr>
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                        </tr>
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                        </tr>
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                        </tr>
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                        </tr>
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                        </tr>
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                        </tr>
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                        </tr>
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                        </tr>
+                        <tr>
+                            <td>Mbaye </td>
+                            <td>Libasse</td>
+                        </tr>
                        
                         
                     </tbody>
                 </table>
                
                </div>
-               <button type="submit" class="button " name="pagin-jour">Suivant</button>
             </div>
         </div>
         
@@ -71,7 +107,7 @@
                padding: 12px;
            }
            .container{
-            height: 1000px;
+            height: 900px;
         }
         .jhg{
             height: 800px;

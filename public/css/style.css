@@ -3,7 +3,26 @@
     color: #fff;
     
   }
-  
+  .conect{
+    
+    background-color: #F9F9F9;
+}
+@media only screen and (max-width: 991px){
+  .deconnect{
+    display: none;
+  }
+}
+
+  .deconnect{
+    background-color:#F9F9F9;
+  }
+  .deconnect a{
+    padding: 10px;
+    background-color: #C4C4C4;
+  }
+  .deconnect a:hover{
+    background-color: #ddd;
+  }
     .submit:hover{
     background-color: #fff;
     color: #C90017;
@@ -103,3 +122,156 @@ font-weight: bold;
 padding: 1rem;
 transition: all 0.2s;
 }
+
+
+/* menu */
+#mySidepanel{
+  margin-top: 25%;
+  margin-left: 10%;
+  width: 70%;
+}
+.sidepanel {
+height: 450px; /* Specify a height */
+width: 0; /* 0 width - change this with JavaScript */
+position: fixed; /* Stay in place */
+z-index: 2; /* Stay on top */
+top: 0;
+left: 0;
+background-color: #111; /* Black*/
+overflow-x: hidden; /* Disable horizontal scroll */
+padding-top: 0px; /* Place content 60px from the top */
+transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
+}
+
+/* The sidepanel links */
+.sidepanel a {
+/* padding: 8px 8px 8px 32px; */
+text-decoration: none;
+font-size: 20px;
+color: #818181;
+display: block;
+transition: 0.3s;
+}
+.sidepanel a:not(.closebtn){
+margin-top: 4%;
+}
+.sidepanel .closebtn{
+margin-left: -10%;
+}
+/* When you mouse over the navigation links, change their color */
+.sidepanel a:hover {
+color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidepanel .closebtn {
+position: absolute;
+top: 0;
+right: 2px;
+font-size: 40px;
+margin-left: 50px;
+}
+
+/* Style the button that is used to open the sidepanel */
+.openbtn {
+font-size: 20px;
+cursor: pointer;
+background-color: #111;
+color: white;
+padding: 10px 15px;
+border: none;
+}
+
+.openbtn:hover {
+background-color: #444;
+}
+.closebtn{
+margin-top: -6%;
+float: left;
+}
+/*  .vertical-menu {
+width: 300px; 
+} */
+.d-flex{
+width: 300px;
+background-color: #fff;
+}
+@media screen and (max-width: 1000px){
+.mnn{
+  display: none;
+}
+
+}
+@media only screen and (min-width: 991px){
+.ambourger{
+  display: none;
+}
+.openbtn{
+  display: none;
+}
+.closebtn{
+  display: none;
+}
+.sidepanel{
+  display: none;
+}
+}
+.vertical-menu img{
+width: 20px;
+height: 20px;
+}
+.photo{
+width: 300px;
+height: 135px;
+background-color: #c90017;
+border-radius: 10px 10px 0% 0%;
+}
+.test{
+height: 800px;
+background-color: #fff;
+}
+.vertical-menu a {
+color: black; 
+display: block; 
+text-decoration: none; 
+/* font-size: 25px; */
+}
+.vertical-menu .d-flex:hover{
+background-color: #ddd;
+border-left: 3px solid black;
+}
+
+.vertical-menu .d-flex{
+background-color: #fff;
+}
+
+/* 
+.mnn{
+background-color: #ddd;
+} */
+
+.admin{
+background-color: #000;
+}
+
+.row{
+padding: 0;
+}
+.conect ul {
+list-style: none  ;
+
+}
+.conect ul li a{
+text-decoration: none;
+color: black;
+margin-left: -16%;
+}
+
+.conect a{
+padding: 12px;
+/*       background-color: #ddd;
+*/  }
+/*  .conect a:hover{
+background-color: grey;
+
+} */

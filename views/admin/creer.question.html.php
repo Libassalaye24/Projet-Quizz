@@ -24,41 +24,48 @@
                     PARAMETRER VOS QUIZZ
                 </h3>
                <form action="" method="post">
-               <div class="border border-danger mt-3">
+               <div class="border border-danger bordure mt-3">
                 <label for="" class="ml-4">Questions</label>
-                    <div class="form-group question ml-5">
+                    <div class="form-group question ml-4 col-sm-9">
                    
-                    <input type="text" name="" id="" class="form-control bg-light" placeholder="" aria-describedby="helpId">
+                    <input type="text" name="" id="" class="form-control bg-white" placeholder="" aria-describedby="helpId">
                     <small id="helpId" class="text-muted">Help text</small>
                     </div>
-                    <label for="" class="ml-4">Nbre de points</label>
-                    <div class="form-group ml-5 slc">
-                    
-                        <select class="custom-select" name="" id="">
-                            <option selected>selectionner</option>
-                            <option value="">4</option>
-                            <option value="">5</option>
-                            <option value="">6</option>
-                            <option value="">6</option>
-                            <option value="">6</option>
-                            <option value="">6</option>
-                        </select>
-                    </div>
+                   <div class="form-group ml-4">
+                     <label for="">Nbre de points</label>
+                     <input type="number" name="nbr-pts" id="" class="form-control point bg-white ml-4" placeholder="" aria-describedby="helpId">
+                   </div>
                     <label for="" class="ml-4">Types de reponses</label>
                     <div class="form-group ml-5 question ">
                     
-                        <select class="custom-select" name="tpquest" id="">
+                        <select class="custom-select " name="tpquest" id="">
                             <option selected>Type de reponse</option>
                             <option value="text">Texte</option>
                             <option value="simpe">Simple</option>
                             <option value="multiple">Multiple choice</option>
                            
                         </select>
-                        <a href="#" class="btn btn-dark active ml-4" role="button">+</a>
+                        <button type="submit" name="ajout" class="plus ">+</button>
                     </div>
+
+                   <div class="form-group ml-4">
+                     <label for="">Reponse 1</label>
+                     <div class="row">
+                         <div class="col-6 ml-4">
+                         <input type="text" name="" id="" class="form-control bg-white " placeholder="" aria-describedby="helpId">
+                           
+                         </div>
+                         <div class="col-4">
+                         <input type="checkbox" class="form-check-input checks" name="" id="" value="checkedValue" >
+                         <input type="radio" name="" class="ml-5 mt-2" id="">
+
+                         </div>
+                     </div>
+                   </div>
                    
                 </div>
                </form>
+              
             </div>
         </div>
         
@@ -71,15 +78,31 @@
         .question{
             width: 360px;
         }
+        .checks{
+            width: 70px;
+            height: 30px;
+            margin-right: 19%;
+        }
         .interface{
             padding: 12px;
         }
        /*  .container{
             height: 700px;
         } */
+        .bordure{
+            height: 400px;
+        }
         .jhg{
             height: 500px;
         }
+        .plus{
+            margin-left: 102%;
+            margin-top: -12%;
+        }
+        .point{
+            width: 15%;
+        }
+       
     </style>
 <?php 
     require_once(ROUTE_DIR.'views/imc/footer.html.php');

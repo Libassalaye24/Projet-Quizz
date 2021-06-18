@@ -106,8 +106,11 @@ function inscription(array $data ,array $files):void{
             
         
             add_user($data);
-            
-            header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');
+            if (est_admin()) {
+              header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.question');
+            }else {
+              header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');
+            }
          }else {
             
              if (est_admin()) {

@@ -33,7 +33,7 @@
             height: 700px;
         }
         .jhg{
-            height: 900px;
+            height: 1000px;
         }
       </style>
 <?php 
