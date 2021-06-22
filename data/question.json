@@ -1,0 +1,57 @@
+[
+    {
+        "controlleurs": "admin",
+        "action": "question",
+        "question": "Les langages du Web",
+        "nbr-pts": "34",
+        "tpquest": "multiple",
+        "btn_submit": "",
+        "reponse": "HTML",
+        "reponse0": "JAVA",
+        "reponse1": "RS"
+    },
+    {
+        "controlleurs": "admin",
+        "action": "question",
+        "question": "D'ou vient le Corona?",
+        "nbr-pts": "34",
+        "tpquest": "simpe",
+        "btn_submit": "",
+        "reponse": "ITALIE",
+        "reponse0": "CHINE"
+    },
+    {
+        "controlleurs": "admin",
+        "action": "question",
+        "question": "Quel terme definit le langage qui s'adapte sur Android te sur Ios?",
+        "nbr-pts": "12",
+        "tpquest": "text",
+        "btn_submit": "",
+        "reponse": "feuille de style en cascade",
+        "reponse0": "style"
+    },
+    {
+        "controlleurs": "admin",
+        "action": "question",
+        "question": "Quelle est la premiere ecole de codage gratuite au senegal?",
+        "nbr-pts": "11",
+        "tpquest": "simpe",
+        "btn_submit": "",
+        "reponse": "Simpio",
+        "reponse0": "Orange Digital Center"
+    },
+    {
+        "question": "quelle est la capital du senegal",
+        "nbr-pts": "4",
+        "tpquest": "simpe",
+        "reponse": "DAKAR",
+        "reponse0": "THIES"
+    },
+    {
+        "question": "les langages du web",
+        "nbr-pts": "10",
+        "tpquest": "multiple",
+        "reponse": "HTML",
+        "reponse0": "CSS"
+    }
+]

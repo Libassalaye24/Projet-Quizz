@@ -44,11 +44,11 @@ if (isset($_SESSION['arrayError'])) {
             
        
     </div>
-      <div class="container mt-10 bordure col-10 col-md-12">
+      <div class="container mt-10 bordure col-sm-9 col-md-10  col-xs-12 col-lg-10">
         
         <div class="row mt-5 "> 
-          <div class="col-sm-9  col-lg-5 mx-auto  " style="margin-top: 6%;">
-            <div class="card">
+          <div class="col-sm-9 col-xs-12   mx-auto  " style="margin-top: 6%;">
+            <div class="card ">
               <div class="card-body">
                 <h3 class="card-title text-center " style="color: #C90017;"><b>Login Form</b></h3> <br>
                  
@@ -67,7 +67,7 @@ if (isset($_SESSION['arrayError'])) {
                                   <div class="input-group-append">
                                       <span class="input-group-text"><i class="fa fa-user"></i></span>
                                   </div>
-                          </div>
+                     </div>
                           <div class="danger">
                             <?= isset($arrayError['login']) ? $arrayError['login'] : ""; ?>
                           </div>

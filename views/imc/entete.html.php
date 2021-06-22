@@ -17,7 +17,7 @@
       float:left ;
       width: 120px;
       height: 90px;
-      margin-left: -2%;
+      margin-left: -3%;
       margin-top: -21px;
     }
 

@@ -18,11 +18,11 @@
   }
   .deconnect a{
     padding: 10px;
-    background-color: #C4C4C4;
+    color: #fff;
   }
-  .deconnect a:hover{
+  /* .deconnect a:hover{
     background-color: #ddd;
-  }
+  } */
     .submit:hover{
     background-color: #fff;
     color: #C90017;
@@ -156,7 +156,7 @@ transition: 0.3s;
 margin-top: 4%;
 }
 .sidepanel .closebtn{
-margin-left: -10%;
+margin-left: -8%;
 }
 /* When you mouse over the navigation links, change their color */
 .sidepanel a:hover {
@@ -200,6 +200,7 @@ background-color: #fff;
 .mnn{
   display: none;
 }
+
 
 }
 @media only screen and (min-width: 991px){

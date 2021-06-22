@@ -13,7 +13,7 @@
 
  
 
-         <div class="container mt-5 bordure  col-md-12 ">
+         <div class="container mt-5 bordure  col-md-12 col-sm-12 col-lg-15 col-xs-12">
             
                 <div class="card ">
                   <div class="card-body ">

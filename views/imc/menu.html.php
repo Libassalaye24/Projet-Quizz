@@ -16,6 +16,7 @@
             <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.admin'?>">Creer Admin</a>
             <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.joueur'?>">Liste des joueurs</a>
             <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.question'?>">Creer Questions</a>
+            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.admin '?>">Liste des Admins</a>
             <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=tab.bord '?>">Tableau de bord</a>
             <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion '?>">Se deconnecter</a>
 
@@ -65,8 +66,9 @@
             cursor: pointer;
         }
     </style>
+    
     <?php 
-   require_once(ROUTE_DIR.'views/imc/header.html.php'); 
+   require_once(ROUTE_DIR.'views/imc/footer.html.php'); 
 ?>
 
                

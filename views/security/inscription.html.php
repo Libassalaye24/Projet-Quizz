@@ -36,6 +36,6 @@
       </div>
  
     
-<div class="col-md-8 ml-auto mr-auto">
+<div class="col-md-10 col-sm-10 col-xs-12 ml-auto mr-auto ">
   <?php require_once(ROUTE_DIR.'views/security/inscription2.html.php') ?>
 </div>

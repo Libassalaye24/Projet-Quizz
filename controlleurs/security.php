@@ -10,6 +10,10 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
        }elseif($_GET['views']=='deconnexion') {
            deconnexion();
            header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');  
+       }elseif ($_GET['views'] == 'show.user') {
+      /*     $_SESSION['id'] = $user['id'];
+          supprime_utilisateur();
+          require(ROUTE_DIR.'views/security/show.user.html.php'); */
        }
     }else{
             require(ROUTE_DIR.'views/security/connexion.html.php');
@@ -107,7 +111,9 @@ function inscription(array $data ,array $files):void{
         
             add_user($data);
             if (est_admin()) {
-              header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.question');
+              $_SESSION['success_Inscript'] = 'Votre compte Admin a bien ete cree';
+              header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.admin');
+              exit();
             }else {
               header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');
             }
@@ -125,4 +131,12 @@ function inscription(array $data ,array $files):void{
 function deconnexion():void{
     unset($_SESSION['userConnect']);
 }
+/* function supprime_utilisateur(){
+  $id = $_SESSION['id'];
+  $ok = suppression_user($id);
+  if ($ok) {
+    header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.admin');
+    exit();
+  }
+} */
 ?>

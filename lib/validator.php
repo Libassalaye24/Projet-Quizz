@@ -129,7 +129,17 @@ function bisextille_annee(int $annee):bool{
          return false;
      }
     }
-
+   
+    function valideChamps(string $valeur1,string $key,array &$arrayError):void{
+        if (est_vide($valeur1)) {
+            $arrayError[$key] = 'champs obligatoire';
+        }
+    }
+    function valideReps(string $valeur1,string $key,array &$arrayError):void{
+        if ($valeur1 == 'Type de reponse') {
+            $arrayError[$key] = 'veiller choisir le type de reponse';
+        }
+    }
     function validation_date($date,$separateur,string $key, array &$arrayError):void{
         $separateur = explode('/',$date);
        if (est_vide($date)) {
@@ -148,5 +158,29 @@ function bisextille_annee(int $annee):bool{
             
         }
     }
+    function nombrePageTotal($array, $nombreElement): int {
+        $nombrePage = 0;
+        $longueurArray = count($array);
+        if ($longueurArray % $nombreElement == 0) {
+            $nombrePage = $longueurArray / $nombreElement;
+        } else {
+            $nombrePage = ($longueurArray / $nombreElement) + 1;
+        }
+        return $nombrePage;
+    }
+
+function get_element_to_display($array, int $page, int $nombreElement): array {
+    $arrayElement = [];
+    $indiceDepart = ($page*$nombreElement) - $nombreElement;
+    $limitElement = $page * $nombreElement;
+    for ($i = $indiceDepart; $i < $limitElement; $i++) {
+        if ($i >= count($array)) {
+            return $arrayElement;
+        } else {
+            $arrayElement[] = $array[$i];
+        }
+    }
+    return $arrayElement;
+}
    
 ?>
