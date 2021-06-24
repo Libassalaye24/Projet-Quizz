@@ -10,11 +10,11 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
        }elseif($_GET['views']=='deconnexion') {
            deconnexion();
            header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');  
-       }elseif ($_GET['views'] == 'show.user') {
-      /*     $_SESSION['id'] = $user['id'];
-          supprime_utilisateur();
-          require(ROUTE_DIR.'views/security/show.user.html.php'); */
-       }
+       }elseif ($_GET['views'] == 'edit') {
+        $id=$_GET['id'];
+        $user = find_user_id($id);
+        require_once(ROUTE_DIR.'views/admin/creer.admin.html.php'); 
+    }
     }else{
             require(ROUTE_DIR.'views/security/connexion.html.php');
         }
@@ -28,10 +28,15 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
                     unset($_POST['submit']);
                     unset($_POST['action']);
                     unset($_POST['controlleurs']);
-                   
                     inscription($_POST,$_FILES);
                    
-            }
+            }elseif ($_POST['action']=='edit') {
+              unset($_POST['submit']);
+              unset($_POST['action']);
+              unset($_POST['controlleurs']);
+              inscription($_POST,$_FILES);
+              header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.admin');
+          }
         }
 }
 
@@ -73,7 +78,7 @@ function inscription(array $data ,array $files):void{
     validation_username($name,'name',$arrayError);
      /* valide_avatar($avatar,'avatar',$arrayError); */  
      
-    if(login_exist($login)){
+       if(empty($data['id']) and login_exist($login)){
             $arrayError['login'] = 'Ce login existe déjà';
             $_SESSION['arrayError']=$arrayError;
             header('location:'.WEB_ROUTE.'?controlleurs=security&views=inscription');
@@ -95,28 +100,44 @@ function inscription(array $data ,array $files):void{
 
     if(form_valid($arrayError)) {
        
-            // appel du model
-          if ( to_uploads($_FILES)) {
-            $data['file1'] = $files['file1']['name'];
-          }
-             
-             unset($data['password2']);
-             unset($data['controlleurs']);
-             if (est_admin()) {
-                $data['role'] = 'ROLE_ADMIN';
-               }else {
-                    $data['role'] = 'ROLE_JOUEUR';
-            }
-            
-        
-            add_user($data);
-            if (est_admin()) {
-              $_SESSION['success_Inscript'] = 'Votre compte Admin a bien ete cree';
-              header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.admin');
-              exit();
-            }else {
-              header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');
-            }
+                  // appel du model
+                if ( to_uploads($_FILES)) {
+                  $data['file1'] = $files['file1']['name'];
+                }
+                  
+                  unset($data['password2']);
+                  unset($data['controlleurs']);
+
+                  if (est_admin()) {
+                    $data['role'] = 'ROLE_ADMIN';
+                  }else {
+                        $data['role'] = 'ROLE_JOUEUR';
+                }   
+
+                  if( isset($data['id'])){
+                    if (est_admin()) {
+                      modif_user($data);
+                      header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.admin');  
+                    }
+                    
+                  }
+
+                  if (empty($data['id']) ) {
+                 
+                      add_user($data); 
+                      header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.admin');
+  
+                  }
+                  
+
+                 
+              // if (empty($data['id']) && est_admin() ) {
+              
+              // $_SESSION['success_Inscript'] = 'Votre compte Admin a bien ete cree';
+         
+            // }else {
+            //   header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');
+            // }
          }else {
             
              if (est_admin()) {

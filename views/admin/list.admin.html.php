@@ -16,7 +16,7 @@
                 </ul>
         <?php endif ?>
         </div>
-        <div class="row bg-white  " style="height: 520px;">
+        <div class="row bg-white  " >
             <div class="col-4 mt-3 " >
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
@@ -48,7 +48,7 @@
                                     <td style="font-size: larger;"><?php echo $user['name'].'  '.$user['prenom'] ?></td>
                                     <td><?php echo $user['role'] ?></td>
                                     <td> 
-                                        <a name="" id="" class="btn btn-secondary " href="#" role="button">modifier <ion-icon name="create-outline"></ion-icon></a>
+                                        <a name="" id="" class="btn btn-secondary " href="<?= WEB_ROUTE.'?controlleurs=security&views=edit&id='.$user['id']?>" role="button">modifier <ion-icon name="create-outline"></ion-icon></a>
                                     </td>
                                 </tr>
                             <?php $i=$i+1; ?> 
@@ -71,9 +71,9 @@
                height: 900px;
                padding: 12px;
            }
-           .container{
-            height: 1000px;
-        }
+           /* .container{
+            height: 1400px;
+        } */
         .jhg{
 /*             height: 1000px;
  */            padding: 12px;

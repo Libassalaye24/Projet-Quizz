@@ -16,7 +16,7 @@
                 </ul>
         <?php endif ?>
         </div>
-        <div class="row   bg-white interface jhg ">
+        <div class="row   bg-white   ">
             <div class="col-4">
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
@@ -27,68 +27,79 @@
                     // 2 convertir le json
                     $arrayQuestion = json_decode($js ,true);
                  //  var_dump(count($arrayQuestion));
+                 $page=1;
+                 $nbrPage= 0;
+                 
                 if (isset($_GET['page'])) {
                     $page=$_GET['page'];
-                    nombrePageTotal($arrayQuestion,5);
-                    get_element_to_display($arrayQuestion,$page,5);
+                  $nbrPage=  nombrePageTotal($arrayQuestion,5);
+                   $quest= get_element_to_display($arrayQuestion,$page,5);
                 }
                 ?>
-                <div class="row">
-                    <div class="col-6 ">
+                <div class="row mt-2 col-sm-12 col-md-12 col-xs-10">
+                    <div class="col-md-6 col-sm-6 ">
                     <h4>Nbre de jeu par question/jeu</h4>
                     </div>
-                    <div class="col-md-5 col-sm-9 col-xs-12 ">
-                          <input type="number" class=" point" name="" id="" placeholder="5">
+                    <div class="col-sm-6 col-md-5">
+                          <input type="number" class="  col-md-7 col-sm-5 " name="" id="" placeholder="5">
                     </div>
-                   <div class="">
+                   <div class="col-sm-3 col-md-1 mt-1">
                    <button type="submit" class="btn ok ml-auto">OK</button>
                    </div>
 
                 </div>
-               <div class=" row border border-danger list mt-3 ">
+               <div class=" row border border-danger mli mt-3 ">
                <table class="table ">
                    
                    <tbody>
                        <?php $i=1; ?>
-                       <?php foreach($arrayQuestion as $question ): ?>
+                       <?php foreach($arrayQuestion as $question => $value): ?>
                        
                                <tr>
-                                   <td>
-                                   <?php if($i<=5): ?>
-                                      <b> <?php echo "$i.".$question['question'] ?> </b>
-                                     <a name="" id="" class="btn btn-light" href="#" role="button"><ion-icon name="trash-outline" class="supp"></ion-icon>delete</a> <a name="" id="" class="btn btn-light" href="#" role="button"><ion-icon name="create-outline" class="edit"></ion-icon>Edit</a>
-                                       <br>
-                                       <?php $i=$i+1; ?> 
-                                      
-                                   <?php if($question['tpquest'] ==  'simpe'): ?>
-                                       <input type="radio" name="1" id="" class="mt-2">
-                                       <?php echo $question['reponse'] ?>
-                                       <br>
-                                       <input type="radio" name="1" id="" class="mt-2">
-                                       <?php echo $question['reponse0'] ?>
-                                   <?php elseif($question['tpquest'] == 'text'): ?>
-                                    <div class="form-group mt-3">
-                                    <input type="text" name="question" class="mt-2 input-lg" id="" class="form-control bg-white  question" placeholder="" >
-
-                                    </div>
-                                   <?php elseif($question['tpquest'] == 'multiple'): ?>
-                                    <div class="checkbox ml-4">
-                                        <label for="">  <input class="form-check-input " name="reps" type="checkbox" value="1" > <?php echo $question['reponse'] ?></label>
-                                       
-                                        <br>
-                                         <label for="">  <input class="form-check-input " name="reps" type="checkbox" value="1" > <?php echo $question['reponse0'] ?></label>
-                                        <br>
-                                        <label for="">  <input class="form-check-input " name="reps" type="checkbox" value="1" > <?php echo $question['reponse1'] ?></label>
-                                        </label>
-                                    </div>
-                                      
-                                   <?php endif ?>
+                                  <td>
                                   
-                                    
-                                 
-                                    </td>
-                                    <?php endif ?>
-                                 
+                                      <?= "$i.".$value['question'] ?> <br>
+                                     
+                                      <?php if($value['tpquest'] ==  'simpe'): ?> <br>
+                                        <div class="row col-5 ml-3 mt-2">
+                                        <input type="radio" name="coudy">
+                                        <div class="col">
+                                             <?= $value['reponse']?>
+                                        </div>
+                                        </div> 
+                                        <div class="row col-5 ml-3 mt-2">
+                                        <input type="radio" name="coudy">
+                                        <div class="col">
+                                             <?= $value['reponse0']?>
+                                        </div>
+                                        </div>
+                                        
+                                        <?php elseif($value['tpquest'] == 'text'): ?>
+                                            <div class="row col-5 ml-3 mt-2 ">
+                                                 <input type="text" name="" class="form-control bg-white">
+                                            </div>
+                                         <?php elseif($value['tpquest'] == 'multiple'): ?>
+                                            <div class="row col-5 ml-3 mt-2 ">
+                                                <input type="checkbox" name="">
+                                                <div class="col">
+                                                     <?= $value['reponse'] ?>
+                                                </div>
+                                            </div>
+                                            <div class="row col-5 ml-3 mt-2 ">
+                                                <input type="checkbox" name="">
+                                                <div class="col">
+                                                     <?= $value['reponse0'] ?>
+                                                </div>
+                                            </div>
+                                         
+                                        <?php endif ?>
+                                        <?php $i=$i+1; ?>
+                                  </td>
+                                  <td>
+                                     <a name="" id="" class="btn btn-light" href="<?= WEB_ROUTE.'?controlleurs=admin&views=supprimer&id='.$value['id']?>" role="button"><ion-icon name="trash-outline" class="supp"></ion-icon>delete</a> 
+                                     <a name="" id="" class="btn btn-light" href="<?= WEB_ROUTE.'?controlleurs=admin&views=modif&id='.$value['id']?>" role="button"><ion-icon name="create-outline" class="edit"></ion-icon>Edit</a>
+                                   
+                                  </td>
                                </tr>
                            <?php endforeach ?>
                    </tbody>
@@ -121,9 +132,9 @@
         .interface{
             padding: 12px;
         }
-        .container{
+        /* .container{
             height: 1190px;
-        }
+        } */
         .ok{
             background-color: #c90017;
             color: white;
@@ -137,7 +148,9 @@
         .jhg{
             height: 700px;
         }
-        
+        .mli{
+            padding: 12px;
+        }
         .question{
             width: 360px;
         }

@@ -24,7 +24,7 @@ if (isset($_SESSION['arrayError'])) {
                 </ul>
         <?php endif ?>
         </div>
-        <div class="row bg-white interface ">
+        <div class="row bg-white  ">
             <div class="col-4">
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
@@ -34,7 +34,8 @@ if (isset($_SESSION['arrayError'])) {
                 </h3>
              <form action="<?= WEB_ROUTE ?>" method="post">
              <input type="hidden" name="controlleurs" value="admin">
-             <input type="hidden" name="action" value="question">
+             <input type="hidden" name="action" value="<?=!isset($quest['id']) ? 'question': 'modif' ?>">
+             <input type="hidden" name="id" value="<?=isset($quest['id']) ? $quest['id'] : ""; ?>">
              <?php if(isset($_SESSION['sucess_Question'])){
                    $success_Question=$_SESSION['sucess_Question'];                   
                }
@@ -45,47 +46,86 @@ if (isset($_SESSION['arrayError'])) {
                         <h4 class="alert-heading"><?=$success_Question?></h4>
                      </div>
                 <?php endif ?>
-               <div class="border border-danger bordure mt-3">
-                <label for="" class="ml-4">Questions</label>
-                    <div class="form-group question ml-4 col-sm-9">
-                   
-                    <input type="text" name="question" id="" class="form-control bg-white" placeholder="" aria-describedby="helpId">
-                    <small class="text-danger"><?=isset($arrayError['question']) ? $arrayError['question'] : ""; ?></small>
-                </div>
-                   <div class="form-group ml-4">
-                     <label for="">Nbre de points</label>
-                     <input type="number" name="nbr_pts" id="" class="form-control point bg-white ml-4" placeholder="" aria-describedby="helpId">
-                     <p class="text-danger"><?=isset($arrayError['nbr_pts']) ? $arrayError['nbr_pts'] : ""; ?></p>
-                    </div>
-                    <label for="" class="ml-4">Types de reponses</label>
-                    <div class="form-group ml-5 question ">
-                    
-                        <select class="custom-select " name="tpquest" id="">
-                            <option value="text">Texte</option>
-                            <option value="simpe">Simple</option>
-                            <option value="multiple">Multiple choice</option>
-                           
-                        </select>
-                    </div>
-                    <small class="text-danger"><?=isset($arrayError['tpquest']) ? $arrayError['tpquest'] : ""; ?></small>
-
-                    <a name="ajout" id="" class="btn btn-danger plus" href="<?=WEB_ROUTE.'?controlleurs=admin&views=ajouter'?>" role="button">+</a>
-
-
-                   <div class="form-group ml-4">
-                     <label for="">Reponse 1</label>
-                     <div class="row">
-                         <div class="col-6 ml-4">
-                         <input type="text" name="reponse" id="" class="form-control bg-white " placeholder="" aria-describedby="helpId">
-                         <small class="text-danger"> <?=isset($arrayError['reponse']) ? $arrayError['reponse'] : ""; ?></small>
+               <div class="border border-danger  mt-3">
+                    <div class="row col-md-10 col-sm-8 col-xs-5">
+                        <div class="col-md-10 col-sm-8   ">
+                             <label for="" class="ml-4">Questions</label>
                         </div>
-                         <div class="col-4">
-                            <input type="checkbox" class="form-check-input checks" name="" id="" value="checkedValue" >
-                            <input type="radio" name="" class="ml-5 mt-2" id="">
-                         </div>
+                        <div class="form-group question ml-4  col-md-8 col-sm-10 col-xs-5">
+                            <input type="text" name="question" id="" class="form-control bg-white" placeholder="" aria-describedby="helpId" value="<?=isset($quest['question']) ? $quest['question']: '' ?>">
+                            <small class="text-danger"><?=isset($arrayError['question']) ? $arrayError['question'] : ""; ?></small>
+                        </div>
+                    </div>
+                  <div class="row col-md-10 col-sm-9 col-xs-5">
+                      <div class="col-md-4 col-sm-8 col-xs-2">
+                      <div class="form-group ml-4">
+                     <label for="">Nbre de points</label>
+                     <input type="number" name="nbr_pts" id="" class="form-control  bg-white ml-4" placeholder="" aria-describedby="helpId" value="<?=isset($quest['nbr_pts']) ? $quest['nbr_pts']: '' ?>">
+                     <small class="text-danger"><?=isset($arrayError['nbr_pts']) ? $arrayError['nbr_pts'] : ""; ?></small>
+                    </div>
+                      </div>
+                  </div>
+                    <div class="row ">
+                        <div class="col-7">
+                        <label for="" class="ml-2">Types de reponses</label>
+                        </div>
+                            <div class="form-group ml-5 question col-md-6 col-sm-8 col-xs-4 ">
+                                <select class="custom-select " name="tpquest" id="" >
+                                    <option value="text">Texte</option>
+                                    <option value="simpe">Simple</option>
+                                    <option value="multiple">Multiple choice</option>
+                                
+                                </select>
+                                <small id="helpId" class=" text-danger form-text"><?=isset($arrayError['tpquest']) ? $arrayError['tpquest'] : ""; ?></small>
+
+                            </div>
+                
                      </div>
-                   </div>
-                   <button type="submit" name="btn_submit" class="border border-danger button">Enregistrer</button>
+                    
+                     <div class="row ">
+                        <div class="col-7">
+                        <label for="" class="ml-4">Nbr de reponse</label>
+                        <div class="form-group ml-5">
+                          <input type="number"
+                            class="form-control bg-white" name="nbr_reps" id="" aria-describedby="helpId" placeholder="">
+                          <small id="helpId" class="form-text text-danger"><?=isset($arrayError['nbr_reps']) ? $arrayError['nbr_reps'] : ""; ?></small>
+                        </div>
+                        </div>
+                        <div class="col-4 mt-4">
+                              <button type="submit" class="btn btn-danger"   name="nbr_submit_question">+</button>
+                        </div>
+                        </div>
+
+                        <?php $nbrreps=1;  $nbrreps=$_SESSION['nbr_reps']; ?>
+                        <?php for($i=1;$i<=$nbrreps;$i++): ?>
+                            <div class="form-group ml-4">
+                                               <label for="">Reponse<?=$i?> </label>
+                                               <div class="row">
+                                                   <div class="col-6 ml-4">
+                                                       <input type="text" name="reponse<?=$i?> " id="" class="form-control bg-white " placeholder="" aria-describedby="helpId" value="<?=isset($quest['reponse']) ? $quest['reponse']: '' ?>">
+                                                       <small class="text-danger"> <?=isset($arrayError['reponse']) ? $arrayError['reponse'] : ""; ?></small>
+                                                   </div>
+                                                   <div class="col-4">
+                                                       <input type="checkbox" class="form-check-input checks" name="bon_reps<?=$i?> " id="" value="checkedValue" >
+                                                       <input type="radio" name="" class="ml-5 mt-2" id="">
+                                                   </div>
+                                               </div>
+                                          </div>
+                        <?php endfor ?>
+                      
+                       
+                                        
+
+                      
+                    
+
+
+
+                 
+                </div>
+                <div class="row">
+                <button type="submit" name="btn_submit" class="border border-danger button ml-auto mr-4 mt-2 p-10"><?=isset($quest['id']) ? "Modifier" : "Confirmer"; ?></button>
+
                 </div>
              </form>
               
@@ -97,12 +137,10 @@ if (isset($_SESSION['arrayError'])) {
     <style>
         .button{
             padding: 15px 32px;
-            float: right;
-            margin-right: 4%;
+            
             background-color: #c90017;
             border: #c90017;
             color: white;
-            margin-top: 10%;
         }
         .button:hover{
             background-color: #fff;
@@ -113,9 +151,7 @@ if (isset($_SESSION['arrayError'])) {
          .slc{
             width: 90px;
         }
-        .container{
-            height: 700px;
-        }
+        
         .question{
             width: 360px;
         }
@@ -124,15 +160,15 @@ if (isset($_SESSION['arrayError'])) {
             height: 30px;
             margin-right: 19%;
         }
-        .interface{
+       /*  .interface{
             padding: 12px;
             height: 600px;
-        }
-       /*  .container{
-            height: 700px;
         } */
+        .container{
+            height: 900px;
+        }
         .bordure{
-            height: 490px;
+            height: 500px;
             
         }
         .jhg{
@@ -151,5 +187,8 @@ if (isset($_SESSION['arrayError'])) {
     require_once(ROUTE_DIR.'views/imc/footer.html.php');
     if (isset($_SESSION['sucess_Question'])) {
         unset($_SESSION['sucess_Question']);
+    }
+    if (isset($_SESSION['nbr_reps'])) {
+        unset($_SESSION['nbr_reps']);
     }
 ?>

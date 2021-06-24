@@ -27,7 +27,7 @@
     <div class="mnn">
             <div class=" photo mt-5">
                 mklwklwedlw
-<!--                 <img src="<?php echo UPLOAD_DIR . basename($_FILES['file1']['name']) ; ?>" alt="">
+<!--                 <img src="<?php //echo UPLOAD_DIR . basename($_FILES['file1']['name']) ; ?>" alt="">
  -->            </div>
             <div class="vertical-menu" >
                 <div class="d-flex">
@@ -36,6 +36,7 @@
                 </div>
                 <div class="d-flex">
                     <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.admin'?>">Creer admin</a>
+                    
                     <img class="mt-3 ml-auto mr-4" src="<?= WEB_ROUTE.'img/ic-ajout.png' ?>" alt="">
                 </div>  
                 <div class="d-flex">

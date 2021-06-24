@@ -1,240 +1,279 @@
 [
     {
-        "contolleurs": "security",
-        "prenom": "libasse",
-        "name": "seck",
-        "login": "frhddh@gmail.com",
-        "password": "qqqqqq",
-        "avatar": "",
-        "role": "ROLE_JOUEUR",
-        "score": "1120 pts",
-        "id": "60d894d64d25f"
-    },
-    {
-        "prenom": "bara",
-        "name": "laye",
-        "login": "imam@gmail.com",
-        "password": "qqqqqq",
-        "avatar": "",
-        "role": "ROLE_JOUEUR",
-        "score": "880 pts",
-        "id": "60d094d64d05f"
-    },
-    {
-        "prenom": "libasse",
-        "name": "laye",
+        "id": "60d1d8c7827b4",
+        "prenom": "Mbaye",
+        "name": "Libasse laye",
         "login": "libasse@gmail.com",
-        "password": "libasse",
-        "avatar": "avatar.png",
-        "role": "ROLE_ADMIN",
-        "id": "09d094d64d25f"
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_ADMIN"
     },
     {
-        "prenom": "Diagne",
-        "name": "Diandji",
-        "login": "nwi@gmail.com",
-        "password": "libasse",
-        "file1": "images.jpeg",
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
         "role": "ROLE_JOUEUR",
-        "score": "650 pts",
-        "id": "60d094d64d25e"
+        "score": "1220 pts"
     },
     {
-        "prenom": "sene",
-        "name": "Abdou",
-        "login": "sene@gmail.com",
-        "password": "senesene",
-        "file1": "question-mark-1872665_1920.jpg",
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
         "role": "ROLE_JOUEUR",
-        "score": "480 pts",
-        "id": "60d094d64d65f"
+        "score": "1220 pts"
     },
     {
-        "prenom": "Barro",
-        "name": "Mamadou",
-        "login": "diop@gmail.com",
-        "password": "wanecoudy",
-        "file1": "connexion.fig",
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
         "role": "ROLE_JOUEUR",
-        "score": "470 pts",
-        "id": "60d094d64d29f"
+        "score": "1220 pts"
     },
     {
-        "prenom": "Massaer",
-        "name": "Diop",
-        "login": "hh@gmail.com",
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d200cd2dd86",
+        "prenom": "coudy",
+        "name": "wane",
+        "login": "coudy@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_JOUEUR",
+        "score": "1220 pts"
+    },
+    {
+        "id": "60d201653d306",
+        "prenom": "Baila birane dev coach",
+        "name": "Wane",
+        "login": "Bailaaa@gmail.com",
+        "password": "123456",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "id": "60d2023c362bc",
+        "prenom": "Imame",
+        "name": "Niass",
+        "login": "Mbaye@gmail.com",
+        "password": "bbbbbb",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "id": "60d2071d03a23",
+        "prenom": "demba",
+        "name": "ndoye",
+        "login": "demba@gmail.com",
+        "password": "123456",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "id": "60d2075120f69",
+        "prenom": "ndoye coach",
+        "name": "amed",
+        "login": "ndoye@gmail.com",
+        "password": "123456",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "id": "60d2085e6bc53",
+        "prenom": "yaya",
+        "name": "sambou",
+        "login": "yaya@gmail.com",
         "password": "123456",
         "file1": "woman-918583_1920.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "400 pts"
+        "role": "ROLE_ADMIN"
     },
     {
-        "prenom": "Khadim",
-        "name": "Ndiaye",
-        "login": "wej@gmail.com",
+        "id": "60d2094975bfe",
+        "prenom": "djanki gana",
+        "name": "diagne",
+        "login": "hhi@gmail.com",
         "password": "123456",
-        "file1": "bee-6061015_1920.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "350 pts"
+        "file1": "Avatar.jpg",
+        "role": "ROLE_ADMIN"
     },
     {
-        "prenom": "Moussa",
-        "name": "Diagne",
-        "login": "diope@gmail.com",
-        "password": "wanecoudy",
-        "file1": "question-mark-1019820_1920.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "319 pts"
+        "id": "60d20a127b45d",
+        "prenom": "qwkkwdk imame",
+        "name": "2k2",
+        "login": "hhjjjj@gmail.com",
+        "password": "qqqqqq",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_ADMIN"
     },
     {
-        "prenom": "Mbengue",
-        "name": "Ndiaye",
-        "login": "wqdk@gmail.com",
-        "password": "mbenglaye",
-        "file1": "index.jpeg",
-        "role": "ROLE_JOUEUR",
-        "score": "300 pts"
+        "id": "60d20aa8d23ab",
+        "prenom": "khady",
+        "name": "ndiaye",
+        "login": "moi@gmail.com",
+        "password": "mmmmmm",
+        "file1": "woman-918583_1920.jpg",
+        "role": "ROLE_ADMIN"
     },
     {
-        "prenom": "Babs",
-        "name": "Ndiaye",
-        "login": "123@gmail.com",
+        "id": "60d2108b43f86",
+        "prenom": "Baila birane hadji",
+        "name": "Wane ly",
+        "login": "Bailaaa@gmail.com",
         "password": "123456",
-        "file1": "ECOLE 221 QUIZZ.png",
-        "role": "ROLE_JOUEUR",
-        "score": "280 pts"
+        "file1": "Avatar.jpg",
+        "role": "ROLE_ADMIN"
     },
     {
-        "prenom": "MBD",
-        "name": "Diouf",
-        "login": "1233@gmail.com",
+        "action": "edit",
+        "id": "60d21496c627a",
+        "prenom": "Baila birane dev",
+        "name": "Wane",
+        "login": "Bailaaa@gmail.com",
+        "password": "bbbbbb",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_ADMIN"
+    },
+    {
+        "id": "60d25ba06aaf9",
+        "prenom": "Awa ",
+        "name": "Mbayeee",
+        "login": "awa@gmail.com",
         "password": "123456",
-        "file1": "bee-6061015_1920.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "1120 pts"
+        "file1": "Avatar.jpg",
+        "role": "ROLE_ADMIN"
     },
     {
-        "prenom": "ndoye",
-        "name": "Ahmed",
-        "login": "poiu@gmail.com",
-        "password": "ndoye123",
-        "file1": "question-mark-1872665_1920.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "260 pts"
+        "id": "60d31ddaf1f56",
+        "prenom": "libasse",
+        "name": "laye",
+        "login": "libassse@gmail.com",
+        "password": "123456",
+        "file1": "Avatar.jpg",
+        "role": "ROLE_ADMIN"
     },
     {
-        "prenom": "SOuma",
-        "name": "Moussa",
-        "login": "bnib@gmail.com",
-        "password": "bnbbnb",
-        "file1": "hacker-2883635_1920.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "210 pts"
-    },
-    {
-        "prenom": " Mbeing",
-        "name": "Diop",
-        "login": "mbeing@gmail.com",
-        "password": "mbenglaye",
-        "file1": "question-mark-1872665_1920.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "200 pts"
-    },
-    {
-        "prenom": "Bouba",
-        "name": "sow",
+        "id": "60d323593b34c",
+        "prenom": "sjnnjsw laye",
+        "name": "we  jwe",
         "login": "dwqu@gmail.com",
         "password": "123456",
-        "file1": "index.jpeg",
-        "role": "ROLE_JOUEUR",
-        "score": "122 pts"
-    },
-    {
-        "prenom": "Bounou",
-        "name": "Yacine",
-        "login": "eweo@gmail.com",
-        "password": "eweewe",
-        "file1": "woman-918583_1920.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "112 pts"
-    },
-    {
-        "prenom": "mamadou",
-        "name": "cissokho",
-        "login": "cisko@gmail.com",
-        "password": "mamadou",
-        "file1": "bee-6061015_1920.jpg",
+        "file1": "Avatar.jpg",
         "role": "ROLE_ADMIN"
-    },
-    {
-        "prenom": "lamine",
-        "name": "ndiaye",
-        "login": "ndiaye@gmail.com",
-        "password": "lamine",
-        "file1": "hacker-2883635_1920.jpg",
-        "role": "ROLE_ADMIN"
-    },
-    {
-        "prenom": "papa",
-        "name": "abdou",
-        "login": "abdou@gmail.com",
-        "password": "papalaye",
-        "file1": "hacker-2883635_1920.jpg",
-        "role": "ROLE_JOUEUR",
-        "id": "60d094d64d25f"
-    },
-    {
-        "prenom": "jdkwqkj",
-        "name": "qdwkwdn",
-        "login": "wdnnw@gmail.com",
-        "password": "123456",
-        "file1": "question-mark-1872665_1920.jpg",
-        "role": "ROLE_ADMIN",
-        "id": "60d0de803b222"
-    },
-    {
-        "prenom": "qwdjjkwejk",
-        "name": "dw klklwd",
-        "login": "wcccd@gmail.com",
-        "password": "123456",
-        "file1": "bee-6061015_1920.jpg",
-        "role": "ROLE_ADMIN",
-        "id": "60d0deb2a369d"
-    },
-    {
-        "prenom": "wdkdkw",
-        "name": "ddjjdj",
-        "login": "sss@gmail.com",
-        "password": "123456",
-        "file1": "question-mark-1872665_1920.jpg",
-        "role": "ROLE_ADMIN",
-        "id": "60d0deea46a67"
-    },
-    {
-        "prenom": "moussa",
-        "name": "seck",
-        "login": "moise@gmail.com",
-        "password": "layelaye",
-        "file1": "ECOLE 221 QUIZZ.png",
-        "role": "ROLE_ADMIN",
-        "id": "60d0df268741a"
-    },
-    {
-        "prenom": "wwd;mmdw",
-        "name": "dwq",
-        "login": "1123@gmail.com",
-        "password": "123456",
-        "file1": "index.jpeg",
-        "role": "ROLE_ADMIN",
-        "id": "60d0df6115b5f"
-    },
-    {
-        "prenom": "mbaye",
-        "name": "niass",
-        "login": "niass@gmail.com",
-        "password": "dadadada",
-        "file1": "hacker-2883635_1920.jpg",
-        "role": "ROLE_ADMIN",
-        "id": "60d0dfa91b3f2"
     }
 ]

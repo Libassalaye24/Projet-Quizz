@@ -158,6 +158,32 @@ function bisextille_annee(int $annee):bool{
             
         }
     }
+
+
+    function valid_input($valeur,string $key,array &$arrayError){
+        if (empty($valeur)) {
+            $arrayError[$key] = "Ce champ est obligatoire ";
+        }
+    }
+    
+    function valid_point($valeur,string $key,array &$arrayError){
+        if (empty($valeur)) {
+            $arrayError[$key] = "Ce champ est obligatoire ";
+        }elseif ($valeur<=0) {
+            $arrayError[$key] = "Veillez saisir un nombre positif";
+        }
+    }
+    
+    
+    function valid_nbr_reponse($valeur,string $key,array &$arrayError){
+        if (empty($valeur)) {
+            $arrayError[$key] = "Ce champ est obligatoire ";
+        }elseif ($valeur<=0) {
+            $arrayError[$key] = "Veillez saisir un nombre positif";
+        }
+    }
+
+
     function nombrePageTotal($array, $nombreElement): int {
         $nombrePage = 0;
         $longueurArray = count($array);
