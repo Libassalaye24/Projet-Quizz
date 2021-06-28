@@ -15,13 +15,15 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
             }elseif ($_GET['views'] == 'tab.bord') {
                 require(ROUTE_DIR.'views/admin/tab.bord.html.php'); 
             }elseif ($_GET['views'] == 'list.admin') {
+                
                 require(ROUTE_DIR.'views/admin/list.admin.html.php'); 
             }elseif ($_GET['views'] == 'ajouter') {
                 require(ROUTE_DIR.'views/admin/creer.question.html.php'); 
                
               
             }elseif($_GET['views'] == 'modif'){
-                $id=$_GET['id'];
+                $_SESSION['id']=$_GET['id'];
+                $id=$_SESSION['id'];
                // $question = modif_question();
                 $quest = find_question_id($id);
                 require_once(ROUTE_DIR.'views/admin/creer.question.html.php'); 
@@ -30,9 +32,18 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                 $id = $_SESSION['id'];
                  $quest = find_question_id($id);
                  //supprime_quest();
+               
                 require_once(ROUTE_DIR.'views/security/confirm.html.php'); 
             }elseif ($_GET['views'] == 'confirm') {
-                delete_question();
+                $_SESSION['id']=$_GET['id'];
+                $id = $_SESSION['id'];
+                $quest = find_question_id($id);
+               // unset($quest);
+               /*  var_dump($quest);
+                die(); */
+              //  $id = $_SESSION['id'];
+              delete_question();
+              //  unset($questio);
                 require_once(ROUTE_DIR.'views/admin/list.question.html.php'); 
             }
 
@@ -63,6 +74,14 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                         header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.question');
                     }else {
                         $nbr_reps = $_POST['nbr_reps'];
+                        $tpquest = $_POST['tpquest'];
+                        $ques= $_POST['question'];
+                        $reps=$_POST['reponse'.$i];
+                        $pts=$_POST['nbr_pts'];
+                        $_SESSION['reponse'.$i] = $reps;
+                        $_SESSION['pts'] = $pts;
+                        $_SESSION['question'] = $ques;
+                        $_SESSION['tpquest'] = $tpquest;
                         $_SESSION['nbr_reps'] = $nbr_reps;
                         //die('entre');
                         header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.question');
@@ -71,11 +90,44 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                
                
             }elseif ($_POST['action'] == 'modif') {
-                unset($_POST['controlleurs']);
-                unset($_POST['action']);
-                unset($_POST['btn_submit']);
-                validation($_POST);
-                header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.question');
+                if (isset($_POST['btn_submit'])) {
+                    unset($_POST['controlleurs']);
+                    unset($_POST['action']);
+                    unset($_POST['btn_submit']);
+                    validation($_POST);
+                    header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.question');
+                }elseif (isset($_POST['Modif_quest'])) {
+                   
+                    $nbr_reps = $_POST['nbr_reps'];
+                    $tpquest = $_POST['tpquest'];
+                    $ques= $_POST['question'];
+                    $reps=$_POST['reponse'.$i];
+                    $pts=$_POST['nbr_pts'];
+                    $_SESSION['reponse'.$i] = $reps;
+                    $_SESSION['pts'] = $pts;
+                    $_SESSION['question'] = $ques;
+                    $_SESSION['tpquest'] = $tpquest;
+                    $_SESSION['nbr_reps'] = $nbr_reps;
+                    //die('entre');
+                    $value=$_SESSION['id'];
+                 header('location:'.WEB_ROUTE.'?controlleurs=admin&views=modif&id='.$value['id']);
+                 if (isset($_SESSION['id'])) {
+                    unset($_SESSION['id']);
+                }
+                if (isset($_SESSION['question'])) {
+                    unset($_SESSION['question']);
+                }
+                if (isset($_SESSION['pts'])) {
+                    unset($_SESSION['pts']);
+                }
+               /*  if (isset($_SESSION['nbr_reps'])) {
+                    unset($_SESSION['nbr_reps']);
+                } */
+                            
+
+             }
+             
+               
             }
         }
     }
@@ -89,23 +141,43 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
        
        // header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.question');
         if (form_valid($arrayError)) {
-            if( isset($question['id'])){
+            if( isset($data['id'])){
                 if (est_admin()) {
+                    $arrayReponse=[];
+                    //$nbrreps=$_SESSION['nbr_reps'];
+                    for($i=1;$i<=$data['nbr_reps'];$i++){
+                       // $arrayReponse[]=$data['reponse'.$i];
+                      // $arrayReponse[$i]=$data['reponse'.$i];
+                     
+                       array_push($arrayReponse,$data['reponse'.$i]);
+                       
+                        
+                    }
+                    $data['reponse'] = $arrayReponse;
                   modif_question($data);
                   header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.question');
                 }
                 
               }
-              if (empty($question['id']) ) {
+              if (empty($data['id']) ) {
 
-               
-               /*  $arrayReponse['reponse0']=$question['reponse0']; */
-               for($i=0;$i<$nbrreps;$i++){
-                   $arrayReponse['reponse'.$i]=$data['reponse'.$i];
+               $arrayReponse=[];
+               //$nbrreps=$_SESSION['nbr_reps'];
+               for($i=1;$i<=$data['nbr_reps'];$i++){
+                  // $arrayReponse[]=$data['reponse'.$i];
+                 // $arrayReponse[$i]=$data['reponse'.$i];
+                
+                  array_push($arrayReponse,$data['reponse'.$i]);
+                  
+                   
                }
                $data['reponse'] = $arrayReponse;
+              
+              
                 add_question($data);
-                $_SESSION['sucess_Question'] = 'votre question est crée' ;
+            
+               
+                $_SESSION['sucess_Question'] = 'Question crée avec succée' ;
                 header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.question');               
              }
 
@@ -114,24 +186,31 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
             header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.question');
         }
     }
-    function supprime_quest(){
+  /*   function supprime_quest(){
         $id = $_SESSION['id'];
-        $ok = suppression_question($id);
-        if ($ok) {
-
-          header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.question');
-          exit();
-        }
+        $json= file_get_contents(ROUTE_DIR.'data/question.json');
+      // 2 convertir le json
+      $arrayQuestion = json_decode($json ,true);
+      $users[]=$arrayQuestion; 
+     
+      foreach ($users as $user) {
+          if ($user['id'] != $id) {
+            unset($user['question']);
+            unset($user['reponse']);
+          
+          }
       }
+      } */
     function delete_question(){
       
        
         $id = $_SESSION['id'];
         $ok = suppression_question($id);
+        $quest = find_question_id($id);
         
        
         if ($ok) {
-            unset($user[$_GET['id']]);
+            unset($quest);
            header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.question');         
            exit();  
         }

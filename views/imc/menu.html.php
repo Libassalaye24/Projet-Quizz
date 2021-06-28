@@ -24,12 +24,13 @@
 
     <button class="openbtn" onclick="openNav()" >&#9776; </button>
    
-    <div class="mnn">
+    <div class="mnn ">
             <div class=" photo mt-5">
-                mklwklwedlw
+                <h3 class="ml-2 text-white">Libasse</h3>
+                <h3 class="ml-2 text-white">Mbaye</h3>
 <!--                 <img src="<?php //echo UPLOAD_DIR . basename($_FILES['file1']['name']) ; ?>" alt="">
  -->            </div>
-            <div class="vertical-menu" >
+            <div class="vertical-menu " >
                 <div class="d-flex">
                     <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question'?>" class="active">Liste des questions</a>
                     <img class="mt-3 ml-auto mr-4" src="<?= WEB_ROUTE.'img/ic-liste-active.png' ?>" alt="">
@@ -49,13 +50,16 @@
                 </div>
 
                 <div class="d-flex">
-                    <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=tab.bord'?>" >Tableau de bord</a>
-                    <img class="mt-3 ml-auto mr-4"  src="<?= WEB_ROUTE.'img/ic-liste-active.png' ?>" alt="">
-                </div>
-                <div class="d-flex">
                     <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.admin'?>" >Liste des admins</a>
                     <img class="mt-3 ml-auto mr-4"  src="<?= WEB_ROUTE.'img/ic-liste-active.png' ?>" alt="">
                 </div>
+
+                <div class="d-flex">
+                    <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=tab.bord'?>" >Tableau de bord</a>
+                    <ion-icon class="mt-3 ml-auto mr-4" name="stats-chart-outline"></ion-icon>
+                  <!--   <img class="mt-3 ml-auto mr-4"  src="<?= WEB_ROUTE.'img/ic-liste-active.png' ?>" alt=""> -->
+                </div>
+              
           
             </div>
         

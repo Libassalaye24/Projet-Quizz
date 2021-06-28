@@ -117,9 +117,9 @@
        $json= file_get_contents(ROUTE_DIR.'data/question.json');
        // 2 convertir le json
        $arrayQuestion = json_decode($json ,true);
-        foreach ($arrayQuestion as $question => $oldQuest) {
+        foreach ($arrayQuestion as $key => $oldQuest) {
             if ($oldQuest['id'] == $new_id['id']) {
-                $arrayQuestion[$question] = $new_id;
+                $arrayQuestion[$key] = $new_id;
             }
         }
         $json= json_encode($arrayQuestion);

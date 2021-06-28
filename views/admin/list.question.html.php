@@ -7,11 +7,11 @@
     <div class="container bg-light conect mt-5 col-xs-12">
         <div class="row deconnect">
         <?php if(est_connect()): ?>
-            <h3 class="text-dark mt-3 text-center font-weight-bold ml-4"> CREER ET PARAMETRER VOS QUIZZ</h3>
+            <h3 class="text-white mt-3 text-center font-weight-bold ml-4"> CREER ET PARAMETRER VOS QUIZZ</h3>
 
                 <ul class="ml-auto mt-2 ">
                     <li class="nav-item ">
-                        <a class="nav-link text-dark" href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion' ?>">Deconnexion</a>
+                        <a class="nav-link text-white" href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion' ?>">Deconnexion</a>
                     </li>
                 </ul>
         <?php endif ?>
@@ -29,12 +29,31 @@
                  //  var_dump(count($arrayQuestion));
                  $page=1;
                  $nbrPage= 0;
+                    $nbrElement=5;
+                 if (!isset($_GET['page'])) {
+                        
+                    $_SESSION['quest'] =  $arrayQuestion;
+                    $nbrPage = nombrePageTotal( $_SESSION['quest'], $nbrElement);
+                    $quest= get_element_to_display( $_SESSION['quest'],$page, $nbrElement);
+                    //$nbr_user= count($list_user);
+                   
+                }
+                   if (isset($_GET['page'])) {
+                    $page=$_GET['page'];
+                        if (isset($_SESSION['quest'])) {
+                            $_SESSION['quest'] =  $arrayQuestion;
+                            $nbrPage = nombrePageTotal( $_SESSION['quest'], $nbrElement);
+                            $quest= get_element_to_display( $_SESSION['quest'],$page, $nbrElement);
+                           // $nbr_user= count($list_user);
+                        }
+
+                    }
                  
-                if (isset($_GET['page'])) {
+               /*  if (isset($_GET['page'])) {
                     $page=$_GET['page'];
                   $nbrPage=  nombrePageTotal($arrayQuestion,5);
                    $quest= get_element_to_display($arrayQuestion,$page,5);
-                }
+                } */
                 ?>
                 <div class="row mt-2 col-sm-12 col-md-12 col-xs-10">
                     <div class="col-md-6 col-sm-6 ">
@@ -53,45 +72,37 @@
                    
                    <tbody>
                        <?php $i=1; ?>
-                       <?php foreach($arrayQuestion as $question => $value): ?>
+                       <?php foreach($quest as $question => $value): ?>
                        
                                <tr>
                                   <td>
                                   
-                                      <?= "$i.".$value['question'] ?> <br>
+                                      <?= "$i.".$value['question'] ?> 
                                      
                                       <?php if($value['tpquest'] ==  'simpe'): ?> <br>
-                                        <div class="row col-5 ml-3 mt-2">
-                                        <input type="radio" name="coudy">
-                                        <div class="col">
-                                             <?= $value['reponse']?>
-                                        </div>
-                                        </div> 
-                                        <div class="row col-5 ml-3 mt-2">
-                                        <input type="radio" name="coudy">
-                                        <div class="col">
-                                             <?= $value['reponse0']?>
-                                        </div>
-                                        </div>
-                                        
+                                        <?php foreach($value['reponse'] as $reps => $vlue): ?>
+                                            <div class="row col-5 ml-3 mt-2">
+                                                <input type="radio" name="coudy">
+                                                <div class="col">
+                                                    <?= $vlue?>
+                                                </div>
+                                          </div> 
+                                        <?php  endforeach ?>
+                                      
                                         <?php elseif($value['tpquest'] == 'text'): ?>
                                             <div class="row col-5 ml-3 mt-2 ">
                                                  <input type="text" name="" class="form-control bg-white">
                                             </div>
                                          <?php elseif($value['tpquest'] == 'multiple'): ?>
-                                            <div class="row col-5 ml-3 mt-2 ">
-                                                <input type="checkbox" name="">
-                                                <div class="col">
-                                                     <?= $value['reponse'] ?>
-                                                </div>
-                                            </div>
-                                            <div class="row col-5 ml-3 mt-2 ">
-                                                <input type="checkbox" name="">
-                                                <div class="col">
-                                                     <?= $value['reponse0'] ?>
-                                                </div>
-                                            </div>
-                                         
+                                            <?php foreach($value['reponse'] as $reps => $vlue): ?>
+                                                <div class="row col-5 ml-3 mt-2">
+                                                    <input type="checkbox" name="coudy">
+                                                    <div class="col">
+                                                        <?= $vlue?>
+                                                    </div>
+                                                 </div> 
+                                            <?php  endforeach ?>
+                                          
                                         <?php endif ?>
                                         <?php $i=$i+1; ?>
                                   </td>
@@ -108,9 +119,9 @@
                    
                    
                </div>
-               <?php $i=1; ?>
-               <a name="" id="" class="btn suivant mt-4  mr-5  col-xs-2 " href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question?page='.$i ?>" role="button">SUIVANT</a>
-               <?php $i=$i+1; ?>
+               <?php for($i=1;$i<=$nbrPage;$i++): ?>
+               <a name="" id="" class="btn suivant mt-4  mr-5  col-xs-2 " href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question&page='.$i ?>" role="button"><?=$i?></a>
+               <?php endfor ?>
             </div>
         </div>  
         
@@ -160,4 +171,31 @@
     </style>
 <?php 
     require_once(ROUTE_DIR.'views/imc/footer.html.php');
+    
 ?>
+ <!--  <div class="row col-5 ml-3 mt-2">
+                                        <input type="radio" name="coudy">
+                                        <div class="col">
+                                             
+                                        </div>
+                                        </div> 
+                                        <div class="row col-5 ml-3 mt-2">
+                                        <input type="radio" name="coudy">
+                                        <div class="col">
+                                             
+                                        </div>
+                                        </div> -->
+                                        
+ <!--  <div class="row col-5 ml-3 mt-2 ">
+                                                <input type="checkbox" name="">
+                                                <div class="col">
+                                                   
+                                                </div>
+                                            </div>
+                                            <div class="row col-5 ml-3 mt-2 ">
+                                                <input type="checkbox" name="">
+                                                <div class="col">
+                                                   
+                                                </div>
+                                            </div>
+                                          -->

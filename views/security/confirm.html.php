@@ -12,7 +12,7 @@
       <div class="card-body">
         <h4 class="card-title">Confirmation</h4>
         <p class="card-text">Voulez-vous supprimer cette question</p>
-            <a name="" id="" class="btn btn-danger" href="<?=WEB_ROUTE.'?controlleurs=admin&views=confirm'?>" role="button">OUI</a>
+            <a name="" id="" class="btn btn-danger" href="<?=WEB_ROUTE.'?controlleurs=admin&views=confirm&id='.$quest['id']?>" role="button">OUI</a>
             <a name="" id="" class="btn btn-warning" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.question'?>" role="button">NON</a>
       </div>
     </div>

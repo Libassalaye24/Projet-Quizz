@@ -1,108 +1,154 @@
 [
     {
-        "controlleurs": "admin",
-        "action": "question",
-        "question": "Les langages du Web",
-        "nbr-pts": "34",
-        "tpquest": "multiple",
-        "btn_submit": "",
-        "reponse": "HTML",
-        "reponse0": "JAVA",
-        "reponse1": "RS",
-        "id": 6
-    },
-    {
-        "controlleurs": "admin",
-        "action": "question",
-        "question": "D'ou vient le Corona?",
-        "nbr-pts": "34",
+        "id": "5",
+        "question": "D'ou vient l Corona?",
+        "nbr_pts": "12",
         "tpquest": "simpe",
-        "btn_submit": "",
-        "reponse": "ITALIE",
-        "reponse0": "CHINE",
-        "id": 5
+        "nbr_reps": "2",
+        "reponse1": "chine",
+        "reponse2": "Italie",
+        "reponse": [
+            "chine",
+            "Italie"
+        ]
     },
     {
-        "controlleurs": "admin",
-        "action": "question",
+        "id": "4",
         "question": "Quel terme definit le langage qui s'adapte sur Android te sur Ios?",
-        "nbr-pts": "12",
+        "nbr_pts": "12",
         "tpquest": "text",
-        "btn_submit": "",
-        "reponse": "feuille de style en cascade",
-        "reponse0": "style",
-        "id": 4
+        "nbr_reps": "2",
+        "nbr_submit_question": ""
     },
     {
-        "controlleurs": "admin",
-        "action": "question",
+        "id": "3",
         "question": "Quelle est la premiere ecole de codage gratuite au senegal?",
-        "nbr-pts": "11",
+        "nbr_pts": "12",
         "tpquest": "simpe",
-        "btn_submit": "",
-        "reponse": "Simpio",
-        "reponse0": "Orange Digital Center",
-        "id": 3
+        "nbr_reps": "2",
+        "reponse1": "orange digital center",
+        "bon_repsr": "bon_repsr1",
+        "reponse2": "simpio",
+        "reponse": [
+            "orange digital center",
+            "simpio"
+        ]
     },
     {
         "question": "quelle est la capital du senegal",
         "nbr-pts": "4",
         "tpquest": "simpe",
-        "reponse": "DAKAR",
-        "reponse0": "THIES",
+        "reponse": [
+            "DAKAR",
+            "THIES"
+        ],
         "id": 2
     },
     {
+        "id": "1",
         "question": "les langages du web",
-        "nbr-pts": "10",
-        "tpquest": "multiple",
-        "reponse": "mofefo",
-        "reponse0": "CSS",
-        "id": 1
-    },
-    {
-        "id": "60d45504cdcde",
-        "question": "jjjjjjjjjjjjjjj",
-        "nbr_pts": "1",
-        "tpquest": "text",
-        "nbr_reps": "1",
-        "reponse": "hhhhhhhhhhhhhhh"
-    },
-    {
-        "id": "60d456a66ac42",
-        "question": "bjhbuiui",
-        "nbr_pts": "1",
-        "tpquest": "text",
-        "nbr_reps": "1",
-        "reponse": []
-    },
-    {
-        "id": "60d466ac267a4",
-        "question": "dggggggggggggggg",
-        "nbr_pts": "12",
-        "tpquest": "text",
+        "nbr_pts": "2",
+        "tpquest": "simpe",
         "nbr_reps": "2",
-        "reponse0_": "vvvvvvvvvvvvvvvvvvvvvv",
-        "reponse1_": "bbbbbbbbbbbbbbb"
+        "reponse1": "HTML",
+        "bon_reps_": "bon_reps1",
+        "reponse2": "RSS",
+        "reponse": [
+            "HTML",
+            "RSS"
+        ]
     },
     {
-        "id": "60d46903349c4",
+        "id": "60d5ab0a0cdf2",
         "question": "dggggggggggggggg",
         "nbr_pts": "12",
         "tpquest": "simpe",
         "nbr_reps": "2",
-        "reponse0_": "linnsjjjjjjjjjjjjjjjjjjjjjjjj",
-        "reponse1_": "hdhhdhdndhjjjjjjj",
-        "reponse": null
+        "reponse1": "kkrkgkkkkkkkkk",
+        "reponse2": "gjjjjjjjjjjjjjjjjjjjje",
+        "reponse": [
+            "kkrkgkkkkkkkkk",
+            "gjjjjjjjjjjjjjjjjjjjje"
+        ]
     },
     {
-        "id": "60d46969efd58",
+        "id": "60d5abc88762c",
+        "question": "dggggggggggggggg",
+        "nbr_pts": "12",
+        "tpquest": "multiple",
+        "nbr_reps": "2",
+        "reponse1": "kkkkkkkkk",
+        "reponse2": "dqwkewi",
+        "reponse": [
+            "djwkkkkkkkk",
+            "dqwkewi"
+        ]
+    },
+    {
+        "id": "60d5ac08167a7",
+        "question": "weh wieh",
+        "nbr_pts": "12",
+        "tpquest": "text",
+        "nbr_reps": "2",
+        "reponse1": "wjhwejwe",
+        "reponse2": "dwjwefhhef",
+        "reponse": [
+            "wjhwejwe",
+            "dwjwefhhef"
+        ]
+    },
+    {
+        "id": "60d5b026da7a1",
+        "question": "les langages du web",
+        "nbr_pts": "12",
+        "tpquest": "simpe",
+        "nbr_reps": "2",
+        "reponse1": "JAVA",
+        "reponse2": "RSE",
+        "reponse": [
+            "JAVA",
+            "RSE",
+            "HTML"
+        ]
+    },
+    {
+        "id": "60d5cf42020fb",
         "question": "dggggggggggggggg",
         "nbr_pts": "12",
         "tpquest": "text",
         "nbr_reps": "2",
-        "reponse0_": "gggggggggggggggggg",
-        "reponse1_": "jnnhhhhhhhhhhhhhh",
-        "reponse": null
+        "reponse1": "jjjnj",
+        "reponse2": "nn",
+        "reponse": [
+            "jjjnj",
+            "nn"
+        ]
+    },
+    {
+        "id": "60d5d0ae4e1d2",
+        "question": "keffffffffff",
+        "nbr_pts": "12",
+        "tpquest": "simpe",
+        "nbr_reps": "2",
+        "reponse1": "efjjjjjjjjj",
+        "reponse2": "ewkkkkkkkkkkk",
+        "reponse": [
+            "efjjjjjjjjj",
+            "ewkkkkkkkkk"
+        ]
+    },
+    {
+        "id": "60d5ed0d952b1",
+        "question": "jnnnnnnnnnnn",
+        "nbr_pts": "12",
+        "tpquest": "simpe",
+        "nbr_reps": "2",
+        "reponse1": "hfg hfhhfh jhfjhf",
+        "bon_repsr": "bon_repsr1",
+        "reponse2": "nnnnnnnnnnnnnnnnnvvvvvv",
+        "reponse": [
+            "hfg hfhhfh ",
+            "nnvvvvvv"
+        ]
     }
 ]

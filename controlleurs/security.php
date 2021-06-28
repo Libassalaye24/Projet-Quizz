@@ -127,17 +127,7 @@ function inscription(array $data ,array $files):void{
                       add_user($data); 
                       header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.admin');
   
-                  }
-                  
-
-                 
-              // if (empty($data['id']) && est_admin() ) {
-              
-              // $_SESSION['success_Inscript'] = 'Votre compte Admin a bien ete cree';
-         
-            // }else {
-            //   header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');
-            // }
+                  }   
          }else {
             
              if (est_admin()) {

@@ -7,11 +7,11 @@
     <div class="container bg-white conect mt-5">
         <div class="row deconnect">
         <?php if(est_connect()): ?>
-            <h3 class="text-dark mt-3 ml-4 font-weight-bold " >CREER ET PARAMETRER VOS QUIZZ</h3>
+            <h3 class="text-white mt-3 ml-4 font-weight-bold " >CREER ET PARAMETRER VOS QUIZZ</h3>
 
                 <ul class="ml-auto mt-2">
                     <li class="nav-item ">
-                        <a class="nav-link text-dark" href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion' ?>">Deconnexion</a>
+                        <a class="nav-link text-white" href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion' ?>">Deconnexion</a>
                     </li>
                 </ul>
         <?php endif ?>
@@ -20,7 +20,7 @@
             <div class="col-4 mt-5">
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
-            <div class="col-md-8 col-sm-12 bg-white mt-2 rounded jhg">
+            <div class="col-md-8 col-sm-12 bg-white mt-2 rounded ">
                 <h4 style="padding:4px;text-align:center; " >Liste des joueurs par score</h4>
                <div class="border border-danger ">
                <?php
@@ -28,6 +28,37 @@
                     $json= file_get_contents(ROUTE_DIR.'data/user.data.json');
                     // 2 convertir le json
                     $arrayUser = json_decode($json ,true);
+
+                    $list_user =[];
+                    $nbrPage =0;
+                    $page=1;
+                    $nbrElement = 15;
+                  //  $_SESSION['user_admin'] =  $arrayUser;
+                  $joueur_user=[];
+                  foreach ($arrayUser as $user) {
+                      if ($user['role']=='ROLE_JOUEUR') {
+                          $joueur_user[]=$user;
+                      }
+                     
+                  }
+                  if (!isset($_GET['page'])) {
+                        
+                    $_SESSION['joueur_user'] =  $joueur_user;
+                    $nbrPage = nombrePageTotal( $_SESSION['joueur_user'], $nbrElement);
+                    $list_user= get_element_to_display( $_SESSION['joueur_user'],$page, $nbrElement);
+                    //$nbr_user= count($list_user);
+                   
+                }
+                   if (isset($_GET['page'])) {
+                    $page=$_GET['page'];
+                        if (isset($_SESSION['joueur_user'])) {
+                            $_SESSION['joueur_user'] =  $joueur_user;
+                            $nbrPage = nombrePageTotal( $_SESSION['joueur_user'], $nbrElement);
+                            $list_user= get_element_to_display( $_SESSION['joueur_user'],$page, $nbrElement);
+                           // $nbr_user= count($list_user);
+                        }
+
+                    }
                    
                 ?>
                 <table class="table ">
@@ -41,25 +72,23 @@
                     </thead>
                     <tbody>
                         
-                           <?php foreach($arrayUser as $user ): ?>
+                           <?php foreach($list_user as $user ): ?>
                              <?php if($user['role'] != 'ROLE_ADMIN'): ?>
                                 <tr>
                                     <td><?php echo $user['name'] ?></td>
-                                    
                                     <td><?php echo $user['prenom'] ?></td>
-                                    
                                     <td><?php echo $user['score'] ?></td>
                                 </tr>
                              <?php endif ?>
                             <?php endforeach ?>
-                    
-                       
-                        
                     </tbody>
                 </table>
                
                </div>
-               <button type="submit" class="button " name="pagin-jour">Suivant</button>
+               <?php for($i=1;$i<=$nbrPage;$i++): ?>
+                    <a name="" id="" class="btn btn-danger   mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$i?>" role="button"><?=$i?></a>
+               <?php endfor; ?>
+              <!--  <button type="submit" class="button " name="pagin-jour">Suivant</button> -->
             </div>
         </div>
         
@@ -70,9 +99,9 @@
                height: 900px;
                padding: 12px;
            }
-           .container{
+         /*   .container{
             height: 1000px;
-        }
+        } */
         .jhg{
             height: 800px;
         }
