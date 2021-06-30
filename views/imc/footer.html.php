@@ -4,7 +4,7 @@
     
 <script>
     function openNav() {
-  document.getElementById("mySidepanel").style.width = "500px";
+  document.getElementById("mySidepanel").style.width = "440px";
 }
 
 function closeNav() {

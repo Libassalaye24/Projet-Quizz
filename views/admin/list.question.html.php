@@ -16,11 +16,11 @@
                 </ul>
         <?php endif ?>
         </div>
-        <div class="row   bg-white   ">
-            <div class="col-4">
+        <div class="row   bg-light  p-md-2 p-sm-4   ">
+            <div class="col-4 d-none-sm">
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
-            <div class="col-md-8 col-sm-10 bg-white ">
+            <div class="col-md-8 col-sm-10 mt-md-4 jjj shadow jeu_quest ml-sm-5 ml-md-0 mb-5 bg-white rounded ">
             <?php
                      // 1 lire le contenu du fichier
                     $js= file_get_contents(ROUTE_DIR.'data/question.json');
@@ -29,6 +29,7 @@
                  //  var_dump(count($arrayQuestion));
                  $page=1;
                  $nbrPage= 0;
+                 $suivant=2;
                     $nbrElement=5;
                  if (!isset($_GET['page'])) {
                         
@@ -40,6 +41,8 @@
                 }
                    if (isset($_GET['page'])) {
                     $page=$_GET['page'];
+                    $suivant=$page+1;
+                    $precedent=$page-1;
                         if (isset($_SESSION['quest'])) {
                             $_SESSION['quest'] =  $arrayQuestion;
                             $nbrPage = nombrePageTotal( $_SESSION['quest'], $nbrElement);
@@ -55,29 +58,35 @@
                    $quest= get_element_to_display($arrayQuestion,$page,5);
                 } */
                 ?>
-                <div class="row mt-2 col-sm-12 col-md-12 col-xs-10">
-                    <div class="col-md-6 col-sm-6 ">
-                    <h4>Nbre de jeu par question/jeu</h4>
-                    </div>
-                    <div class="col-sm-6 col-md-5">
-                          <input type="number" class="  col-md-7 col-sm-5 " name="" id="" placeholder="5">
-                    </div>
-                   <div class="col-sm-3 col-md-1 mt-1">
-                   <button type="submit" class="btn ok ml-auto">OK</button>
-                   </div>
+               <form action="<?=WEB_ROUTE;?>" method="post">
+                    <input type="hidden" name="controlleurs" value="admin">
+                    <input type="hidden" name="action" value="fixer_question">
+                    <div class="row mt-2 col-sm-12 col-md-12 col-xs-10">
+                            <div class="col-md-6 col-sm-6 ">
+                            <h4>Nbre de jeu par question/jeu</h4>
+                            </div>
+                            <div class="col-sm-4 col-md-5">
+                                <input type="number" class=" form-control col-md-7 col-sm-5 " name="nbrQuest" id="" >
+                            </div>
+                        <div class="col-sm-3 col-md-1 mt-1">
+                        <button type="submit" class="btn ok ml-auto">OK</button>
+                        </div>
 
-                </div>
-               <div class=" row border border-danger mli mt-3 ">
+                        </div>
+               </form>
+
+                <div class="border  border-dark p-3  mt-3">
+                <div class=" row    ">
                <table class="table ">
                    
                    <tbody>
-                       <?php $i=1; ?>
+                       <?php $i=1; $_SESSION['i']=$i; ?>
                        <?php foreach($quest as $question => $value): ?>
                        
                                <tr>
                                   <td>
                                   
-                                      <?= "$i.".$value['question'] ?> 
+                                      <?= $_SESSION['i'].  $value['question'] ?> 
                                      
                                       <?php if($value['tpquest'] ==  'simpe'): ?> <br>
                                         <?php foreach($value['reponse'] as $reps => $vlue): ?>
@@ -101,16 +110,19 @@
                                                         <?= $vlue?>
                                                     </div>
                                                  </div> 
+                                                 
                                             <?php  endforeach ?>
                                           
                                         <?php endif ?>
-                                        <?php $i=$i+1; ?>
+                                        <?php $_SESSION['i']++; ?>
                                   </td>
                                   <td>
+                                      
                                      <a name="" id="" class="btn btn-light" href="<?= WEB_ROUTE.'?controlleurs=admin&views=supprimer&id='.$value['id']?>" role="button"><ion-icon name="trash-outline" class="supp"></ion-icon>delete</a> 
                                      <a name="" id="" class="btn btn-light" href="<?= WEB_ROUTE.'?controlleurs=admin&views=modif&id='.$value['id']?>" role="button"><ion-icon name="create-outline" class="edit"></ion-icon>Edit</a>
                                    
                                   </td>
+                              
                                </tr>
                            <?php endforeach ?>
                    </tbody>
@@ -119,15 +131,28 @@
                    
                    
                </div>
-               <?php for($i=1;$i<=$nbrPage;$i++): ?>
-               <a name="" id="" class="btn suivant mt-4  mr-5  col-xs-2 " href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question&page='.$i ?>" role="button"><?=$i?></a>
-               <?php endfor ?>
+                </div>
+                <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
+                <a name="" id="" class="btn btn-danger disabled  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.question&page='.$precedent;  ?>" role="button">Precedent</a> 
+                <?php else: ?>
+                    <a name="" id="" class="btn btn-danger  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.question&page='.$precedent;  ?>" role="button">Precedent</a> 
+                 <?php endif ?>
+                 <?php if($_GET['page'] > $nbrPage-1): ?>
+                <a name="" id="" class="btn btn-danger suiv disabled nnn  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.question&page='.$suivant; ?>" role="button">Suivant</a>
+                <?php else: ?>
+                    <a name="" id="" class="btn btn-danger suiv  nnn  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.question&page='.$suivant; ?>" role="button">Suivant</a>
+                 <?php endif ?>
+              
             </div>
         </div>  
         
        
     </div>
     <style>
+
+
+
+
         .supp{
             color: red;
         }
@@ -146,6 +171,9 @@
         /* .container{
             height: 1190px;
         } */
+        .nnn{
+            float: right;
+        }
         .ok{
             background-color: #c90017;
             color: white;
@@ -159,9 +187,9 @@
         .jhg{
             height: 700px;
         }
-        .mli{
-            padding: 12px;
-        }
+        .p-4 {
+    padding: 2.5rem !important;
+}
         .question{
             width: 360px;
         }

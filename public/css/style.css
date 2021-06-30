@@ -127,8 +127,8 @@ transition: all 0.2s;
 /* menu */
 #mySidepanel{
   margin-top: 25%;
-  margin-left: 10%;
-  width: 70%;
+  margin-left: 0;
+  width: 50%;
 }
 .sidepanel {
 height: 450px; /* Specify a height */
@@ -137,30 +137,30 @@ position: fixed; /* Stay in place */
 z-index: 2; /* Stay on top */
 top: 0;
 left: 0;
-background-color: #111; /* Black*/
+background-color: #fff; /* Black*/
 overflow-x: hidden; /* Disable horizontal scroll */
 padding-top: 0px; /* Place content 60px from the top */
 transition: 0.5s; /* 0.5 second transition effect to slide in the sidepanel */
 }
 
 /* The sidepanel links */
-.sidepanel a {
+.sidepanel a:not(.closebtn) {
 /* padding: 8px 8px 8px 32px; */
 text-decoration: none;
 font-size: 20px;
-color: #818181;
+color: #c90017;
 display: block;
 transition: 0.3s;
 }
 .sidepanel a:not(.closebtn){
 margin-top: 4%;
 }
-.sidepanel .closebtn{
-margin-left: -8%;
-}
+
 /* When you mouse over the navigation links, change their color */
 .sidepanel a:hover {
-color: #f1f1f1;
+color: #fff;
+border-bottom: 2px #c90017 solid;
+background-color: #c90017;
 }
 
 /* Position and style the close button (top right corner) */
@@ -169,14 +169,15 @@ position: absolute;
 top: 0;
 right: 2px;
 font-size: 40px;
-margin-left: 50px;
+margin-left: 45px;
+margin-top: 0.5px;
 }
 
 /* Style the button that is used to open the sidepanel */
 .openbtn {
 font-size: 20px;
 cursor: pointer;
-background-color: #111;
+background-color: #c90017;
 color: white;
 padding: 10px 15px;
 border: none;
@@ -186,12 +187,17 @@ border: none;
 background-color: #444;
 }
 .closebtn{
-margin-top: -6%;
+margin-top: -12%;
 float: left;
+color: black;
 }
 /*  .vertical-menu {
 width: 300px; 
 } */
+.mnn{
+  width: 300px;
+  margin-top: 15%;
+}
 .d-flex{
 width: 300px;
 background-color: #fff;
@@ -225,7 +231,6 @@ height: 20px;
 width: 300px;
 height: 135px;
 background-color: #c90017;
-border-radius: 10px 10px 0% 0%;
 }
 .test{
 height: 800px;

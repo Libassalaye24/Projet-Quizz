@@ -16,11 +16,11 @@
                 </ul>
         <?php endif ?>
         </div>
-        <div class="row bg-white interface jhg">
+        <div class="row bg-light interface jhg">
             <div class="col-4">
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
-            <div class="col-md-8 col-sm-12 bg-light inscript">
+            <div class="col-md-8 col-sm-12  shadow p-3 mb-5 bg-white rounded inscript">
                <?php if(isset($_SESSION['success_Inscript'])){
                    $inscription=$_SESSION['success_Inscript'];                   
                }
@@ -40,12 +40,12 @@
           .interface{
             padding: 12px;
         }
-        .container{
+       /*  .container{
             height: 700px;
         }
         .jhg{
             height: 1000px;
-        }
+        } */
       </style>
 <?php 
     require_once(ROUTE_DIR.'views/imc/footer.html.php');

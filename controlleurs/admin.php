@@ -38,12 +38,8 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                 $_SESSION['id']=$_GET['id'];
                 $id = $_SESSION['id'];
                 $quest = find_question_id($id);
-               // unset($quest);
-               /*  var_dump($quest);
-                die(); */
-              //  $id = $_SESSION['id'];
-              delete_question();
-              //  unset($questio);
+               $ok =  suppression_question($id);
+              
                 require_once(ROUTE_DIR.'views/admin/list.question.html.php'); 
             }
 
@@ -128,6 +124,9 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
              }
              
                
+            }elseif ($_POST['action'] == 'fixer_question') {
+                $_SESSION['fixer_question']=$_POST['nbrQuest'];
+                header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.question');
             }
         }
     }
@@ -201,7 +200,7 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
           }
       }
       } */
-    function delete_question(){
+   /*  function delete_question(){
       
        
         $id = $_SESSION['id'];
@@ -215,5 +214,5 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
            exit();  
         }
     }
-
+ */
 ?>

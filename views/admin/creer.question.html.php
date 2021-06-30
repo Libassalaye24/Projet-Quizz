@@ -14,8 +14,8 @@ if (isset($_SESSION['arrayError'])) {
   
 
 ?>
-    <div class="container bg-white conect mt-5">
-        <div class="row deconnect">
+    <div class="container bg-light conect mt-5">
+        <div class="row  deconnect">
         <?php if(est_connect()): ?>
             <h3 class="text-white mt-3 ml-4 font-weight-bold ">PARAMETRER VOS QUIZZ</h3>
 
@@ -26,11 +26,11 @@ if (isset($_SESSION['arrayError'])) {
                 </ul>
         <?php endif ?>
         </div>
-        <div class="row bg-white  ">
-            <div class="col-4">
+        <div class="row bg-light  ">
+            <div class="col-4 mt-2">
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
-            <div class="col-md-8 col-sm-12 bg-white jhg">
+            <div class="col-md-8 col-sm-12 bg-white mt-4 mb-4 shadow  mb-5 bg-white rounded  pl-2  jhg">
                 <h3 style="color: #c90017;">
                   CREER ET PARAMETRER VOS QUIZZ
                 </h3>
@@ -54,7 +54,7 @@ if (isset($_SESSION['arrayError'])) {
                              <label for="" class="ml-4">Questions</label>
                         </div>
                         <div class="form-group question ml-4  col-md-9 col-sm-10 col-xs-5">
-                            <input type="text" name="question" id="" class="form-control bg-white" placeholder="" aria-describedby="helpId" value="<?=isset($quest['question']) ? $quest['question']: '' ?><?=isset($ques) ? $ques: ""; ?>">
+                            <textarea name="question" id="" cols="45" rows="2"><?=isset($quest['question']) ? $quest['question']: '' ?><?=isset($ques) ? $ques: ""; ?></textarea>
                             <small class="text-danger"><?=isset($arrayError['question']) ? $arrayError['question'] : ""; ?></small>
                         </div>
                     </div>
@@ -170,16 +170,14 @@ if (isset($_SESSION['arrayError'])) {
             padding: 12px;
             height: 600px;
         } */
-        .container{
+       /*  .container{
             height: 900px;
-        }
+        } */
         .bordure{
             height: 500px;
             
         }
-        .jhg{
-            height: 500px;
-        }
+      
         .plus{
             margin-left: 62%;
             margin-top: -8%;

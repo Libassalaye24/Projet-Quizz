@@ -16,6 +16,26 @@
                 </ul>
         <?php endif ?>
         </div>
+        <div class="row bg-light">
+            <div class="col-md-8 bg-dark">
+                <div class="row mx-auto bg-danger mt-4 ">
+                  <p class="text-center text-white"> Question 1/5 <br>
+                    les langages du Web</p> 
+                </div>
+                <div class="row bg-light">
+
+              <input type="checkbox" name="coudy"> <br>
+              <input type="checkbox" name="coudy"> <br>
+              <input type="checkbox" name="coudy"> <br>
+              <input type="checkbox" name="coudy"> 
+              
+            </div>
+                </div>
+            
+            <div class="col-md-4 bg-primary">
+                    meilleures scores
+                </div>
+        </div>
        
         
        

@@ -62,13 +62,22 @@
       $json= file_get_contents(ROUTE_DIR.'data/question.json');
       // 2 convertir le json
       $arrayQuestion = json_decode($json ,true);
-      $users[]=$arrayQuestion; 
+     
+      $tabQuest=[];
       $ok =false;
-      foreach ($users as $user) {
-          if ($user['id'] != $id) {
+      foreach ($arrayQuestion as $user) {
+          if ($user['id'] == $id) {
               $ok = true;
+          }else {
+              $tabQuest[]=$user;
           }
       }
+     
+      if ($ok) {
+        $js=json_encode($tabQuest);
+        file_put_contents(ROUTE_DIR.'data/question.json',$js);
+      }
+
       return $ok;
    }
     

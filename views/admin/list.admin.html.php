@@ -16,11 +16,12 @@
                 </ul>
         <?php endif ?>
         </div>
-        <div class="row bg-white  " >
+        <div class="row bg-light  p-3 " >
             <div class="col-4 mt-3 " >
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
-            <div class="col-md-8 col-sm-12 bg-white mt-2 border border-danger rounded    jhg">
+           <div class="shadow p-4 mb-5  rounded jhg col-md-8 col-sm-12 bg-white mt-4 ">
+           <div class="border border-danger   ">
                 <h4 style="padding:4px;text-align:center; " >Liste des Admins</h4>
                <div class=" ">
                <?php
@@ -31,10 +32,9 @@
                     $list_user =[];
                     $nbrPage =0;
                     $page=1;
-                    $suivant=1;
+                    $suivant=2;
                     $nbrElement = 15;
-                    $prec = $suivant-1;
-                  //  $_SESSION['user_admin'] =  $arrayUser;
+                   
                   $admin_user=[];
                   foreach ($arrayUser as $user) {
                       if ($user['role']=='ROLE_ADMIN') {
@@ -42,53 +42,58 @@
                       }
                      
                   }
-                /*   if (!isset($_GET['page'])) {
-                    $_SESSION['suivant'] = $_GET['suivant'];
-                   $suivant = $_SESSION['suivant'] ;
+                
+
+               
+
+                
+                
+                  /*   var_dump($_SESSION['suivant']);
+                    die(); */
+                 /*    if (isset($_SESSION['user_admin'])) {
+                        $_SESSION['user_admin'] =  $admin_user;
+                        $nbrPage = nombrePageTotal( $_SESSION['user_admin'], $nbrElement);
+                        $list_user= get_element_to_display( $_SESSION['user_admin'], $_SESSION['suivant'], $nbrElement);
+                        
+                        $nbrPage++;
+                       // $nbr_user= count($list_user);
+                    }
+                    
+                   // $_GET['suivant']++;
+                   
+                }else {
+                    $_SESSION['suivant'] =1;
+                    
+                  
+                    
+                    $_SESSION['user_admin'] =  $admin_user;
+                    $nbrPage = nombrePageTotal( $_SESSION['user_admin'], $nbrElement);
+                    $list_user= get_element_to_display( $_SESSION['user_admin'],$_SESSION['suivant'], $nbrElement);
+                } */
+                 
+                 
+                if (!isset($_GET['page'])) {
+                   $page=1;
                     $_SESSION['user_admin'] =  $admin_user;
                     $nbrPage = nombrePageTotal( $_SESSION['user_admin'], $nbrElement);
                     $list_user= get_element_to_display( $_SESSION['user_admin'],$page, $nbrElement);
-                    //$nbr_user= count($list_user);
-                   
-                } */
-
-                if (!isset($_GET['suivant'])) {
-                    //$suivant  = $_GET['suivant'];
-                   
-                    $_SESSION['user_admin'] =  $admin_user;
-                    $nbrPage = nombrePageTotal( $_SESSION['user_admin'], $nbrElement);
-                    $list_user= get_element_to_display( $_SESSION['user_admin'],$suivant, $nbrElement);
-                   // $_GET['suivant']++;
-                    //$nbr_user= count($list_user);
-                   
-                }
-
-                if (isset($_GET['suivant'])) {
                   
-                    if (isset($_SESSION['user_admin'])) {
-                        $_SESSION['user_admin'] =  $admin_user;
-                        $nbrPage = nombrePageTotal( $_SESSION['user_admin'], $nbrElement);
-                        $list_user= get_element_to_display( $_SESSION['user_admin'],$suivant, $nbrElement);
-                        $_GET['suivant']++;
-                    
-                       // $nbr_user= count($list_user);
-                    }
-                   // $_GET['suivant']++;
-                   
                 }
-               
-                   /* if (isset($_GET['page'])) {
+             
+                   if (isset($_GET['page'])) {
                       
                     $page=$_GET['page'];
+                    $suivant=$page+1;
+                    $precednt=$page-1;
                         if (isset($_SESSION['user_admin'])) {
                             $_SESSION['user_admin'] =  $admin_user;
                             $nbrPage = nombrePageTotal( $_SESSION['user_admin'], $nbrElement);
                             $list_user= get_element_to_display( $_SESSION['user_admin'],$page, $nbrElement);
-                           // $nbr_user= count($list_user);
+                          
                         }
 
-                    } */
-                   // unset($_GET['page']);
+                    }
+                 
                    
                  
                     
@@ -100,7 +105,7 @@
                     <thead>
                         <tr>
                             <th scope="col">NOM & PRENOM</th>
-                            <th scope="col">ROLE</th>
+                            <th scope="col">LOGIN</th>
                             <th scope="col">ACTION</th>
                         </tr>
                     </thead>
@@ -108,35 +113,32 @@
                     <?php /* $i=0; */  ?>
 
                     <?php foreach($list_user as $user ): ?>
-                        <?php //if($user['role'] == "ROLE_JOUEUR"): ?>
                                 <tr>
                                     <td style="font-size: larger;"><?php echo $user['name'].'  '.$user['prenom'] ?></td>
-                                    <td><?php echo $user['role'] ?></td>
+                                    <td><?php echo $user['login'] ?></td>
                                     <td> 
                                         <a name="" id="" class="btn btn-secondary " href="<?= WEB_ROUTE.'?controlleurs=security&views=edit&id='.$user['id']?>" role="button">modifier <ion-icon name="create-outline"></ion-icon></a>
                                     </td>
                                 </tr>
-                            <?php   // endif ?>
                      <?php endforeach ?>
                     </tbody>
                 </table>
-               
-               </div>
-               <a name="" id="" class="btn btn-danger   mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&precedent='.$nbrPage  ?>" role="button">Precedent</a>
-               <a name="" id="" class="btn btn-danger suiv  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&suivant='.$nbrPage?>" role="button">Suivant</a>
-
-               <!-- <?php //for($i=1;$i<=$nbrPage;$i++): ?>
-                    <a name="" id="" class="btn btn-danger   mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$i?>" role="button"><?=$i?></a>
-               <?php    // endfor; ?> -->
-               <!-- <?php //$i=1; ?>
-               <a name="" id="" class="btn btn-danger   mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$i?>" role="button">Suivant</a>
-               <?php //$i=$i+1; $j=$i-1;  ?>
-               <a name="" id="" class="btn btn-danger   mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$j?>" role="button">Precedent</a>
-               -->
+                <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
+                <a name="" id="" class="btn btn-danger disabled  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
+                <?php else: ?>
+                    <a name="" id="" class="btn btn-danger  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
+                 <?php endif ?>
+                 <?php if($_GET['page'] > $nbrPage-1): ?>
+                <a name="" id="" class="btn btn-danger suiv disabled  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
+                <?php else: ?>
+                    <a name="" id="" class="btn btn-danger suiv   mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
+                 <?php endif ?>
+          
             </div>
         </div>
         
        
+           </div>
     </div>
     <style>
     .suiv{
@@ -146,12 +148,9 @@
                height: 900px;
                padding: 12px;
            }
-           /* .container{
-            height: 1400px;
-        } */
+        
         .jhg{
-/*             height: 1000px;
- */            padding: 12px;
+    padding: 12px;
         } 
         .button{
             background-color: #c90017;

@@ -13,7 +13,7 @@
                 </ul>
         <?php endif ?>
         </div>
-        <div class="row bg-white interface">
+        <div class="row bg-light   p-md-2 interface ">
              <?php
                      // 1 lire le contenu du fichier
                     $json= file_get_contents(ROUTE_DIR.'data/user.data.json');
@@ -42,10 +42,27 @@
             <div class="col-4">
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
-            <div class="col-md-8 col-sm-12 bg-white ">
-                <div class="progress ">
+            <div class="col-md-8 col-sm-12 bg-white mt-md-4 mt-sm-4  shadow p-3 mb-5  rounded">
+
+                <div class="column joueur">
+                    <div class="shadow p-3 mb-5 bg-light rounded">
+                        <p class="text-center text-danger">Nombre de joueur: <?=$cptj?></p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="shadow p-3 mb-5 bg-light rounded">
+                        <p class="text-center text-primary">Nombre  d'admin: <?=$cpta?></p>
+                    </div>
+                </div>
+                <div class="column">
+                    <div class="shadow p-3 mb-5 bg-light rounded">
+                        <p class="text-center text-success">Nombre de question: <?=$cptq?></p>
+                    </div>
+                </div>
+                
+               <!--  <div class="progress ">
                     <label for="file" >Nombre de joueur: </label>
-                    <progress id="file1" value="<?=$cptj?>" max="100" >  </progress><?=$cptj?>
+                    <progress id="file1"  value="<?=$cptj?>" max="100" >  </progress><?=$cptj?>
                 </div>
 
                 <div class="progress">
@@ -56,13 +73,16 @@
                 <div class="progress">
                     <label for="file">Nombre de question: </label>
                     <progress   id="file" value="<?=$cptq?>" max="100"> 72% </progress><?=$cptq?>
-                </div>
+                </div> -->
             </div>
         </div>
         
        
     </div>
     <style>
+        .column{
+            margin-top: 7%;
+        }
          .interface{
             padding: 12px;
         }
@@ -81,6 +101,9 @@
             width: 100%;
             height: 60px;
             
+        }
+        .borde{
+            border: 2px #ddd solid;
         }
         #file1{
             background-color: #ddd;
