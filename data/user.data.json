@@ -19,10 +19,10 @@
     },
     {
         "id": "60d1d8l7827bi4",
-        "prenom": "hhhh",
-        "name": "nnnn laye",
-        "login": "bb@gmail.com",
-        "password": "qqqqqq",
+        "prenom": "mouhamet",
+        "name": "Dieng",
+        "login": "dieng24@gmail.com",
+        "password": "123456",
         "file1": "Avatar.jpg",
         "role": "ROLE_ADMIN"
     },
@@ -35,35 +35,7 @@
         "file1": "Avatar.jpg",
         "role": "ROLE_ADMIN"
     },
-    {
-        "id": "60d1d8c0827bi4",
-        "prenom": "dbd",
-        "name": "bcvvc laye",
-        "login": "biig@gmail.com",
-        "password": "qqqqqq",
-        "file1": "Avatar.jpg",
-        "role": "ROLE_ADMIN"
-    },
-    {
-        "id": "60d290cd2dd86",
-        "prenom": "coudy",
-        "name": "wane",
-        "login": "coudy@gmail.com",
-        "password": "qqqqqq",
-        "file1": "Avatar.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
-    },
-    {
-        "id": "60d205cd2dd86",
-        "prenom": "coudy",
-        "name": "wane",
-        "login": "coudy@gmail.com",
-        "password": "qqqqqq",
-        "file1": "Avatar.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
-    },
+   
     {
         "id": "60d240cd2dd86",
         "prenom": "coudy",
@@ -75,14 +47,14 @@
         "score": "1220 pts"
     },
     {
-        "id": "60d2k0cd2dd86",
-        "prenom": "coudy",
-        "name": "wane",
-        "login": "coudy@gmail.com",
+        "id": "60d2k9cd2dd86",
+        "prenom": "Abdou",
+        "name": "Sene",
+        "login": "coudjy@gmail.com",
         "password": "qqqqqq",
         "file1": "Avatar.jpg",
         "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
+        "score": "3502 pts"
     },
     {
         "id": "60d2l0cd2dd86",
@@ -92,7 +64,7 @@
         "password": "qqqqqq",
         "file1": "Avatar.jpg",
         "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
+        "score": "650 pts"
     },
     {
         "id": "60d200nd2dd86",
@@ -102,7 +74,7 @@
         "password": "qqqqqq",
         "file1": "Avatar.jpg",
         "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
+        "score": "800 pts"
     },
     {
         "id": "60d200cm2dd86",
@@ -112,7 +84,7 @@
         "password": "qqqqqq",
         "file1": "Avatar.jpg",
         "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
+        "score": "100 pts"
     },
     {
         "id": "60d200cd2dd86",
@@ -122,7 +94,7 @@
         "password": "qqqqqq",
         "file1": "Avatar.jpg",
         "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
+        "score": "130 pts"
     },
     {
         "id": "60d200cd2dd86",
@@ -132,7 +104,7 @@
         "password": "qqqqqq",
         "file1": "Avatar.jpg",
         "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
+        "score": "540 pts"
     },
     {
         "id": "60d200cd2dd86",
@@ -142,58 +114,9 @@
         "password": "qqqqqq",
         "file1": "Avatar.jpg",
         "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
+        "score": "980 pts"
     },
-    {
-        "id": "60d200cd2dd86",
-        "prenom": "coudy",
-        "name": "wane",
-        "login": "coudy@gmail.com",
-        "password": "qqqqqq",
-        "file1": "Avatar.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
-    },
-    {
-        "id": "60d200cd2dd86",
-        "prenom": "coudy",
-        "name": "wane",
-        "login": "coudy@gmail.com",
-        "password": "qqqqqq",
-        "file1": "Avatar.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
-    },
-    {
-        "id": "60d200cd2dd86",
-        "prenom": "coudy",
-        "name": "wane",
-        "login": "coudy@gmail.com",
-        "password": "qqqqqq",
-        "file1": "Avatar.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
-    },
-    {
-        "id": "60d200cd2dd86",
-        "prenom": "coudy",
-        "name": "wane",
-        "login": "coudy@gmail.com",
-        "password": "qqqqqq",
-        "file1": "Avatar.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
-    },
-    {
-        "id": "60d200cd2dd86",
-        "prenom": "coudy",
-        "name": "wane",
-        "login": "coudy@gmail.com",
-        "password": "qqqqqq",
-        "file1": "Avatar.jpg",
-        "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
-    },
+    
     {
         "id": "60d201653d306",
         "prenom": "cissokho",
@@ -201,7 +124,8 @@
         "login": "Bailaaa@gmail.com",
         "password": "123456",
         "file1": "Avatar.jpg",
-        "role": "ROLE_ADMIN"
+        "role": "ROLE_ADMIN",
+        "score": "760 pts"
     },
     {
         "id": "60d2023c362bc",
@@ -210,7 +134,8 @@
         "login": "Mbaye@gmail.com",
         "password": "bbbbbb",
         "file1": "Avatar.jpg",
-        "role": "ROLE_ADMIN"
+        "role": "ROLE_ADMIN",
+        "score": "290 pts"
     },
     {
         "id": "60d2071d03a23",
@@ -219,7 +144,8 @@
         "login": "demba@gmail.com",
         "password": "123456",
         "file1": "Avatar.jpg",
-        "role": "ROLE_ADMIN"
+        "role": "ROLE_ADMIN",
+        "score": "900 pts"
     },
     {
         "id": "60d2075120f69",
@@ -228,7 +154,8 @@
         "login": "ndoye@gmail.com",
         "password": "123456",
         "file1": "Avatar.jpg",
-        "role": "ROLE_ADMIN"
+        "role": "ROLE_ADMIN",
+        "score": "190 pts"
     },
     {
         "id": "60d2085e6bc53",
@@ -246,7 +173,8 @@
         "login": "hhi@gmail.com",
         "password": "123456",
         "file1": "Avatar.jpg",
-        "role": "ROLE_ADMIN"
+        "role": "ROLE_ADMIN",
+        "score": "520 pts"
     },
     {
         "id": "60d20a127b45d",
@@ -501,7 +429,43 @@
         "password": "123456",
         "file1": "bee-6061015_1920.jpg",
         "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
+        "score": "950 pts"
+    },
+    {
+        "id": "60d5df870d4ad",
+        "prenom": "dkn23",
+        "name": "nsnns",
+        "login": "ewess@gmail.com",
+        "password": "123456",
+        "role": "ROLE_JOUEUR",
+        "score": "620 pts"
+    },
+    {
+        "id": "60d5df870d4ad",
+        "prenom": "dkn23",
+        "name": "nsnns",
+        "login": "ewess@gmail.com",
+        "password": "123456",
+        "role": "ROLE_JOUEUR",
+        "score": "1290 pts"
+    },
+    {
+        "id": "60d5df870d4ad",
+        "prenom": "dkn23",
+        "name": "nsnns",
+        "login": "ewess@gmail.com",
+        "password": "123456",
+        "role": "ROLE_JOUEUR",
+        "score": "820 pts"
+    },
+    {
+        "id": "60d5df870d4ad",
+        "prenom": "dkn23",
+        "name": "nsnns",
+        "login": "ewess@gmail.com",
+        "password": "123456",
+        "role": "ROLE_JOUEUR",
+        "score": "720 pts"
     },
     {
         "id": "60d5df870d4ad",
@@ -519,7 +483,7 @@
         "login": "ewess@gmail.com",
         "password": "123456",
         "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
+        "score": "150 pts"
     },
     {
         "id": "60d5df870d4ad",
@@ -528,7 +492,7 @@
         "login": "ewess@gmail.com",
         "password": "123456",
         "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
+        "score": "420 pts"
     },
     {
         "id": "60d5df870d4ad",
@@ -537,42 +501,6 @@
         "login": "ewess@gmail.com",
         "password": "123456",
         "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
-    },
-    {
-        "id": "60d5df870d4ad",
-        "prenom": "dkn23",
-        "name": "nsnns",
-        "login": "ewess@gmail.com",
-        "password": "123456",
-        "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
-    },
-    {
-        "id": "60d5df870d4ad",
-        "prenom": "dkn23",
-        "name": "nsnns",
-        "login": "ewess@gmail.com",
-        "password": "123456",
-        "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
-    },
-    {
-        "id": "60d5df870d4ad",
-        "prenom": "dkn23",
-        "name": "nsnns",
-        "login": "ewess@gmail.com",
-        "password": "123456",
-        "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
-    },
-    {
-        "id": "60d5df870d4ad",
-        "prenom": "dkn23",
-        "name": "nsnns",
-        "login": "ewess@gmail.com",
-        "password": "123456",
-        "role": "ROLE_JOUEUR",
-        "score": "1220 pts"
+        "score": "580 pts"
     }
 ]

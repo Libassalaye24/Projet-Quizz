@@ -91,15 +91,16 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                     unset($_POST['action']);
                     unset($_POST['btn_submit']);
                     validation($_POST);
-                    header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.question');
+                    $value=$_SESSION['id'];
+                    header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.question');                
                 }elseif (isset($_POST['Modif_quest'])) {
                    
                     $nbr_reps = $_POST['nbr_reps'];
                     $tpquest = $_POST['tpquest'];
                     $ques= $_POST['question'];
-                    $reps=$_POST['reponse'.$i];
+                    $reps=$_POST['reponse'];
                     $pts=$_POST['nbr_pts'];
-                    $_SESSION['reponse'.$i] = $reps;
+                    $_SESSION['reponse'] = $reps;
                     $_SESSION['pts'] = $pts;
                     $_SESSION['question'] = $ques;
                     $_SESSION['tpquest'] = $tpquest;

@@ -9,6 +9,9 @@ if (isset($_SESSION['arrayError'])) {
   $ques=$_SESSION['question'];
   $pts=  $_SESSION['pts'];
   $tpques=$_SESSION['tpquest'];
+  $tpreps=$_SESSION['tpquest']; 
+  $reps=$_SESSION['reponse'] ;
+
         require_once(ROUTE_DIR.'views/imc/entete.html.php'); 
    require_once(ROUTE_DIR.'views/imc/header.html.php'); 
   
@@ -73,6 +76,7 @@ if (isset($_SESSION['arrayError'])) {
                         </div>
                             <div class="form-group ml-5 question col-md-6 col-sm-8 col-xs-4 ">
                                 <select class="custom-select " name="tpquest"  id="" >
+                                    <option><?=isset($quest['tpques']) ? $quest['tpques']: '' ?><?=isset($tpreps) ? $tpreps:""; ?></option>
                                     <option value="text">Texte</option>
                                     <option value="simpe">Simple</option>
                                     <option value="multiple">Multiple choice</option>
@@ -97,7 +101,7 @@ if (isset($_SESSION['arrayError'])) {
                         </div>
                         </div>
 
-                        <?php /* $nbrreps=1; */$tpreps=$_SESSION['tpquest'];  $nbrreps=$_SESSION['nbr_reps']; ?>
+                        <?php /* $nbrreps=1; */ $nbrreps=$_SESSION['nbr_reps']; ?>
                         <?php for($i=1;$i<=$nbrreps;$i++): ?>
                             <div class="form-group ml-4">
                                                <label for="">Reponse<?=$i?> </label>
@@ -118,9 +122,12 @@ if (isset($_SESSION['arrayError'])) {
                                                </div>
                                           </div>
                         <?php endfor ?>
-                      
                        
-                                        
+                        <?php if(isset($quest['id'])): ?>
+                            <?php for($i=0;$i<$reps;$i++): ?>
+                                <input type="text" name="reponse<?=$i?>" id="" class="form-control bg-white " placeholder="" aria-describedby="helpId" value="<?=isset($reps[$i]['reponse'])?>">
+                            <?php endfor ?>
+                         <?php endif ?>
 
                       
                     
@@ -204,5 +211,5 @@ if (isset($_SESSION['arrayError'])) {
     if (isset($_SESSION['tpquest'])) {
         unset($_SESSION['tpquest']);
     }
-   
+
 ?>
