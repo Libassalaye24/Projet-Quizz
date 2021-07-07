@@ -72,17 +72,17 @@
                 <div class=" bg-white mt-4 border border-danger mb-3    ">
                    
                     <form action="<?=WEB_ROUTE?>" method="post">
-                 
+                  <!--   <div class="nbrs border border-danger bg-danger shadow mb-2 ">
+                           <label for="" class="mt-2 p-1 text-white">pts</label>
+                     </div> -->
                     <?php  for($i=0;$i<$fixe_quest;$i++):  ?>
                     <div class="mt-4">
                     <h4 class="ml-auto  mr-auto text-center"><?=$quest[$i]['question']?></h4> <br> 
-                    <div class="nbrs border border-danger bg-danger shadow mb-2 ">
-                           <label for="" class="mt-2 p-1 text-white"><?=$quest[$i]['nbr_pts']?>pts</label>
-                     </div>
+                 
                     </div>
                     
                           
-                            <?php if($quest[$i]['tpquest']=='simpe'): ?>
+                            <?php if($quest[$i]['tpquest']=='simple'): ?>
                                 <?php foreach($quest[$i]['reponse'] as $value): ?>
                                     <div class="form-group mt-4 ml-4">
                                     <input type="radio"

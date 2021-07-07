@@ -17,7 +17,7 @@
         <?php endif ?>
         </div>
         <div class="row   bg-light  p-md-2 p-sm-4   ">
-            <div class="col-4 d-none-sm">
+            <div class="col-4 d-none-sm menul">
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
             <div class="col-md-8 col-sm-10 mt-md-4 jjj shadow jeu_quest ml-sm-5 ml-md-0 mb-5 bg-white rounded ">
@@ -66,7 +66,7 @@
                             <h4>Nbre de jeu par question/jeu</h4>
                             </div>
                             <div class="col-sm-4 col-md-5">
-                                <input type="number" class=" form-control col-md-7 col-sm-5 " name="nbrQuest" id="" >
+                                <input type="number" class=" form-control col-md-7 col-sm-5 " value="5" name="nbrQuest" id="" >
                             </div>
                         <div class="col-sm-3 col-md-1 mt-1">
                         <button type="submit" class="btn ok ml-auto">OK</button>
@@ -88,7 +88,7 @@
                                   
                                       <?= $_SESSION['i'].  $value['question'] ?> 
                                      
-                                      <?php if($value['tpquest'] ==  'simpe'): ?> <br>
+                                      <?php if($value['tpquest'] ==  'simple'): ?> <br>
                                         <?php foreach($value['reponse'] as $reps => $vlue): ?>
                                             <div class="row col-5 ml-3 mt-2">
                                                 <input type="radio" name="coudy">

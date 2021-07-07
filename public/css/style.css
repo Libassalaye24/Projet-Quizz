@@ -12,6 +12,13 @@
     display: none;
   }
 }
+@media  screen and (max-width: 767px){
+  .jjj{
+    width: 100%;
+    
+  }
+ 
+}
 
   .deconnect{
     background-color:#c90017;
