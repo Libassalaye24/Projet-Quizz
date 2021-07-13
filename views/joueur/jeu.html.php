@@ -4,11 +4,24 @@
    require_once(ROUTE_DIR.'views/imc/header.html.php'); 
    $fixe_quest =  $_SESSION['fixer_question'];
 ?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= WEB_ROUTE.'css/style.css' ?>">
+  </head>
+  <body>
     <div class="container bg-light conect mt-5">
         <div class="row nnnn">
         <?php if(est_connect()): ?>
            
-            <h4 class="text-white mt-3 text-center font-weight-bold ml-4"> BIENVENUE SUR LA PLATEFORME DE JEU DE QUIZZ</h4>
+            <h4 class="text-white mt-3 text-center font-weight-bold ml-4 d-sm-none"> BIENVENUE SUR LA PLATEFORME DE JEU DE QUIZZ</h4>
 
                 <ul class="ml-auto mt-2 ">
                     <li class="nav-item ">

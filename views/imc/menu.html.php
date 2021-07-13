@@ -10,21 +10,55 @@
    
     <?php if(est_admin()): ?>
       
-        <div id="mySidepanel" class="sidepanel ">
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question'?>">Liste des questions</a>
-            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.admin'?>">Creer Admin</a>
-            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.joueur'?>">Liste des joueurs</a>
-            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.question'?>">Creer Questions</a>
-            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.admin '?>">Liste des Admins</a>
-            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=admin&views=tab.bord '?>">Tableau de bord</a>
-            <a onclick="closeNav()" href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion '?>">Se deconnecter</a>
 
-        </div>
+  <div class="row ">
+  <button  class="btn btn-danger toggle    mb-3    " data-toggle="modal"  data-target="#exampleModal">&#9776;</button>
+</div>
 
-    <button class="openbtn" onclick="openNav()" >&#9776; </button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content text-white bg-dark" >
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> Menu </h5>
+        <button type="button" class="close bg-white" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body ">
+       <div class="row">
+         <a onclick="closeNav()" class="text-white" href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question'?>">Liste des questions</a>
+       </div>
+       <div class="row">
+       <a onclick="closeNav()" class="text-white" href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.admin'?>">Creer Admin</a>
+       </div>
+       <div class="row">
+                       <a onclick="closeNav()" class="text-white" href="<?= WEB_ROUTE.'?controlleurs=admin&views=creer.question'?>">Creer Questions</a>
+
+       </div>
+       <div class="row">
+                 <a onclick="closeNav()" class="text-white" href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.joueur'?>">Liste des joueurs</a>
+           </div>
+           <div class="row">
+              <a onclick="closeNav()" class="text-white" href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.admin '?>">Liste des Admins</a>
+             </div>
+               <div class="row">
+                 <a onclick="closeNav()" class="text-white" href="<?= WEB_ROUTE.'?controlleurs=admin&views=tab.bord '?>">Tableau de bord</a>
+                </div>
+                   <div class="row">   
+                             <a onclick="closeNav()" class="text-white" href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion '?>">Se deconnecter</a>
+                    </div>
+        
+       
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+
    
-    <div class="mnn shadow  mb-5 ">
+    <div class="mnn  shadow  mb-5 ">
             <div class=" photo rounded-top ">
                 
                 <h3 class="ml-2 text-white">Libasse</h3>
@@ -63,6 +97,7 @@
               
           
             </div>
+            
         
     </div>
   
@@ -71,6 +106,7 @@
         .d-flex{
             cursor: pointer;
         }
+       
     </style>
     
     <?php 

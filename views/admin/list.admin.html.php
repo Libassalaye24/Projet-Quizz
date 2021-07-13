@@ -2,8 +2,21 @@
 <?php 
     require_once(ROUTE_DIR.'views/imc/entete.html.php'); 
 
-   require_once(ROUTE_DIR.'views/imc/header.html.php'); 
+   //require_once(ROUTE_DIR.'views/imc/header.html.php'); 
 ?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= WEB_ROUTE.'css/style.css' ?>">
+  </head>
+  <body>
     <div class="container bg-light conect mt-5">
         <div class="row deconnect">
         <?php if(est_connect()): ?>
@@ -48,29 +61,7 @@
 
                 
                 
-                  /*   var_dump($_SESSION['suivant']);
-                    die(); */
-                 /*    if (isset($_SESSION['user_admin'])) {
-                        $_SESSION['user_admin'] =  $admin_user;
-                        $nbrPage = nombrePageTotal( $_SESSION['user_admin'], $nbrElement);
-                        $list_user= get_element_to_display( $_SESSION['user_admin'], $_SESSION['suivant'], $nbrElement);
-                        
-                        $nbrPage++;
-                       // $nbr_user= count($list_user);
-                    }
-                    
-                   // $_GET['suivant']++;
-                   
-                }else {
-                    $_SESSION['suivant'] =1;
-                    
-                  
-                    
-                    $_SESSION['user_admin'] =  $admin_user;
-                    $nbrPage = nombrePageTotal( $_SESSION['user_admin'], $nbrElement);
-                    $list_user= get_element_to_display( $_SESSION['user_admin'],$_SESSION['suivant'], $nbrElement);
-                } */
-                 
+               
                  
                 if (!isset($_GET['page'])) {
                    $page=1;
@@ -105,7 +96,7 @@
                     <thead>
                         <tr>
                             <th scope="col">NOM & PRENOM</th>
-                            <th scope="col">LOGIN</th>
+                            <th class="bouttt" scope="col">LOGIN</th>
                             <th scope="col">ACTION</th>
                         </tr>
                     </thead>
@@ -115,9 +106,9 @@
                     <?php foreach($list_user as $user ): ?>
                                 <tr>
                                     <td style="font-size: larger;"><?php echo $user['name'].'  '.$user['prenom'] ?></td>
-                                    <td><?php echo $user['login'] ?></td>
+                                    <td class="bouttt"><?php echo $user['login'] ?></td>
                                     <td> 
-                                        <a name="" id="" class="btn btn-secondary " href="<?= WEB_ROUTE.'?controlleurs=security&views=edit&id='.$user['id']?>" role="button">modifier <ion-icon name="create-outline"></ion-icon></a>
+                                        <a name="" id="" class="btn btn-secondary  " href="<?= WEB_ROUTE.'?controlleurs=security&views=edit&id='.$user['id']?>" role="button">modifier <ion-icon name="create-outline"></ion-icon></a>
                                     </td>
                                 </tr>
                      <?php endforeach ?>

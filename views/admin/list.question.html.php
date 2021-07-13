@@ -1,9 +1,22 @@
 
 <?php 
     require_once(ROUTE_DIR.'views/imc/entete.html.php'); 
-   require_once(ROUTE_DIR.'views/imc/header.html.php'); 
+   //require_once(ROUTE_DIR.'views/imc/header.html.php'); 
    
 ?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= WEB_ROUTE.'css/style.css' ?>">
+  </head>
+  <body>
     <div class="container bg-light conect mt-5 col-xs-12">
         <div class="row deconnect">
         <?php if(est_connect()): ?>
@@ -61,7 +74,7 @@
                <form action="<?=WEB_ROUTE;?>" method="post">
                     <input type="hidden" name="controlleurs" value="admin">
                     <input type="hidden" name="action" value="fixer_question">
-                    <div class="row mt-2 col-sm-12 col-md-12 col-xs-10">
+                    <div class="row mt-2 col-sm-15 col-md-12 col-xs-10">
                             <div class="col-md-6 col-sm-6 ">
                             <h4>Nbre de jeu par question/jeu</h4>
                             </div>
@@ -86,11 +99,11 @@
                                <tr>
                                   <td>
                                   
-                                      <?= $_SESSION['i'].  $value['question'] ?> 
+                                      <?= $_SESSION['i']. ".".  $value['question'] ?> 
                                      
                                       <?php if($value['tpquest'] ==  'simple'): ?> <br>
                                         <?php foreach($value['reponse'] as $reps => $vlue): ?>
-                                            <div class="row col-5 ml-3 mt-2">
+                                            <div class="row col-md-6 ml-3 mt-2">
                                                 <input type="radio" name="coudy">
                                                 <div class="col">
                                                     <?= $vlue?>
@@ -99,16 +112,16 @@
                                         <?php  endforeach ?>
                                       
                                         <?php elseif($value['tpquest'] == 'text'): ?>
-                                            <div class="row col-5 ml-3 mt-2 ">
+                                            <div class="row col-md-8 col-sm-7 ml-3 mt-2 ">
                                                  <input type="text" name="" class="form-control bg-white">
                                             </div>
                                          <?php elseif($value['tpquest'] == 'multiple'): ?>
                                             <?php foreach($value['reponse'] as $reps => $vlue): ?>
-                                                <div class="row col-5 ml-3 mt-2">
+                                                <div class="row col-md-6 ml-3 mt-2">
                                                     <input type="checkbox" name="coudy">
                                                     <div class="col">
-                                                        <?= $vlue?>
-                                                    </div>
+                                                    <?= $vlue?>
+                                                </div>
                                                  </div> 
                                                  
                                             <?php  endforeach ?>
@@ -118,10 +131,12 @@
                                   </td>
                                   <td>
                                       
-                                     <a name="" id="" class="btn btn-light" href="<?= WEB_ROUTE.'?controlleurs=admin&views=supprimer&id='.$value['id']?>" role="button"><ion-icon name="trash-outline" class="supp"></ion-icon>delete</a> 
-                                     <a name="" id="" class="btn btn-light" href="<?= WEB_ROUTE.'?controlleurs=admin&views=modif&id='.$value['id']?>" role="button"><ion-icon name="create-outline" class="edit"></ion-icon>Edit</a>
-                                   
+                                     <a name="" id="" class="btn btn-light btt " href="<?= WEB_ROUTE.'?controlleurs=admin&views=supprimer&id='.$value['id']?>" role="button"><ion-icon name="trash-outline" class="supp"></ion-icon>delete</a> 
+                                     <a name="" id="" class="btn btn-light btt" href="<?= WEB_ROUTE.'?controlleurs=admin&views=modif&id='.$value['id']?>" role="button"><ion-icon name="create-outline" class="edit"></ion-icon>Edit</a>
+                                    <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=supprimer&id='.$value['id']?>"> <ion-icon name="trash-outline" class="supp iccc"></ion-icon></a>
+                                    
                                   </td>
+                                  <td><a href="<?= WEB_ROUTE.'?controlleurs=admin&views=modif&id='.$value['id']?>"> <ion-icon name="create-outline" class="edit iccc"></ion-icon></a></td>
                               
                                </tr>
                            <?php endforeach ?>

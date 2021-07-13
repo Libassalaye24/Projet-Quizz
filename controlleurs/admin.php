@@ -58,7 +58,7 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                     unset($_POST['btn_submit']);
                     
                 validation($_POST);
-                header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.question');
+               // header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.question');
                 }elseif (isset($_POST['nbr_submit_question'])) {
                     if (est_vide($_POST['nbr_reps'])) {
                        
@@ -153,7 +153,7 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                 if (est_admin()) {
                     $arrayReponse=[];
                     //$nbrreps=$_SESSION['nbr_reps'];
-                    for($i=1;$i<=$data['nbr_reps'];$i++){
+                    for($i=0;$i<$data['nbr_reps'];$i++){
                        // $arrayReponse[]=$data['reponse'.$i];
                       // $arrayReponse[$i]=$data['reponse'.$i];
                        array_push($arrayReponse,$data['reponse'.$i]);
@@ -179,7 +179,7 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                $data['reponse'] = $arrayReponse;
                 add_question($data);
                 $_SESSION['sucess_Question'] = 'Question crée avec succée' ;
-                header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.question');               
+                header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.question');               
              }
 
         }else {

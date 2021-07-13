@@ -16,10 +16,23 @@ if (isset($_SESSION['arrayError'])) {
   die(); */
 
         require_once(ROUTE_DIR.'views/imc/entete.html.php'); 
-   require_once(ROUTE_DIR.'views/imc/header.html.php'); 
+  //require_once(ROUTE_DIR.'views/imc/header.html.php'); 
   
 
 ?>
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="<?= WEB_ROUTE.'css/style.css' ?>">
+  </head>
+  <body>
     <div class="container bg-light conect mt-5">
         <div class="row  deconnect">
         <?php if(est_connect()): ?>
@@ -49,11 +62,11 @@ if (isset($_SESSION['arrayError'])) {
                }
 
                 ?>
-                <?php if(isset($_SESSION['sucess_Question'])): ?>
+               <!--  <?php //if(isset($_SESSION['sucess_Question'])): ?>
                     <div class="alert alert-success" role="alert">
-                        <h4 class="alert-heading"><?=$success_Question?></h4>
+                        <h4 class="alert-heading"><? //$success_Question?></h4>
                      </div>
-                <?php endif ?>
+                <?php //endif ?> -->
                <div class="border border-danger  mt-3   ">
                     <div class="row col-md-10 col-sm-8 col-xs-5">
                         <div class="col-md-10 col-sm-8   ">
@@ -73,11 +86,11 @@ if (isset($_SESSION['arrayError'])) {
                     </div>
                       </div>
                   </div>
-                    <div class="row ">
-                        <div class="col-7">
-                        <label for="" class="ml-2">Types de reponses</label>
-                        </div>
-                            <div class="form-group ml-5 question col-md-6 col-sm-8 col-xs-4 ">
+                        <div class="row ">
+                            <div class="col-7">
+                            <label for="" class="ml-2">Types de reponses</label>
+                            </div>
+                                <div class="form-group ml-5 question col-md-6 col-sm-8 col-xs-4 ">
                                 <select class="custom-select " name="tpquest"  id="" >
                                     <option><?=isset($quest['tpquest']) ? $quest['tpquest']: '' ?><?=isset($tpreps) ? $tpreps:""; ?></option>
                                     <option value="text">Texte</option>
@@ -90,7 +103,7 @@ if (isset($_SESSION['arrayError'])) {
                             </div>
                 
                      </div>
-                     <?php   $nbrreps=$_SESSION['nbr_reps']; ?>
+                     <?php   //$pts=$_SESSION['nbr_reps']; ?>
                      <div class="row ">
                         <div class="col-7">
                         <label for="" class="ml-4">Nbr de reponse</label>
@@ -129,6 +142,7 @@ if (isset($_SESSION['arrayError'])) {
                                              
                                                <div class="row">
                                                <?php if(isset($quest['id'])): ?>
+                                                <?php //var_dump($tab_reponse); die(); ?>
                                                  <?php for($i=0;$i<count($tab_reponse);$i++): ?>
                                                    
                                                    <div class="col-6 ml-4">
@@ -148,11 +162,15 @@ if (isset($_SESSION['arrayError'])) {
                                                      
                                                        <?php endif ?>
                                                    </div>
-                                               </div>
+                        </div>
                                           </div>
                 </div>
                 <div class="row ml-auto">
-                    <button type="submit" name="btn_submit" class="border border-danger button ml-auto mr-4 mt-2 p-10"><?=isset($quest['id']) ? "Modifier" : "Confirmer"; ?></button>
+                <?php if(isset($quest['id'])): ?>
+                        <a name="" id="" class="btn btn-dark mr-4 mt-2 mr-auto    " href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question'?>" role="button">annuler</a>
+                    <?php endif?>
+                    <button type="submit" name="btn_submit" class="border border-danger button ml-auto mr-4  "><?=isset($quest['id']) ? "Modifier" : "Confirmer"; ?></button>
+                   
                 </div>
              </form>
               
@@ -166,8 +184,8 @@ if (isset($_SESSION['arrayError'])) {
             margin-top: 5%;
         }
         .button{
-            padding: 15px 32px;
-            
+            padding: 6px 32px;
+            margin-top: -13%;
             background-color: #c90017;
             border: #c90017;
             color: white;
@@ -228,9 +246,9 @@ if (isset($_SESSION['arrayError'])) {
     if (isset($_SESSION['tpquest'])) {
         unset($_SESSION['tpquest']);
     }
-    if (isset($_SESSION['tab_reponse'])) {
+   /*  if (isset($_SESSION['tab_reponse'])) {
         unset($_SESSION['tab_reponse']);
-    }
+    } */
     
     
 

@@ -28,8 +28,8 @@
   <div class="container-fluid">
          
               <div class="titre ">
-                  <img class="" src="<?= WEB_ROUTE.'img/logo.png' ;?>" alt="">
-                  <h1 style="text-align: center;">Le plaisir de jouer</h1>
+                  <img class="mobile" src="<?= WEB_ROUTE.'img/logo.png' ;?>" alt="">
+                  <h1 style="text-align: center;" class="">Le plaisir de jouer</h1>
               </div>
               
          

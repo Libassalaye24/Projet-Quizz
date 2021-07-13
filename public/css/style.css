@@ -209,24 +209,41 @@ width: 300px;
 width: 300px;
 background-color: #fff;
 }
-@media screen and (max-width: 1000px){
+@media screen and (max-width: 942px){
+  .mobile{
+    margin-left: -10%;
+  }
+  
+}
+
+
+@media  screen and (max-width: 992px){
 .mnn{
   display: none;
 }
+.btt{
+  display: none;
+}
 
 
+.mobile{
+  margin-left: -5%;
 }
-@media only screen and (min-width: 991px){
-.ambourger{
-  display: none;
+ h1{
+  margin-top: -5%;
 }
-.openbtn{
-  display: none;
 }
-.closebtn{
-  display: none;
+@media  screen and (max-width: 945px){
+  .bouttt{
+    display: none;
+  }
 }
-.sidepanel{
+
+@media  screen and (min-width: 992px){
+ .toggle{
+   display: none;
+ }
+ .iccc{
   display: none;
 }
 }
