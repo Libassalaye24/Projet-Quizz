@@ -58,7 +58,7 @@
 
 
    
-    <div class="mnn  shadow  mb-5 ">
+    <div class="mnn  shadow  mb-5  ">
             <div class=" photo rounded-top ">
                 
                 <h3 class="ml-2 text-white">Libasse</h3>
@@ -100,6 +100,7 @@
             
         
     </div>
+    
   
     <?php endif ?>
     <style>

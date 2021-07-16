@@ -149,16 +149,19 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
        
        // header('location:'.WEB_ROUTE.'?controlleurs=admin&views=creer.question');
         if (form_valid($arrayError)) {
+            if (est_admin()) {
             if( isset($data['id'])){
-                if (est_admin()) {
                     $arrayReponse=[];
                     //$nbrreps=$_SESSION['nbr_reps'];
+                    $bonnereponse=[];
                     for($i=0;$i<$data['nbr_reps'];$i++){
                        // $arrayReponse[]=$data['reponse'.$i];
                       // $arrayReponse[$i]=$data['reponse'.$i];
                        array_push($arrayReponse,$data['reponse'.$i]);
+                      
+                      
                     }
-                   
+                    
                     $data['reponse'] = $arrayReponse;
                    
                   modif_question($data);
@@ -169,13 +172,33 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
               if (empty($data['id']) ) {
 
                $arrayReponse=[];
+               $bonnereponse=[];
                //$nbrreps=$_SESSION['nbr_reps'];
                for($i=1;$i<=$data['nbr_reps'];$i++){
                   // $arrayReponse[]=$data['reponse'.$i];
                  // $arrayReponse[$i]=$data['reponse'.$i];
                   array_push($arrayReponse,$data['reponse'.$i]);
- 
+                    if ($data['tpquest']=='multiple') {
+                        if (isset($data['bon_repsrc'])) {
+                            array_push($bonnereponse,$data['bon_repsrc']);
+                            $data['bon_repsrc'] = $bonnereponse;
+                        }
+                    }
                }
+                if ($data['tpquest']=='simple') {
+                    if (isset($data['bon_repsr'])) {
+                        array_push($bonnereponse,$data['bon_repsr']);
+                        $data['bon_repsr'] = $bonnereponse;
+                    }
+                }elseif ($data['tpquest']=='text') {
+                    if (isset($data['bon_repsr'])) {
+                        array_push($bonnereponse,$data['bon_repsr']);
+                        $data['bon_repsr'] = $bonnereponse;
+                    }
+                }
+                
+              
+                 
                $data['reponse'] = $arrayReponse;
                 add_question($data);
                 $_SESSION['sucess_Question'] = 'Question crée avec succée' ;

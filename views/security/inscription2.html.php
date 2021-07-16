@@ -66,7 +66,8 @@
                                             <label for=""></label>
                                             <input type="password"
                                                 class="form-control" name="password" id="" aria-describedby="helpId" placeholder="Password" value="<?=isset($user['password']) ? $user['password'] : ""; ?>">
-                                            <small id="helpId" class="form-text text-danger"> <?=isset($arrayError['password']) ? $arrayError['password'] : ""; ?></small>
+                                            
+                                                <small id="helpId" class="form-text text-danger"> <?=isset($arrayError['password']) ? $arrayError['password'] : ""; ?></small>
                                         </div>
                                   </div>
                                   <div class="col">

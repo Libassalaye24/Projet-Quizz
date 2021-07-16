@@ -114,7 +114,11 @@
                      <?php endforeach ?>
                     </tbody>
                 </table>
-                <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
+               
+          
+            </div>
+        </div>
+        <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
                 <a name="" id="" class="btn btn-danger disabled mb-3 mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
                 <?php else: ?>
                     <a name="" id="" class="btn btn-danger  mb-3 mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
@@ -124,9 +128,6 @@
                 <?php else: ?>
                     <a name="" id="" class="btn btn-danger suiv mb-3  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
                  <?php endif ?>
-          
-            </div>
-        </div>
         
        
            </div>

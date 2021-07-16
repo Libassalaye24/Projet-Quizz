@@ -10,5 +10,11 @@ if (!est_joueur()) header("location:".WEB_ROUTE.'?controlleurs=security&view=con
         }else {
             require_once(ROUTE_DIR.'views/security/connexion.html.php');
         }
+    }elseif ($_SERVER['REQUEST_METHOD']=='POST') {
+        if (isset($_POST['action'])) {
+            if ($_POST['action']=='jeux') {
+                $_SESSION['repsjeu']=$_POST['reps'];
+            }
+        }
     }
 ?>

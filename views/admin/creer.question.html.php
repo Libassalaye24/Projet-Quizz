@@ -129,9 +129,9 @@ if (isset($_SESSION['arrayError'])) {
                                                    <div class="col-4">
                                                         <?php if(isset($tpreps)): ?>
                                                         <?php if($tpreps == 'simple'): ?>
-                                                            <input type="radio" name="bon_repsr" value=""  class=" mt-2 " id="">
+                                                            <input type="radio" name="bon_repsr" value="<?=isset($quest['simple'])?$quest['simple']:'reponse'.$i;?>"  class=" mt-2 " id="">
                                                        <?php elseif($tpreps == 'multiple') :?>
-                                                        <input type="checkbox" class="form-check-input " name="bon_reps " id="" value="bon_reps<?=$i?>" >
+                                                        <input type="checkbox" class="form-check-input " name="bon_repsrc<?=$i?> " id="" value="<?=isset($quest['multiple'])?$quest['multiple']:'reponse'.$i;?>" >
                                                        <?php endif ?>
                                                        <?php endif ?>
                                                    </div>
@@ -167,9 +167,9 @@ if (isset($_SESSION['arrayError'])) {
                 </div>
                 <div class="row ml-auto">
                 <?php if(isset($quest['id'])): ?>
-                        <a name="" id="" class="btn btn-dark mr-4 mt-2 mr-auto    " href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question'?>" role="button">annuler</a>
+                        <a name="" id="" class="btn btn-dark mr-4 mt-2 mr-auto  mb-2  " href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question'?>" role="button">annuler</a>
                     <?php endif?>
-                    <button type="submit" name="btn_submit" class="border border-danger button ml-auto mr-4  "><?=isset($quest['id']) ? "Modifier" : "Confirmer"; ?></button>
+                    <button type="submit" name="btn_submit" class="border border-danger button ml-auto mr-4  mt-2 mb-2"><?=isset($quest['id']) ? "Modifier" : "Confirmer"; ?></button>
                    
                 </div>
              </form>

@@ -216,12 +216,26 @@ background-color: #fff;
   
 }
 
-
+@media  screen and (max-width: 777px){
+ /*  .mnn{
+    display: none;
+  } */
+}
+@media  screen and (min-width: 777px){
+ /*  .toggle{
+    display: none;
+  } */
+ 
+}
 @media  screen and (max-width: 992px){
-.mnn{
+  
+  .mnn{
+    display: none;
+  }
+.btt{
   display: none;
 }
-.btt{
+.bouttt{
   display: none;
 }
 
@@ -239,10 +253,11 @@ background-color: #fff;
   }
 }
 
+
 @media  screen and (min-width: 992px){
- .toggle{
-   display: none;
- }
+  .toggle{
+    display: none;
+  }
  .iccc{
   display: none;
 }

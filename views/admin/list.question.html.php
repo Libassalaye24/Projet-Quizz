@@ -30,7 +30,7 @@
         <?php endif ?>
         </div>
         <div class="row   bg-light  p-md-2 p-sm-4   ">
-            <div class="col-4 d-none-sm menul">
+            <div class="col-4 d-none-sm menul ">
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
             <div class="col-md-8 col-sm-10 mt-md-4 jjj shadow jeu_quest ml-sm-5 ml-md-0 mb-5 bg-white rounded ">
@@ -133,10 +133,13 @@
                                       
                                      <a name="" id="" class="btn btn-light btt " href="<?= WEB_ROUTE.'?controlleurs=admin&views=supprimer&id='.$value['id']?>" role="button"><ion-icon name="trash-outline" class="supp"></ion-icon>delete</a> 
                                      <a name="" id="" class="btn btn-light btt" href="<?= WEB_ROUTE.'?controlleurs=admin&views=modif&id='.$value['id']?>" role="button"><ion-icon name="create-outline" class="edit"></ion-icon>Edit</a>
-                                    <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=supprimer&id='.$value['id']?>"> <ion-icon name="trash-outline" class="supp iccc"></ion-icon></a>
-                                    
+                                 
                                   </td>
-                                  <td><a href="<?= WEB_ROUTE.'?controlleurs=admin&views=modif&id='.$value['id']?>"> <ion-icon name="create-outline" class="edit iccc"></ion-icon></a></td>
+                                  <td>
+                                  <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=supprimer&id='.$value['id']?>"> <ion-icon name="trash-outline" class="supp iccc"></ion-icon></a>
+                                    <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=modif&id='.$value['id']?>"> <ion-icon name="create-outline" class="edit iccc"></ion-icon></a>
+
+                                  </td>
                               
                                </tr>
                            <?php endforeach ?>

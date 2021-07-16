@@ -3,6 +3,7 @@
     require_once(ROUTE_DIR.'views/imc/entete.html.php'); 
    require_once(ROUTE_DIR.'views/imc/header.html.php'); 
    $fixe_quest =  $_SESSION['fixer_question'];
+   
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,7 +22,7 @@
         <div class="row nnnn">
         <?php if(est_connect()): ?>
            
-            <h4 class="text-white mt-3 text-center font-weight-bold ml-4 d-sm-none"> BIENVENUE SUR LA PLATEFORME DE JEU DE QUIZZ</h4>
+            <h4 class="text-white mt-3 text-center font-weight-bold ml-4 "> BIENVENUE SUR LA PLATEFORME DE JEU DE QUIZZ</h4>
 
                 <ul class="ml-auto mt-2 ">
                     <li class="nav-item ">
@@ -32,8 +33,8 @@
         </div>
         <div class="row bg-light">
             <div class="col-md-8 bg-light ">
-                <div class="row  mx-auto bg-light   ">
-                  <p class="text-center text-dark ml-auto mr-auto" style="font-size: 30px;"> Question 1/<?=$fixe_quest;?> <br></p> 
+                <div class="row  mx-auto bg-light   "><?php  $questi=0;$questi=$_GET['page']; ?>
+                  <p class="text-center text-dark ml-auto mr-auto" style="font-size: 30px;"> Question <?=$questi;?>/<?=$fixe_quest;?> <br></p> 
                 </div>
                 <?php
                      // 1 lire le contenu du fichier
@@ -85,9 +86,8 @@
                 <div class=" bg-white mt-4 border border-danger mb-3    ">
                    
                     <form action="<?=WEB_ROUTE?>" method="post">
-                  <!--   <div class="nbrs border border-danger bg-danger shadow mb-2 ">
-                           <label for="" class="mt-2 p-1 text-white">pts</label>
-                     </div> -->
+                  <input type="hidden" name="controlleurs" value="jeu">
+                  <input type="hidden" name="action" value="jeux">
                     <?php  for($i=0;$i<$fixe_quest;$i++):  ?>
                     <div class="mt-4">
                     <h4 class="ml-auto  mr-auto text-center"><?=$quest[$i]['question']?></h4> <br> 
@@ -97,18 +97,18 @@
                           
                             <?php if($quest[$i]['tpquest']=='simple'): ?>
                                 <?php foreach($quest[$i]['reponse'] as $value): ?>
-                                    <div class="form-group mt-4 ml-4">
+                                    <div class="form-group mt-4 ml-4 col-md-10">
                                     <input type="radio"
-                                    name="reps" id="" aria-describedby="helpId" placeholder="">
-                                    <label for="" class="h4 ml-4 input"><?=$value?></label>
+                                    name="reps" id="" aria-describedby="helpId" placeholder="" value="<?=isset($quest[$i]['simple'])?$quest[$i]['simple']:$value;?>">
+                                    <label for="" class="h4 ml-4 input col-md-10"><?=$value?></label>
                                  </div>
                                  <?php endforeach ?>
                             <?php elseif($quest[$i]['tpquest']=='multiple'): ?>
                                 <?php foreach($quest[$i]['reponse'] as $value): ?>
-                                    <div class="form-group mt-4 ml-4">
+                                    <div class="form-group mt-4 ml-4 col-md-10">
                                     <input type="checkbox"
-                                    name="reps" id="" aria-describedby="helpId" placeholder="">
-                                    <label for="" class="h4 ml-4 input"><?=$value?></label>
+                                    name="reps" id="" aria-describedby="helpId" value="<?=isset($quest[$i]['multiple'])?$quest[$i]['multiple']:$value;?>" placeholder="">
+                                    <label for="" class="h4 ml-4 input col-md-10"><?=$value?></label>
                                  </div>
                                  <?php endforeach ?>
                             <?php elseif($quest[$i]['tpquest']=='text'): ?>
@@ -119,11 +119,7 @@
                             <?php endif ?>
              
                     <?php endfor ?>
-                
-
-                    </form>
-
-                 <div class="row ">
+                    <div class="row ">
                  <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
                 <a name="" id="" class="btn btn-danger disabled ml-4 mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$precedent;  ?>" role="button">Precedent</a> 
                 <?php else: ?>
@@ -132,9 +128,15 @@
                  <?php if($_GET['page'] > $fixe_quest-1): ?>
                 <a name="" id="" class="btn btn-danger suiv disabled nnn  mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" role="button">Suivant</a>
                 <?php else: ?>
-                    <a name="" id="" class="btn btn-danger suiv   nnn  mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" role="button">Suivant</a>
+<!--                     <a name="" id="" class="btn btn-danger suiv   nnn  mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" role="button">Suivant</a>
+ -->   
+                 <a href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" class="btn btn-danger  suiv   nnn  mt-2" role="submit">Suivant</a>
                  <?php endif ?>
                  </div>
+
+                    </form>
+
+                
                 </div>
             </div>
             
