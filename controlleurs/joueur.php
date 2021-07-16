@@ -13,7 +13,9 @@ if (!est_joueur()) header("location:".WEB_ROUTE.'?controlleurs=security&view=con
     }elseif ($_SERVER['REQUEST_METHOD']=='POST') {
         if (isset($_POST['action'])) {
             if ($_POST['action']=='jeux') {
-                $_SESSION['repsjeu']=$_POST['reps'];
+              
+              //$_SESSION['reps']=$_POST['reps'];
+               header("location:".WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$_SESSION['suivant']);
             }
         }
     }

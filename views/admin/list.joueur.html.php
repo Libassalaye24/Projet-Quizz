@@ -101,16 +101,10 @@
                 </table>
                
                </div>
-               <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
-                <a name="" id="" class="btn btn-danger disabled  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$precedent;  ?>" role="button">Precedent</a> 
-                <?php else: ?>
-                    <a name="" id="" class="btn btn-danger  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$precedent;  ?>" role="button">Precedent</a> 
-                 <?php endif ?>
-                 <?php if($_GET['page'] > $nbrPage-1): ?>
-                <a name="" id="" class="btn btn-danger suiv disabled  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$suivant; ?>" role="button">Suivant</a>
-                <?php else: ?>
-                    <a name="" id="" class="btn btn-danger suiv    mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$suivant; ?>" role="button">Suivant</a>
-                 <?php endif ?>
+              
+                    <a name="" id="" class="btn btn-danger  mt-2 <?= empty($_GET['page']) || ($_GET['page']==1)? 'disabled' : ""?> " href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$precedent;  ?>" role="button">Precedent</a> 
+                    <a name="" id="" class="btn btn-danger suiv   <?= $_GET['page'] > $nbrPage-1 ? 'disabled' : ""?> mt-2"  href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$suivant; ?>" role="button">Suivant</a>
+              
              <!--   <?php for($i=1;$i<=$nbrPage;$i++): ?>
                     <a name="" id="" class="btn btn-danger   mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$i?>" role="button"><?=$i?></a>
                <?php endfor; ?> -->

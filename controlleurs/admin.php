@@ -119,12 +119,12 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                  if (isset($_SESSION['id'])) {
                     unset($_SESSION['id']);
                 }
-                if (isset($_SESSION['question'])) {
+               /*  if (isset($_SESSION['question'])) {
                     unset($_SESSION['question']);
-                }
-                if (isset($_SESSION['pts'])) {
+                } */
+               /*  if (isset($_SESSION['pts'])) {
                     unset($_SESSION['pts']);
-                }
+                } */
                /*  if (isset($_SESSION['nbr_reps'])) {
                     unset($_SESSION['nbr_reps']);
                 } */
@@ -178,12 +178,7 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                   // $arrayReponse[]=$data['reponse'.$i];
                  // $arrayReponse[$i]=$data['reponse'.$i];
                   array_push($arrayReponse,$data['reponse'.$i]);
-                    if ($data['tpquest']=='multiple') {
-                        if (isset($data['bon_repsrc'])) {
-                            array_push($bonnereponse,$data['bon_repsrc']);
-                            $data['bon_repsrc'] = $bonnereponse;
-                        }
-                    }
+                  
                }
                 if ($data['tpquest']=='simple') {
                     if (isset($data['bon_repsr'])) {
@@ -194,6 +189,11 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                     if (isset($data['bon_repsr'])) {
                         array_push($bonnereponse,$data['bon_repsr']);
                         $data['bon_repsr'] = $bonnereponse;
+                    }
+                }elseif ($data['tpquest']=='multiple') {
+                    if (isset($data['bon_repsrc'])) {
+                        array_push($bonnereponse,$data['bon_repsrc']);
+                        $data['bon_repsrc'] = $bonnereponse;
                     }
                 }
                 

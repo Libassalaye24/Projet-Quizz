@@ -2,7 +2,9 @@
 <?php 
     require_once(ROUTE_DIR.'views/imc/entete.html.php'); 
    require_once(ROUTE_DIR.'views/imc/header.html.php'); 
-   $fixe_quest =  $_SESSION['fixer_question'];
+  // $fixe_quest =  $_SESSION['fixer_question'];
+   ( empty($_SESSION['fixer_question'])?$fixe_quest=5:$fixe_quest=$_SESSION['fixer_question']);
+  //var_dump(  $_SESSION['repsJeu']);
    
 ?>
 <!doctype html>
@@ -33,7 +35,7 @@
         </div>
         <div class="row bg-light">
             <div class="col-md-8 bg-light ">
-                <div class="row  mx-auto bg-light   "><?php  $questi=0;$questi=$_GET['page']; ?>
+                <div class="row  mx-auto bg-light   "><?php  $questi=1;/* $questi=$_GET['page']+1; */ $questi = ($_GET['page']==1 || empty($_GET['page'])) ? $questi=1: $questi=$_GET['page'] ; ?>
                   <p class="text-center text-dark ml-auto mr-auto" style="font-size: 30px;"> Question <?=$questi;?>/<?=$fixe_quest;?> <br></p> 
                 </div>
                 <?php
@@ -67,6 +69,7 @@
                     $page=$_GET['page'];
                     $suivant=$page+1;
                     $precedent=$page-1;
+                    $_SESSION['suivant']=$suivant;
                         if (isset($_SESSION['quest'])) {
                             $_SESSION['quest'] =  $arrayQuestion;
                             $nbrPage = nombrePageTotal( $_SESSION['quest'], $nbrElement);
@@ -86,8 +89,9 @@
                 <div class=" bg-white mt-4 border border-danger mb-3    ">
                    
                     <form action="<?=WEB_ROUTE?>" method="post">
-                  <input type="hidden" name="controlleurs" value="jeu">
+                  <input type="hidden" name="controlleurs" value="joueur">
                   <input type="hidden" name="action" value="jeux">
+                  <input type="hidden" name="page" value="<?=isset($_GET['page']) ? $_GET['page'] : ''?>">
                     <?php  for($i=0;$i<$fixe_quest;$i++):  ?>
                     <div class="mt-4">
                     <h4 class="ml-auto  mr-auto text-center"><?=$quest[$i]['question']?></h4> <br> 
@@ -120,17 +124,13 @@
              
                     <?php endfor ?>
                     <div class="row ">
-                 <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
-                <a name="" id="" class="btn btn-danger disabled ml-4 mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$precedent;  ?>" role="button">Precedent</a> 
-                <?php else: ?>
-                    <a name="" id="" class="btn btn-danger ml-4 mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$precedent;  ?>" role="button">Precedent</a> 
-                 <?php endif ?>
-                 <?php if($_GET['page'] > $fixe_quest-1): ?>
+                <a name="" id="" class="btn btn-danger   <?= empty($_GET['page']) || ($_GET['page']==1) ? 'disabled' : ""?> ml-4 mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$precedent;  ?>" role="button">Precedent</a> 
+               
+                 <?php if($_GET['page'] > $fixe_quest-1 ): ?>
                 <a name="" id="" class="btn btn-danger suiv disabled nnn  mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" role="button">Suivant</a>
                 <?php else: ?>
-<!--                     <a name="" id="" class="btn btn-danger suiv   nnn  mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" role="button">Suivant</a>
- -->   
-                 <a href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" class="btn btn-danger  suiv   nnn  mt-2" role="submit">Suivant</a>
+<!--                  <a href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" class="btn btn-danger  suiv   nnn  mt-2" role="button">Suivant</a>
+ -->                 <button type="submit" name="suivant" id="" class="btn btn-danger  suiv   nnn  mt-2">Suivant</button>
                  <?php endif ?>
                  </div>
 
@@ -140,12 +140,12 @@
                 </div>
             </div>
             
-            <div class="col-md-4 bg-light p-4  shadow h-75 mt-4">
+            <div class="col-md-4  bg-light p-4  shadow h-75 mt-4">
                <div class="row">
-               <div class="col-6 ">
+               <div class="col-md-6 ">
                   <a name="" id="" class="btn btn-danger" href="#" role="button">  Meilleures scores </a>
                 </div>
-                <div class="col-6">
+                <div class="col-md-6  ">
                 <a name="" id="" class="btn btn-light" href="#" role="button">   Mon meilleur score </a>
                  </div>
                  <?php for ($j=$i+1; $j <count($joueur_user) ; $j++): ?>

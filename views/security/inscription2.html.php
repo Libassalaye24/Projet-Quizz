@@ -82,7 +82,7 @@
                                 <div class="form-group">
                                   <label for=""></label>
                                   <input type="file" class="form-control-file" name="file1" id="" placeholder="" aria-describedby="fileHelpId" value="<?=isset($user['file1']) ? $user['file1'] : ""; ?>">
-                                  <small class="form-text text-danger"><?php echo isset($arrayError['file1']) ? $arrayError['file1'] : ""; ?></small>
+                                  <small class="form-text text-danger"><?php echo isset($arrayError['file1']) ? $arrayError['file1'] :  isset($arrayError['fileSize']) ? $arrayError['fileSize'] :  ( isset($arrayError['fiel']) ? $arrayError['fiel'] : ""); ?></small>
                                 </div>
                                 <br>
                                 <button type="submit" name="" id="" class="btn  form-control"  ><b><?=isset($user['id']) ? "Modification" : "Inscription"; ?></b></button>

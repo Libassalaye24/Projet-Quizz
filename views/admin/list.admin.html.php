@@ -118,16 +118,10 @@
           
             </div>
         </div>
-        <?php if(empty($_GET['page']) || ($_GET['page']==1) ): ?>
-                <a name="" id="" class="btn btn-danger disabled mb-3 mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
-                <?php else: ?>
-                    <a name="" id="" class="btn btn-danger  mb-3 mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
-                 <?php endif ?>
-                 <?php if($_GET['page'] > $nbrPage-1): ?>
-                <a name="" id="" class="btn btn-danger suiv  mb-3 disabled  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
-                <?php else: ?>
-                    <a name="" id="" class="btn btn-danger suiv mb-3  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
-                 <?php endif ?>
+      
+                    <a name="" id="" class="btn btn-danger <?= empty($_GET['page']) || ($_GET['page']==1) ? 'disabled' : ""?> mb-3 mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
+               
+                    <a name="" id="" class="btn btn-danger suiv mb-3 <?= $_GET['page'] > $nbrPage-1 ? 'disabled' : ""?>  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
         
        
            </div>

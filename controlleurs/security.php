@@ -90,10 +90,13 @@ function inscription(array $data ,array $files):void{
             $arrayError['password2'] = 'Les deux password ne sont pas identiques';
         } 
         $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+        $file_ext=strtolower(end(explode('.',$files['file1']['name'])));
       if (empty($files['file1']['name'])) {
         $arrayError['file1'] = 'Le champs est obligatoire';
       }elseif ($files['file1']['size'] > 500000) {
         $arrayError['fileSize'] = 'La taille est grande';
+      }elseif(in_array($file_ext,$extensions)=== false){
+          $arrayError['fiel']='le fichier n\'est pas une image';
       }
        
        
@@ -101,7 +104,7 @@ function inscription(array $data ,array $files):void{
     if(form_valid($arrayError)) {
        
                   // appel du model
-                if ( to_uploads($_FILES)) {
+                if ( to_uploads($files)) {
                   $data['file1'] = $files['file1']['name'];
                 }
                   

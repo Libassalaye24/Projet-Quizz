@@ -208,5 +208,16 @@ function get_element_to_display($array, int $page, int $nombreElement): array {
     }
     return $arrayElement;
 }
+function valide_image(array $files,string $key,array &$arrayError){
+    $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+    $file_ext=strtolower(end(explode('.',$files['file1']['name'])));
+  if (empty($files[$key]['name'])) {
+    $arrayError[$key] = 'Le champs est obligatoire';
+  }elseif ($files[$key]['size'] > 500000) {
+    $arrayError[$key] = 'La taille est grande';
+  }elseif(in_array($file_ext,$extensions)=== false){
+      $arrayError[$key]='le fichier n\'est pas une image';
+  }
+}
    
 ?>
