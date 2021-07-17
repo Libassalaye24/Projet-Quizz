@@ -216,19 +216,28 @@ background-color: #fff;
   
 }
 
-@media  screen and (max-width: 777px){
+@media  screen and (max-width: 800px){
  /*  .mnn{
     display: none;
   } */
-}
-@media  screen and (min-width: 777px){
- /*  .toggle{
+  .joueur{
     display: none;
-  } */
+  }
+}
+@media  screen and (min-width: 800px){
+   .toggles{
+    display: none;
+  } 
+  .ddnone{
+    display: none;
+  }
  
 }
 @media  screen and (max-width: 992px){
-  
+  .mmnn{
+    display: none;
+  }
+ 
   .mnn{
     display: none;
   }
@@ -238,7 +247,15 @@ background-color: #fff;
 .bouttt{
   display: none;
 }
-
+.deco{
+  display: none;
+}
+.mainn{
+  display: block;
+}
+.scores{
+  display: none;
+}
 
 .mobile{
   margin-left: -5%;
@@ -251,6 +268,8 @@ background-color: #fff;
   .bouttt{
     display: none;
   }
+ 
+ 
 }
 
 
@@ -258,6 +277,7 @@ background-color: #fff;
   .toggle{
     display: none;
   }
+  
  .iccc{
   display: none;
 }

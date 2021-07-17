@@ -5,6 +5,10 @@ if (!est_joueur()) header("location:".WEB_ROUTE.'?controlleurs=security&view=con
         if (isset($_GET['views'])) {
             if ($_GET['views'] == 'jeu') {
                 require(ROUTE_DIR.'views/joueur/jeu.html.php');
+            }elseif ($_GET['views'] == 'meilleurs') {
+                require(ROUTE_DIR.'views/joueur/meilleurs.html.php'); 
+               
+              
             }
            
         }else {

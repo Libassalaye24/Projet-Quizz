@@ -20,15 +20,27 @@
     <link rel="stylesheet" href="<?= WEB_ROUTE.'css/style.css' ?>">
   </head>
   <body>
-      <div class="container">
-      <div class="row  nnnn mt-2">
-       
-      <?php   require_once(ROUTE_DIR.'views/imc/menu2.html.php');  ?>
-          
+    <div class="container bg-light conect mt-5">
+        <div class="row nnnn">
+        <?php if(est_connect()): ?>
+           
+            <h4 class="text-white mt-3 text-center font-weight-bold ml-4 "> BIENVENUE SUR LA PLATEFORME DE JEU DE QUIZZ</h4>
+            <!-- <div class="col mainn">
+                <?php   //require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
+            </div> -->
+               <div class="ml-auto scores">
+               <ul class="ml-auto mt-2 ">
+                    <li class="nav-item ">
+                        <a class="nav-link text-white" href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion' ?>">Deconnexion</a>
+                    </li>
+                </ul>
+               </div>
+        <?php endif ?>
         </div>
-          <div class="row bg-light">
-            <div class="col-md-8 col-sm-12">
-              <div class="row  mx-auto bg-light   "><?php  $questi=1;/* $questi=$_GET['page']+1; */ $questi = ($_GET['page']==1 || empty($_GET['page'])) ? $questi=1: $questi=$_GET['page'] ; ?>
+        
+        <div class="row bg-light">
+            <div class="col-md-8 bg-light ">
+                <div class="row  mx-auto bg-light   "><?php  $questi=1;/* $questi=$_GET['page']+1; */ $questi = ($_GET['page']==1 || empty($_GET['page'])) ? $questi=1: $questi=$_GET['page'] ; ?>
                   <p class="text-center text-dark ml-auto mr-auto" style="font-size: 30px;"> Question <?=$questi;?>/<?=$fixe_quest;?> <br></p> 
                 </div>
                 <?php
@@ -55,6 +67,7 @@
                     $_SESSION['quest'] =  $arrayQuestion;
                     $nbrPage = nombrePageTotal( $_SESSION['quest'], $nbrElement);
                     $quest= get_element_to_display( $_SESSION['quest'],$page, $nbrElement);
+                    //$nbr_user= count($list_user);
                    
                 }
                    if (isset($_GET['page'])) {
@@ -66,12 +79,16 @@
                             $_SESSION['quest'] =  $arrayQuestion;
                             $nbrPage = nombrePageTotal( $_SESSION['quest'], $nbrElement);
                             $quest= get_element_to_display( $_SESSION['quest'],$page, $nbrElement);
-                          
+                           // $nbr_user= count($list_user);
                         }
 
                     }
                  
-             
+               /*  if (isset($_GET['page'])) {
+                    $page=$_GET['page'];
+                  $nbrPage=  nombrePageTotal($arrayQuestion,5);
+                   $quest= get_element_to_display($arrayQuestion,$page,5);
+                } */
                 ?>
           
                 <div class=" bg-white mt-4 border border-danger mb-3    ">
@@ -100,7 +117,7 @@
                                     <div class="form-group mt-4 ml-4 col-md-10">
                                     <input type="checkbox"
                                     name="reps" id="" aria-describedby="helpId" value="<?=isset($quest[$i]['multiple'])?$quest[$i]['multiple']:$value;?>" placeholder="">
-                                    <label for="" class="h4 ml-4 input  col-md-10"><?=$value?></label>
+                                    <label for="" class="h4 ml-4 input col-md-10"><?=$value?></label>
                                  </div>
                                  <?php endforeach ?>
                             <?php elseif($quest[$i]['tpquest']=='text'): ?>
@@ -111,25 +128,31 @@
                             <?php endif ?>
              
                     <?php endfor ?>
-                
-                    </form>
-        
-                </div>
-                <div class="row bg-dark">
+                    <div class="row ">
                 <a name="" id="" class="btn btn-danger   <?= empty($_GET['page']) || ($_GET['page']==1) ? 'disabled' : ""?> ml-4 mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$precedent;  ?>" role="button">Precedent</a> 
                
                  <?php if($_GET['page'] > $fixe_quest-1 ): ?>
-                <a name="" id="" class="btn btn-danger  disabled nnn  mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" role="button">Suivant</a>
+                <a name="" id="" class="btn btn-danger suiv disabled nnn  mt-2" href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" role="button">Suivant</a>
                 <?php else: ?>
-                 <a href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" class="btn btn-danger  suiv   nnn  mt-2" role="button">Suivant</a>
-<!--                  <button type="submit" name="suivant" id="" class="btn btn-danger  ml-auto mr-4   nnn  mt-2">Suivant</button>
- -->                 <?php endif ?>
+<!--                  <a href="<?=WEB_ROUTE.'?controlleurs=joueur&views=jeu&page='.$suivant; ?>" class="btn btn-danger  suiv   nnn  mt-2" role="button">Suivant</a>
+ -->                 <button type="submit" name="suivant" id="" class="btn btn-danger  suiv   nnn  mt-2">Suivant</button>
+                 <?php endif ?>
                  </div>
+
+                    </form>
+
+                
+                </div>
             </div>
             
-              <div class="col-md-4 joueur ">
-              <div class="row shadow mt-4">
-                    <h5>les meilleures scores</h5>
+            <div class="col-md-4 scores bg-light p-4  shadow h-75 mt-4">
+               <div class="row scores">
+               <div class="col-md-6  ">
+                  <a name="" id="" class="btn btn-danger " href="#" role="button">  Meilleures scores </a>
+                </div>
+                <div class="col-md-6  ">
+                <a name="" id="" class="btn btn-light scores" href="#" role="button">   Mon meilleur score </a>
+                 </div>
                  <?php for ($j=$i+1; $j <count($joueur_user) ; $j++): ?>
                  <?php for($i=0;$i<(count($joueur_user)-1);$i++): ?>
                   
@@ -144,36 +167,51 @@
                 
                   <table class="table mr-sm-3">
                       <thead>
-                          <th>Prenom&Nom</th>
+                          <th>Prenom</th>
+                          <th>Nom</th>
                           <th>score</th>
                       </thead>
                       <tbody>
                             <?php  for ($i=0; $i <5 ; $i++): ?>
                                 <tr>
-                                    <td><?= $joueur_user[$i]['prenom']." ". $joueur_user[$i]['name']?></td>
-                                    <td><?= $joueur_user[$i]['score'] ?></td>
+                                    <td><?= $joueur_user[$i]['prenom']?></td>
+                                    <td><?= $joueur_user[$i]['name']?></td>
+                                    <td><?= $joueur_user[$i]['score']?></td>
                                 </tr>
                             <?php endfor ?>
                       </tbody>
                   </table>
                </div>
-              </div>
-          </div>
-      </div>
-      <style>
-          .input{
-              margin-top: -6%;
-          }
-          body {
-  margin: 0;
-  font-family: Helvetica, sans-serif;
-  background-color: #f4f4f4;
-}
-.nnnn{
-    background-color: #c90017;
-}
-li{
-    list-style: none;
-}
+                   
+             </div>
+        </div>
        
-      </style>
+        
+       
+    </div>
+    <style>
+    .input{
+        width: 30px;
+        height: 30px;
+    }
+    .text{
+        width: 60%;
+    }
+    .nbrs{
+        float: right;
+        margin-right: 4%;
+    }
+    .nnnn{
+        background-color: #c90017;
+    }
+    .suiv{
+        margin-left: 68%;
+    }
+    .btn{
+       margin-block-end: 10px;
+    }
+    </style>
+    
+<?php 
+    require_once(ROUTE_DIR.'views/imc/footer.html.php');
+?>

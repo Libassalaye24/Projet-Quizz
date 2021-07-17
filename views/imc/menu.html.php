@@ -101,7 +101,9 @@
         
     </div>
     
-  
+    <?php elseif(est_joueur()): ?>
+
+      
     <?php endif ?>
     <style>
         .d-flex{
