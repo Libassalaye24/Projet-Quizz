@@ -1,1 +1,159 @@
-[{"id":"60e420369ab71","question":"quelle est al premiere ecole de codage gratuite au senegal","nbr_pts":"12","tpquest":"simple","nbr_reps":"2","reponse0":"Orange center","reponse1":"ISI","reponse":["Orange center","ISI"]},{"id":"60e7986771904f","question":"les langages du web","nbr_pts":"12","tpquest":"multiple","nbr_reps":"4","reponse0":"HTML","reponse1":"CSS","reponse2":"BOOTSTRAP","reponse3":"RAS","reponse":["HTML","CSS","BOOTSTRAP","RAS"]},{"id":"60e4282804e3f","question":"Donnez un framework de php","nbr_pts":"12","tpquest":"simple","nbr_reps":"2","reponse0":"symphony","bon_repsr":"on","reponse1":"react","reponse":["symphony","react"]},{"id":"60e798677104f","question":"les langages du web","nbr_pts":"12","tpquest":"multiple","nbr_reps":"4","reponse0":"HTML","reponse1":"CSS","reponse2":"BOOTSTRAP","reponse3":"RAS","reponse":["HTML","CSS","BOOTSTRAP","RAS"]},{"id":"60ef72f1d4d43","question":"\u00c0 quoi est \u00e9gal 1 octet ?","nbr_pts":"5","tpquest":"simple","nbr_reps":"2","reponse1":"8 octets","reponse2":"8 bits","bon_repsr":["8 bits"],"reponse":["8 octets","8 bits"]},{"id":"60ef7518ba699","question":"Comment appelle-t-on un logiciel dont l\u2019utilisateur doit r\u00e9tribuer l\u2019auteur s\u2019il veut continuer \u00e0 l\u2019utiliser apr\u00e8s une p\u00e9riode de gratuit\u00e9 ?","nbr_pts":"6","tpquest":"simple","nbr_reps":"3","reponse1":" Un freeware","reponse2":"logiciel open source","reponse3":" Un shareware","bon_repsr":["reponse3"],"reponse":[" Un freeware","logiciel open source"," Un shareware"]},{"id":"60ef76007fabd","question":"Que veut dire FTP ?","nbr_pts":"6","tpquest":"multiple","nbr_reps":"3","reponse1":" File Transmission Protocol","reponse2":" File Transfer Protocol","reponse3":" Fiber twisted pairs","bon_repsr":[],"reponse":[" File Transmission Protocol"," File Transfer Protocol"," Fiber twisted pairs"]},{"id":"60ef777098996","question":"Quelles sont les combinaisons de touches qui permettent de s\u00e9lectionner tous les fichiers d\u2019un r\u00e9pertoire sous Windows ?","nbr_pts":"7","tpquest":"multiple","nbr_reps":"3","reponse0":"ctrl+A","reponse1":"ctrl+C","reponse2":"ctrl+Q","reponse":["ctrl+A","ctrl+C","ctrl+Q"]},{"id":"60f177508b9d9","question":"gv g g g g ggg","nbr_pts":"3","tpquest":"simple","nbr_reps":"2","reponse1":"nnnnnnnnnn","bon_repsr":["reponse1"],"reponse2":"wdlqw","reponse":["nnnnnnnnnn","wdlqw"]}]
+[
+    {
+        "id": "60e420369ab71",
+        "question": "quelle est la premiere ecole de codage gratuite au senegal",
+        "nbr_pts": "12",
+        "tpquest": "simple",
+        "nbr_reps": "2",
+        "reponse0": "Orange center",
+        "bon_repsr":[
+            "reponse0"
+        ],
+        "reponse1": "ISI",
+        "reponse": [
+            "Orange center",
+            "ISI"
+        ]
+    },
+    {
+        "id": "60e7986771904f",
+        "question": "les langages du web",
+        "nbr_pts": "12",
+        "tpquest": "multiple",
+        "nbr_reps": "4",
+        "reponse0": "HTML",
+        "reponse1": "CSS",
+        "reponse2": "BOOTSTRAP",
+        "bon_repsrs0":"reponse0",
+        "bon_repsrs1":"reponse1",
+        "bon_repsrs2":"reponse2",
+        "reponse3": "RAS",
+        "reponse": [
+            "HTML",
+            "CSS",
+            "BOOTSTRAP",
+            "RAS"
+        ]
+    },
+    {
+        "id": "60e4282804e3f",
+        "question": "Donnez un framework de php",
+        "nbr_pts": "12",
+        "tpquest": "simple",
+        "nbr_reps": "2",
+        "reponse0": "symphony",
+        "bon_repsr": [
+            "reponse0"
+        ],
+        "reponse1": "react",
+        "reponse": [
+            "symphony",
+            "react"
+        ]
+    },
+  
+    {
+        "id": "60ef72f1d4d43",
+        "question": "\u00c0 quoi est \u00e9gal 1 octet ?",
+        "nbr_pts": "5",
+        "tpquest": "simple",
+        "nbr_reps": "2",
+        "reponse0": "8 octets",
+        "reponse1": "8 bits",
+        "bon_repsr": [
+            "reponse1"
+        ],
+        "reponse": [
+            "8 octets",
+            "8 bits"
+        ]
+    },
+    {
+        "id": "60ef7518ba699",
+        "question": "Comment appelle-t-on un logiciel dont l\u2019utilisateur doit r\u00e9tribuer l\u2019auteur s\u2019il veut continuer \u00e0 l\u2019utiliser apr\u00e8s une p\u00e9riode de gratuit\u00e9 ?",
+        "nbr_pts": "6",
+        "tpquest": "simple",
+        "nbr_reps": "3",
+        "reponse1": " Un freeware",
+        "reponse2": "logiciel open source",
+        "reponse3": " Un shareware",
+        "bon_repsr": [
+            "reponse3"
+        ],
+        "reponse": [
+            " Un freeware",
+            "logiciel open source",
+            " Un shareware"
+        ]
+    },
+    {
+        "id": "60ef76007fabd",
+        "question": "Que veut dire FTP ?",
+        "nbr_pts": "6",
+        "tpquest": "multiple",
+        "nbr_reps": "3",
+        "reponse1": " File Transmission Protocol",
+        "reponse2": " File Transfer Protocol",
+        "reponse3": " Fiber twisted pairs",
+        "bon_repsrs0": "reponse0",
+        "bon_repsrs1": "reponse1",
+        "reponse": [
+            " File Transmission Protocol",
+            " File Transfer Protocol",
+            " Fiber twisted pairs"
+        ]
+    },
+    {
+        "id": "60f555a9c44c6",
+        "question": "Quelles sont les combinaisons de touches qui permettent de s\u00e9lectionner tous les fichiers d\u2019un r\u00e9pertoire sous Windows ?",
+        "nbr_pts": "2",
+        "tpquest": "simple",
+        "nbr_reps": "3",
+        "reponse0": "ctrl+A",
+        "reponse1": "ctrl+C",
+        "bon_repsr": [
+                "reponse0"
+
+        ],
+        "reponse2": "ctrl+Q",
+        "reponse": [
+            "ctrl+A",
+            "ctrl+C",
+            "ctrl+Q"
+        ]
+    },
+    {
+        "id": "60f55a5ac74ec",
+        "question": "question simple",
+        "nbr_pts": "2",
+        "tpquest": "simple",
+        "nbr_reps": "2",
+        "reponse1": "simple1",
+        "bon_repsr": [
+            "reponse1"
+        ],
+        "reponse2": "simple2",
+        "reponse": [
+            "simple1",
+            "simple2"
+        ]
+    },
+  
+    {
+        "id": "60f565c021952",
+        "question": "qkkqw",
+        "nbr_pts": "2",
+        "tpquest": "multiple",
+        "nbr_reps": "3",
+        "reponse0": "dwkdqw",
+        "bon_repsrs0": "reponse0",
+        "reponse1": "sdnkskwd",
+        "bon_repsrs1": "reponse1",
+        "reponse2": "skdkkdw",
+        "reponse": [
+            "dwkdqw",
+            "sdnkskwd",
+            "skdkkdw"
+        ]
+    }
+]

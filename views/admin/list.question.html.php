@@ -93,7 +93,7 @@
                <table class="table ">
                    
                    <tbody>
-                       <?php $i=1; $_SESSION['i']=$i; ?>
+                       <?php $i=1; $_SESSION['i']=$i; $j=0; ?>
                        <?php foreach($quest as $question => $value): ?>
                        
                                <tr>
@@ -104,7 +104,7 @@
                                       <?php if($value['tpquest'] ==  'simple'): ?> <br>
                                         <?php foreach($value['reponse'] as $reps => $vlue): ?>
                                             <div class="row col-md-6 ml-3 mt-2">
-                                                <input type="radio" name="coudy">
+                                                <input type="radio" <?=isset($value['bon_repsr'][0])&& $value['bon_repsr'][0]=='reponse'.$i   ? 'checked' : ""?>  name="repsr<?=$j?>" value="">
                                                 <div class="col">
                                                     <?= $vlue?>
                                                 </div>
@@ -118,16 +118,16 @@
                                          <?php elseif($value['tpquest'] == 'multiple'): ?>
                                             <?php foreach($value['reponse'] as $reps => $vlue): ?>
                                                 <div class="row col-md-6 ml-3 mt-2">
-                                                    <input type="checkbox" name="coudy">
+                                                    <input type="checkbox" <?=isset($value['bon_repsrs'.$j]) && $value['bon_repsrs'.$j]=='reponse'.$j ? 'checked' : ""  ?>  name="bon_rpsrs">
                                                     <div class="col">
                                                     <?= $vlue?>
                                                 </div>
                                                  </div> 
-                                                 
+                                                 <?php  $j++; ?>
                                             <?php  endforeach ?>
                                           
-                                        <?php endif ?>
-                                        <?php $_SESSION['i']++; ?>
+                                        <?php endif;$_SESSION['i']++; ?>
+                                       
                                   </td>
                                   <td>
                                       
@@ -143,6 +143,7 @@
                               
                                </tr>
                            <?php endforeach ?>
+                           
                    </tbody>
                </table>
                
@@ -150,9 +151,21 @@
                    
                </div>
                 </div>
-                <a name="" id="" class="btn btn-danger  mt-2 <?= empty($_GET['page']) || ($_GET['page']==1) ? 'disabled' : ""?>" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.question&page='.$precedent;  ?>" role="button">Precedent</a> 
-                 <a name="" id="" class="btn btn-danger suiv  nnn  mt-2 <?=$_GET['page']>$nbrPage-1 ? 'disabled' : ""?>" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.question&page='.$suivant; ?>" role="button">Suivant</a>
-              
+             <div class="row">
+                 <div class="col-4">
+                    <a name="" id="" class="btn btn-danger  mt-2 <?= empty($_GET['page']) || ($_GET['page']==1) ? 'disabled' : ""?>" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.question&page='.$precedent;  ?>" role="button">Precedent</a> 
+                 </div>
+                    <div class="col-4">
+                        <?php for($i=1;$i<=$nbrPage;$i++): ?>
+                        <li>
+                            <a name="" id="" class="btn btn-danger mt-2  align-center " href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.question&page='.$i; ?>" role="button"><?=$i?></a>
+                        </li>
+                    <?php endfor ?>
+                     </div>
+                    <div class="col-4">
+                    <a name="" id="" class="btn btn-danger suiv  nnn  mt-2 <?=$_GET['page']>$nbrPage-1 ? 'disabled' : ""?>" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.question&page='.$suivant; ?>" role="button">Suivant</a>
+                    </div>
+             </div>
             </div>
         </div>  
         
@@ -161,7 +174,11 @@
     <style>
 
 
-
+li{
+    list-style: none;
+    display: inline-flex;
+    margin-left: 5%;
+}
 
         .supp{
             color: red;

@@ -27,6 +27,10 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                // $question = modif_question();
                 $quest = find_question_id($id);
               $tab_reponse= $quest['reponse'];
+             // $bnReponse=$quest['bon_repsr'];
+             
+            /*   var_dump($bnReponse);
+              die(); */
                 require_once(ROUTE_DIR.'views/admin/creer.question.html.php'); 
             }elseif ($_GET['views'] == 'supprimer') {
                 $_SESSION['id']=$_GET['id'];
@@ -155,13 +159,26 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
                     //$nbrreps=$_SESSION['nbr_reps'];
                     $bonnereponse=[];
                     for($i=0;$i<$data['nbr_reps'];$i++){
-                       // $arrayReponse[]=$data['reponse'.$i];
-                      // $arrayReponse[$i]=$data['reponse'.$i];
+                      
                        array_push($arrayReponse,$data['reponse'.$i]);
-                      
-                      
+             
                     }
-                    
+                    if ($data['tpquest']=='simple') {
+                        if (isset($data['bon_repsr'])) {
+                            array_push($bonnereponse,$data['bon_repsr']);
+                            $data['bon_repsr'] = $bonnereponse;
+                        }
+                    }elseif ($data['tpquest']=='text') {
+                        if (isset($data['bon_repsr'])) {
+                            array_push($bonnereponse,$data['bon_repsr']);
+                            $data['bon_repsr'] = $bonnereponse;
+                        }
+                    }elseif ($data['tpquest']=='multiple') {
+                        if (isset($data['bon_repsr'])) {
+                            array_push($bonnereponse,$data['bon_repsr']);
+                            $data['bon_repsr'] = $bonnereponse;
+                        }
+                    }
                     $data['reponse'] = $arrayReponse;
                    
                   modif_question($data);
@@ -173,27 +190,25 @@ if (!est_admin()) header("location:".WEB_ROUTE.'?controlleurs=security&view=conn
 
                $arrayReponse=[];
                $bonnereponse=[];
-               //$nbrreps=$_SESSION['nbr_reps'];
-               for($i=1;$i<=$data['nbr_reps'];$i++){
-                  // $arrayReponse[]=$data['reponse'.$i];
-                 // $arrayReponse[$i]=$data['reponse'.$i];
+               for($i=0;$i<$data['nbr_reps'];$i++){
+                  
                   array_push($arrayReponse,$data['reponse'.$i]);
                   
                }
                 if ($data['tpquest']=='simple') {
                     if (isset($data['bon_repsr'])) {
                         array_push($bonnereponse,$data['bon_repsr']);
-                        $data['bon_repsr'] = $bonnereponse;
+                       // $data['bon_repsr'] = $bonnereponse;
                     }
                 }elseif ($data['tpquest']=='text') {
                     if (isset($data['bon_repsr'])) {
                         array_push($bonnereponse,$data['bon_repsr']);
-                        $data['bon_repsr'] = $bonnereponse;
+                       // $data['bon_repsr'] = $bonnereponse;
                     }
                 }elseif ($data['tpquest']=='multiple') {
-                    if (isset($data['bon_repsrc'])) {
-                        array_push($bonnereponse,$data['bon_repsrc']);
-                        $data['bon_repsrc'] = $bonnereponse;
+                    if (isset($data['bon_repsrs'.$i])) {
+                        array_push($bonnereponse,$data['bon_repsr'.$i]);
+                        $data['bon_repsrs'] = $bonnereponse;
                     }
                 }
                 

@@ -57,7 +57,7 @@
             </div>
             <div class="col-md-8 col-sm-12 bg-white mt-md-4 mt-sm-4  shadow p-3 mb-5  rounded">
 
-                <div class="column joueur">
+                <div class="column ">
                     <div class="shadow p-3 mb-5 bg-light rounded">
                         <p class="text-center text-danger">Nombre de joueur: <?=$cptj?></p>
                     </div>

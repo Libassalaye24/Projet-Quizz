@@ -44,9 +44,9 @@
                       }
              ?>
          <h5 class="align-center text-danger ml-auto mr-auto shadow mb-2 mt-2">les meilleures scores</h5>
-               
+         <?php for ($j=$i+1; $j <count($joueur_user) ; $j++): ?>
                  <?php for($i=0;$i<(count($joueur_user)-1);$i++): ?>
-                    <?php for ($j=$i+1; $j <count($joueur_user) ; $j++): ?>
+                 
                   
                         <?php  if ($joueur_user[$i]['score'] >= $joueur_user[$j]['score']): ?>
                             <?php  $tmp=$joueur_user[$i]; ?>

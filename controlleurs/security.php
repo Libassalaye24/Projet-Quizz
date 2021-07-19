@@ -28,6 +28,10 @@ if ($_SERVER['REQUEST_METHOD']=='GET') {
                     unset($_POST['submit']);
                     unset($_POST['action']);
                     unset($_POST['controlleurs']);
+                   /*  $_SESSION['login']=$_POST['login'];
+                    $_SESSION['password']=$_POST['password'];
+                    $_SESSION['name']=$_POST['name'];
+                    $_SESSION['password2']=$_POST['password2']; */
                     inscription($_POST,$_FILES);
                    
             }elseif ($_POST['action']=='edit') {
@@ -56,7 +60,7 @@ function connexion(string $login,string $password):void{
           header('location:'.WEB_ROUTE.'?controlleurs=security&views=connexion');
         }else{
            // session_start();
-            $_SESSION ['userConnect']= $user;
+            $_SESSION ['userConnect'] = $user;
             if ($user['role']=='ROLE_ADMIN') {
                 header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.question');
             }elseif ($user['role']== 'ROLE_JOUEUR') {
@@ -89,15 +93,13 @@ function inscription(array $data ,array $files):void{
         if ($password != $password2){
             $arrayError['password2'] = 'Les deux password ne sont pas identiques';
         } 
-        $extensions = ['jpg', 'png', 'jpeg', 'gif'];
+       /*  $extensions = ['jpg', 'png', 'jpeg', 'gif'];
         $file_ext=strtolower(end(explode('.',$files['file1']['name'])));
-      if (empty($files['file1']['name'])) {
-        $arrayError['file1'] = 'Le champs est obligatoire';
-      }elseif ($files['file1']['size'] > 500000) {
+      if ($files['file1']['size'] > 500000) {
         $arrayError['fileSize'] = 'La taille est grande';
       }elseif(in_array($file_ext,$extensions)=== false){
           $arrayError['fiel']='le fichier n\'est pas une image';
-      }
+      } */
        
        
 
@@ -145,12 +147,6 @@ function inscription(array $data ,array $files):void{
 function deconnexion():void{
     unset($_SESSION['userConnect']);
 }
-/* function supprime_utilisateur(){
-  $id = $_SESSION['id'];
-  $ok = suppression_user($id);
-  if ($ok) {
-    header('location:'.WEB_ROUTE.'?controlleurs=admin&views=list.admin');
-    exit();
-  }
-} */
+
+
 ?>

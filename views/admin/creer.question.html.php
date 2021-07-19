@@ -49,7 +49,7 @@ if (isset($_SESSION['arrayError'])) {
             <div class="col-4 mt-2">
                 <?php   require_once(ROUTE_DIR.'views/imc/menu.html.php');  ?>
             </div>
-            <div class="col-md-8 col-sm-12 bg-white mt-4 mb-4 shadow  mb-5 bg-white rounded  pl-2  jhg">
+            <div class="col-md-8 col-sm-12 bg-white mt-4 mb-4   mb-5 bg-white rounded  pl-2  jhg">
                 <h3 style="color: #c90017;">
                   CREER ET PARAMETRER VOS QUIZZ
                 </h3>
@@ -118,7 +118,7 @@ if (isset($_SESSION['arrayError'])) {
                         </div>
 
                         <?php  $pts=$_SESSION['nbr_reps']; ?>
-                        <?php for($i=1;$i<=$pts;$i++): ?>
+                        <!-- <?php //for($i=1;$i<=$pts;$i++): ?>
                             <div class="form-group ml-4">
                                                <label for="">Reponse<?=$i?> </label>
                                                <div class="row">
@@ -127,50 +127,79 @@ if (isset($_SESSION['arrayError'])) {
                                                        <small class="text-danger"> <?=isset($arrayError['reponse']) ? $arrayError['reponse'] : ""; ?></small>
                                                    </div>
                                                    <div class="col-4">
-                                                        <?php if(isset($tpreps)): ?>
-                                                        <?php if($tpreps == 'simple'): ?>
+                                                        <?php //if(isset($tpreps)): ?>
+                                                        <?php //if($tpreps == 'simple'): ?>
                                                             <input type="radio" name="bon_repsr" value="<?=isset($quest['simple'])?$quest['simple']:'reponse'.$i;?>"  class=" mt-2 " id="">
-                                                       <?php elseif($tpreps == 'multiple') :?>
-                                                        <input type="checkbox" class="form-check-input " name="bon_repsrc<?=$i?> " id="" value="<?=isset($quest['multiple'])?$quest['multiple']:'reponse'.$i;?>" >
-                                                       <?php endif ?>
-                                                       <?php endif ?>
+                                                       <?php //elseif($tpreps == 'multiple') :?>
+                                                        <input type="checkbox" class="form-check-input " name="bon_repsrs<?=$i?>" id="" value="<?=isset($quest['multiple'])?$quest['multiple']:'reponse'.$i;?>" >
+                                                       <?php //endif ?>
+                                                       <?php //endif ?>
                                                    </div>
                                                </div>
                                           </div>
-                        <?php endfor ?>
-                        <div class="form-group ml-4">
+                        <?php //endfor ?> -->
+                      <!--   <div class="form-group ml-4">
                                              
                                                <div class="row">
-                                               <?php if(isset($quest['id'])): ?>
+                                               <?php //if(isset($quest['id'])): ?>
                                                 <?php //var_dump($tab_reponse); die(); ?>
-                                                 <?php for($i=0;$i<count($tab_reponse);$i++): ?>
+                                                 <?php //for($i=0;$i<count($tab_reponse);$i++): ?>
                                                    
                                                    <div class="col-6 ml-4">
                                                    <label for="">Reponse<?=$i?> </label>
                                                        <input type="text" name="reponse<?=$i?>" id="" class="form-control bg-white " placeholder="" aria-describedby="helpId" value="<?=isset($tab_reponse[$i])? $tab_reponse[$i]: "" ?>">
                                                        <small class="text-danger"> <?=isset($arrayError['reponse']) ? $arrayError['reponse'] : ""; ?></small>
                                                    </div>
-                                                   <?php if(isset($quest['tpquest'])): ?>
-                                                        <?php if($quest['tpquest'] == 'simple'): ?>
-                                                            <input type="radio" name="bon_repsr"  class="<?=isset($quest['bon_repsr']) && $quest['bon_repsr']== 'reponse'.$i ? 'checked' : ""  ?>  kli" id="">
-                                                       <?php elseif($quest['tpquest'] == 'multiple') :?>
-                                                            <input type="checkbox" class="kli " name="bon_reps " id="" value="bon_reps<?=$i?>" >
-                                                       <?php endif ?>
-                                                       <?php endif ?>
-                                                   <?php endfor ?>
+                                                   <?php //if(isset($quest['tpquest'])): ?>
+                                                        <?php //if($quest['tpquest'] == 'simple'): ?>
+                                                            <input type="radio" name="bon_repsr" <?=isset($quest['bon_repsr'][0]) && $quest['bon_repsr'][0]=='reponse'.$i ? 'checked' : ""  ?> class="  kli" id="">
+                                                       <?php //elseif($quest['tpquest'] == 'multiple') :?>
+                                                            <input type="checkbox" class="kli " name="bon_repsrs<?=$i?>" id=""  <?=isset($quest['bon_repsrs'.$i]) && $quest['bon_repsrs'.$i]=='reponse'.$i ? 'checked' : ""  ?> >
+                                                       <?php //endif ?>
+                                                       <?php //endif ?>
+                                                   <?php //endfor ?>
                                                   
                                                      
-                                                       <?php endif ?>
+                                                       <?php //endif ?>
                                                    </div>
-                        </div>
-                                          </div>
+                        </div> -->
+                        <?php //for($i=1;$i<=$pts;$i++): ?>
+                         <?php for($i=0;$i<$quest['nbr_reps']||$i<$pts;$i++): ?>
+                            <?php if(isset($tpreps) || (isset($quest['id']))): ?>
+                            <div class="form-group ml-4">
+                                               <label for="">Reponse<?=$i?> </label>
+                                               <div class="row">
+                                                   <div class="col-6 ml-4">
+                                                       <input type="text" name="reponse<?=$i?>" id="" class="form-control bg-white " placeholder="" aria-describedby="helpId" value="<?=isset($tab_reponse[$i])? $tab_reponse[$i]: "" ?>">
+                                                       <small class="text-danger"> <?=isset($arrayError['reponse']) ? $arrayError['reponse'] : ""; ?></small>
+                                                   </div>
+                                                   <div class="col-4">
+                                                       
+                                                        <?php if($tpreps == 'simple' || $quest['tpquest'] == 'simple'): ?>
+                                                            <input type="radio" name="bon_repsr" <?=isset($quest['bon_repsr'][0]) && $quest['bon_repsr'][0]=='reponse'.$i ? 'checked' : "" ?> value="<?=isset($quest['simple'])?$quest['simple']:'reponse'.$i;?>"  class=" mt-2 kli" id="">
+                                                       <?php elseif($tpreps == 'multiple' || $quest['tpquest'] == 'multiple') :?>
+                                                        <input type="checkbox" class="form-check-input kli" name="bon_repsrs<?=$i?>"  <?=isset($quest['bon_repsrs'.$i]) && $quest['bon_repsrs'.$i]=='reponse'.$i ? 'checked' : ""  ?> id="" value="<?=isset($quest['multiple'])?$quest['multiple']:'reponse'.$i;?>" >
+                                                       <?php endif ?>
+                                                      
+                                                   </div>
+                                               </div>
+                            </div>
+                            <?php endif ?>
+                        <?php endfor ?>
+                        <?php //endfor ?>
+                    </div>
+                                          
                 </div>
-                <div class="row ml-auto">
-                <?php if(isset($quest['id'])): ?>
-                        <a name="" id="" class="btn btn-dark mr-4 mt-2 mr-auto  mb-2  " href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question'?>" role="button">annuler</a>
+                <div class="row ml-auto ">
+                    <div class="col">
+                    <?php if(isset($quest['id'])): ?>
+                        <a name="" id="" class="btn btn-dark mr-4  mr-auto  mb-2 annuler  " href="<?= WEB_ROUTE.'?controlleurs=admin&views=list.question'?>" role="button">annuler</a>
                     <?php endif?>
-                    <button type="submit" name="btn_submit" class="border border-danger button ml-auto mr-4  mt-2 mb-2"><?=isset($quest['id']) ? "Modifier" : "Confirmer"; ?></button>
-                   
+                    </div>
+                        <div class="col">
+                        <button type="submit" name="btn_submit" class="border border-danger button ml-auto mr-5   mb-2"><?=isset($quest['id']) ? "Modifier" : "Confirmer"; ?></button>
+
+                        </div>
                 </div>
              </form>
               
@@ -180,6 +209,9 @@ if (isset($_SESSION['arrayError'])) {
        
     </div>
     <style>
+        .annuler{
+            margin-top: -22%;
+        }
         .kli{
             margin-top: 5%;
         }
@@ -189,6 +221,8 @@ if (isset($_SESSION['arrayError'])) {
             background-color: #c90017;
             border: #c90017;
             color: white;
+            margin-top: -14%;
+            height: 55px;
         }
         .button:hover{
             background-color: #fff;

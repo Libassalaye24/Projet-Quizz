@@ -193,3 +193,60 @@ function showList(){
 
               </div>
             </div>
+
+
+
+
+
+
+
+            <?php foreach($quest as $question => $value): ?>
+                       
+                       <tr>
+                          <td>
+                          
+                              <?= $_SESSION['i']. ".".  $value['question'] ?> 
+                             
+                              <?php if($value['tpquest'] ==  'simple'): ?> <br>
+                                <?php foreach($value['reponse'] as $reps => $vlue): ?>
+                                    <div class="row col-md-6 ml-3 mt-2">
+                                        <input type="radio" <?=isset($value['bon_repsr'][0])&& $value['bon_repsr'][0]=='reponse'.$i   ? 'checked' : ""?>  name="repsr<?=$j?>" value="">
+                                        <div class="col">
+                                            <?= $vlue?>
+                                        </div>
+                                  </div> 
+                                <?php  endforeach ?>
+                              
+                                <?php elseif($value['tpquest'] == 'text'): ?>
+                                    <div class="row col-md-8 col-sm-7 ml-3 mt-2 ">
+                                         <input type="text" name="" class="form-control bg-white">
+                                    </div>
+                                 <?php elseif($value['tpquest'] == 'multiple'): ?>
+                                    <?php foreach($value['reponse'] as $reps => $vlue): ?>
+                                        <div class="row col-md-6 ml-3 mt-2">
+                                            <input type="checkbox" <?=isset($value['bon_repsrs'.$j]) && $value['bon_repsrs'.$j]=='reponse'.$j ? 'checked' : ""  ?>  name="bon_rpsrs">
+                                            <div class="col">
+                                            <?= $vlue?>
+                                        </div>
+                                         </div> 
+                                         <?php  $j++; ?>
+                                    <?php  endforeach ?>
+                                  
+                                <?php endif;$_SESSION['i']++; ?>
+                               
+                          </td>
+                          <td>
+                              
+                             <a name="" id="" class="btn btn-light btt " href="<?= WEB_ROUTE.'?controlleurs=admin&views=supprimer&id='.$value['id']?>" role="button"><ion-icon name="trash-outline" class="supp"></ion-icon>delete</a> 
+                             <a name="" id="" class="btn btn-light btt" href="<?= WEB_ROUTE.'?controlleurs=admin&views=modif&id='.$value['id']?>" role="button"><ion-icon name="create-outline" class="edit"></ion-icon>Edit</a>
+                         
+                          </td>
+                          <td>
+                          <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=supprimer&id='.$value['id']?>"> <ion-icon name="trash-outline" class="supp iccc"></ion-icon></a>
+                            <a href="<?= WEB_ROUTE.'?controlleurs=admin&views=modif&id='.$value['id']?>"> <ion-icon name="create-outline" class="edit iccc"></ion-icon></a>
+
+                          </td>
+                      
+                       </tr>
+                   <?php endforeach ?>
+              

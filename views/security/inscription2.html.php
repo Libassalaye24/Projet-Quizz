@@ -57,7 +57,7 @@
                                 <div class="form-group">
                                     <label for=""></label>
                                     <input type="text"
-                                        class="form-control" name="login" id="" aria-describedby="helpId" placeholder="login"  value="<?=isset($user['login']) ? $user['login'] : ""; ?>">
+                                        class="form-control" name="login" id="" aria-describedby="helpId" placeholder="login"  value="<?=isset($user['login']) ? $user['login'] : "";  ?>">
                                     <small id="helpId" class="form-text text-danger"> <?=isset($arrayError['login']) ? $arrayError['login'] : ""; ?></small>
                                 </div>
                               <div class="row">

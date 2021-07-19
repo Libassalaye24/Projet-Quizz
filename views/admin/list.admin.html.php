@@ -118,11 +118,25 @@
           
             </div>
         </div>
-      
+      <div class="row">
+                    <div class="col-4">
                     <a name="" id="" class="btn btn-danger <?= empty($_GET['page']) || ($_GET['page']==1) ? 'disabled' : ""?> mb-3 mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$precednt;  ?>" role="button">Precedent</a> 
-               
-                    <a name="" id="" class="btn btn-danger suiv mb-3 <?= $_GET['page'] > $nbrPage-1 ? 'disabled' : ""?>  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
-        
+
+                    </div>
+                <div class="col-4">
+                       
+                   <?php for($i=1;$i<=$nbrPage;$i++): ?>
+                   <li>
+                       <a name="" id="" class="btn btn-light mt-2   " href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$i; ?>" role="button"><?=$i?></a>
+                   </li>
+               <?php endfor ?>
+             
+                </div>
+                <div class="col-4">
+                <a name="" id="" class="btn btn-danger suiv mb-3 <?= $_GET['page'] > $nbrPage-1 ? 'disabled' : ""?>  mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.admin&page='.$suivant; ?>" role="button">Suivant</a>
+                </div>
+   
+      </div>
        
            </div>
     </div>
@@ -134,6 +148,12 @@
            .interface{
                height: 900px;
                padding: 12px;
+           }
+           li{
+               list-style: none;
+               display: inline-flex;
+               margin-left: 5%;
+             
            }
         
         .jhg{

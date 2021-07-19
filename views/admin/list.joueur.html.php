@@ -47,7 +47,6 @@
                     $page=1;
                     $nbrElement = 15;
                     $suivant=2;
-                  //  $_SESSION['user_admin'] =  $arrayUser;
                   $joueur_user=[];
                   foreach ($arrayUser as $user) {
                       if ($user['role']=='ROLE_JOUEUR') {
@@ -60,7 +59,6 @@
                     $_SESSION['joueur_user'] =  $joueur_user;
                     $nbrPage = nombrePageTotal( $_SESSION['joueur_user'], $nbrElement);
                     $list_user= get_element_to_display( $_SESSION['joueur_user'],$page, $nbrElement);
-                    //$nbr_user= count($list_user);
                    
                 }
                    if (isset($_GET['page'])) {
@@ -71,7 +69,6 @@
                             $_SESSION['joueur_user'] =  $joueur_user;
                             $nbrPage = nombrePageTotal( $_SESSION['joueur_user'], $nbrElement);
                             $list_user= get_element_to_display( $_SESSION['joueur_user'],$page, $nbrElement);
-                           // $nbr_user= count($list_user);
                         }
 
                     }
@@ -101,14 +98,20 @@
                 </table>
                
                </div>
-              
-                    <a name="" id="" class="btn btn-danger  mt-2 <?= empty($_GET['page']) || ($_GET['page']==1)? 'disabled' : ""?> " href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$precedent;  ?>" role="button">Precedent</a> 
-                    <a name="" id="" class="btn btn-danger suiv   <?= $_GET['page'] > $nbrPage-1 ? 'disabled' : ""?> mt-2"  href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$suivant; ?>" role="button">Suivant</a>
-              
-             <!--   <?php for($i=1;$i<=$nbrPage;$i++): ?>
-                    <a name="" id="" class="btn btn-danger   mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$i?>" role="button"><?=$i?></a>
-               <?php endfor; ?> -->
-              <!--  <button type="submit" class="button " name="pagin-jour">Suivant</button> -->
+              <div class="row">
+                  <div class="col-4">
+                    <a name="" id="" class="btn btn-danger  mt-2 <?= empty($_GET['page']) || ($_GET['page']==1)? 'disabled' : ""?> " href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$precedent;  ?>" role="button">Precedent</a>               
+                  </div>
+                  <div class="col-4">
+                        <?php for($i=1;$i<=$nbrPage;$i++): ?>
+                            <a name="" id="" class="btn btn-danger   mt-2" href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$i?>" role="button"><?=$i?></a>
+                         <?php endfor; ?> 
+                  </div>
+                  <div class="col-4">
+                      <a name="" id="" class="btn btn-danger suiv   <?= $_GET['page'] > $nbrPage-1 ? 'disabled' : ""?> mt-2"  href="<?=WEB_ROUTE.'?controlleurs=admin&views=list.joueur&page='.$suivant; ?>" role="button">Suivant</a>
+                  </div>
+              </div>
+             
             </div>
         </div>
         

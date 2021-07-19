@@ -7,7 +7,7 @@
                 <span class="fa fa-bars ml-auto mr-3" aria-hidden="true"></span>
             </a>
             
-            <h5 class="logo text-white mt-3 text-center font-weight-bold ml-4 ">Testez votre niveau de culture generale</h5>
+            <h5 class="logo text-white mt-3 ml-5 font-weight-bold ml-4 ">Testez votre niveau de culture generale</h5>
             
             <nav id="main-menu" class="main-menu" aria-label="Main menu">
                 <a href="#main-menu-toggle"
@@ -19,9 +19,9 @@
                 </a>
                 <ul>
                 <li class="ml-
-                auto mr-md-3 text-white"><a href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion' ?>">Deconnexion</a></li>
+                auto mr-md-3 text-white deccc"><a href="<?= WEB_ROUTE.'?controlleurs=security&views=deconnexion' ?>">Deconnexion</a></li>
                 <li class="ddnone"><a href="<?= WEB_ROUTE.'?controlleurs=joueur&views=meilleurs' ?>">Meilleures scores</a></li>
-                <li  class="ddnone"><a href="<?= WEB_ROUTE.'?controlleurs=joueur&views=jeu' ?>">retour</a></li>
+                <li  class="ddnone"><a href="<?= WEB_ROUTE.'?controlleurs=joueur&views=jeu' ?>">Retour au jeu</a></li>
                 </ul>
             </nav>
             <a href="#main-menu-toggle"
@@ -54,19 +54,23 @@
   clip: rect(0,0,0,0);
   border: 0;
 }
-
+.deccc{
+color: white;
+margin-left: 4%;
+background-color: #ddd;
+}
 /* Button styling */
 .menu-toggle {
   display: inline-block;
   padding: .75em 15px;
-  line-height: 1em;
-  font-size: 1em;
-  color: #333;
+  line-height: 1,5em;
+  font-size: 1.3em;
+  color: #fff;
 }
 
 .menu-toggle:hover,
 .menu-toggle:focus {
-  color: #c00;
+  color: #fff;
 }
 
 /*
